@@ -10,9 +10,9 @@ class Dashboard extends Component {
                 <h1>Dashboard</h1>
                 {/* <button onClick={this.props.viewCreateView} className='button is-primary'>Create Set</button>
                 <button onClick={this.props.viewViewSet} className='button is-success'>View Set</button> */}
-                <button onClick={() => {this.props.changePageName(CREATE_VIEW)}} className='btn btn-primary'>Create Set</button>
-                <button onClick={() => {this.props.changePageName(VIEW_SET)}} className='btn btn-success'>View Set</button>
-                <button onClick={() => {this.props.changePageName(QUIZ)}} className='btn btn-success'>Quiz</button>
+                <button onClick={() => {this.props.changePageName(CREATE_VIEW)}} className='button is-primary'>Create Set</button>
+                <button onClick={() => {this.props.changePageName(VIEW_SET)}} className='button is-success'>View Set</button>
+                <button onClick={() => {this.props.changePageName(QUIZ)}} className='button is-success'>Quiz</button>
             </div>
         );
     }

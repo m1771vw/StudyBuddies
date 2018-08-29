@@ -13,16 +13,22 @@ class Quiz extends Component {
                 </div>
             </div>
 
-            <div className="row level level-flashcards">
-                <div className="box flashcard-box">
-                    <h1>Flashcard 1</h1>
+            <div className="level level-flashcards">
+                <div className='level-item level-left'>
+                    <div className="box flashcard-box">
+                        <h1>Flashcard 1</h1>
+                    </div>
                 </div>
-                <div className="box flashcard-box">
-                    <h1>Flashcard 2</h1>
+                <div className='level-item'>
+                    <div className="box flashcard-box">
+                        <h1>Flashcard 2</h1>
+                    </div>
                 </div>
-                <div className="box flashcard-box">
-                    <h1>Flashcard 3</h1>
-                </div>
+                <div className='level-item level-right'>
+                    <div className="box flashcard-box">
+                        <h1>Flashcard 3</h1>
+                    </div>
+            </div>
                 {/* <div className="box flashcard-box">
                     <h1>Flashcard 4</h1>
                 </div> */}
