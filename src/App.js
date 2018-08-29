@@ -5,9 +5,7 @@ import ViewSet from './components/ViewSet';
 import UserHeader from './components/UserHeader';
 import Dashboard from './components/Dashboard';
 
-const DASHBOARD = 'DASHBOARD';
-const CREATE_VIEW = 'CREATE';
-const VIEW_SET = 'VIEW';
+import { DASHBOARD, CREATE_VIEW, VIEW_SET } from './constants'
 
 class App extends Component {
   state = {
