@@ -11,7 +11,7 @@ class Dashboard extends Component {
                 <div className='level'>
                     <div className='level-item'>
 
-                        <button onClick={(event) => {this.props.changePageName(event, CREATE_VIEW)}} className='button is-primary dashboard-button'>Create Set</button>
+                        <button onClick={() => {this.props.changePageName(CREATE_VIEW)}} className='button is-primary dashboard-button'>Create Set</button>
                     </div>
                 {this.props.flashCardSets.map((cardsets, index) => {
                     return(
