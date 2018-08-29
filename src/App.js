@@ -32,9 +32,13 @@ class App extends Component {
   }
   render() {
     return (
-      <div id="dashboard">
-        <UserHeader /> 
-        {this.setPage(this.state.pageName)}
+      <div>
+        <UserHeader 
+          changePageName={this.changePageName}
+        /> 
+        <div className="container is-fluid main-content">
+          {this.setPage(this.state.pageName)}
+        </div>
       </div>
     );
   }
