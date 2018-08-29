@@ -39,3 +39,15 @@
 
 
 /*Create View css */
+.set-name-field{
+  width: 400px;
+}
+
+.text-area-level{
+  width: 400px ;
+  margin: auto;
+}
+
+#createbutton1{
+  width: 50px;
+}
