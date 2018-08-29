@@ -13,7 +13,7 @@ createRow = () =>{
                 <div className="level">
                     <div className="level-item has-text-centered">
                         <input className="input is-primary set-name-field" type="text" placeholder="Enter set name here..." />
-
+   
                     </div>
                 </div>
 
