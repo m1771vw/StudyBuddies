@@ -11,27 +11,19 @@ const VIEW_SET = 'VIEW';
 
 class App extends Component {
   state = {
-    isCreateViewClicked: false,
-    isViewSetClicked: false,
-    isDashboardClicked: true
+    pageName: DASHBOARD
   }
-  viewViewSet = () => {
+
+  changePageName = name => {
     this.setState({
-      isViewSetClicked: true,
-      isCreateViewClicked: false
-    })
-  }
-  viewCreateView = () => {
-    this.setState({
-      isCreateViewClicked: true,
-      isViewSetClicked: false
+      pageName: name
     })
   }
 
-  changePage = pageName => {
+  setPage = pageName => {
     switch(pageName){
       case DASHBOARD:
-        return(<Dashboard />)
+        return(<Dashboard changePageName={this.changePageName}/>)
       case CREATE_VIEW:
         return(<CreateView />)
       case VIEW_SET:
@@ -44,16 +36,7 @@ class App extends Component {
     return (
       <div id="dashboard">
         <UserHeader /> 
-        {
-          this.state.isCreateViewClicked
-        ? <CreateView />
-        : this.state.isViewSetClicked 
-        ? <ViewSet /> 
-        : <Dashboard viewViewSet={this.viewViewSet} viewCreateView={this.viewCreateView}
-        />
-        }
-        
-
+        {this.setPage(this.state.pageName)}
       </div>
     );
   }
