@@ -10,7 +10,7 @@ import { DASHBOARD, CREATE_VIEW, VIEW_SET, QUIZ } from './constants'
 
 class App extends Component {
   state = {
-    pageName: DASHBOARD
+    pageName: QUIZ
   }
 
   changePageName = name => {
