@@ -27,3 +27,30 @@
   to { transform: rotate(360deg); }
 } */
 
+.flashcard-box{
+  width: 300px;
+  height: 200px;
+  background-color: rgb(233, 233, 233);
+  
+}
+
+.setname-box{
+  width: 400px;
+  
+}
+
+.description-box{
+  width: 400px;
+  height: 250px;
+  margin-top: 125px;
+  margin-bottom: 50px;
+}
+
+.box{
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+.level-set{
+  justify-content: space-evenly
+}
