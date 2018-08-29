@@ -42,7 +42,17 @@ const flashCards = [
             {
                 "term" : "Trump Inauguration",
                 "definition" : "Did this really happen?"
+            },
+            {
+                'term':'First President',
+                'definition' : 'George Washington'
+            },
+            {
+                'term':'Best president',
+                'definition' : 'Obama'
             }
         ]
     }
 ]
+
+export default flashCards;

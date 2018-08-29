@@ -2,6 +2,12 @@
 .main-content {
   border: 1px solid black;
 }
+
+/* Dashboard CSS */
+.dashboard-button {
+  width: 200px;
+  height: 100px;
+}
 /* UserHeader CSS */
 .navbar-container {
   border: 1px solid black;

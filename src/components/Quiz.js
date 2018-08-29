@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { DASHBOARD, CREATE_VIEW, QUIZ, VIEW_SET } from '../constants'
-import { func } from 'prop-types';
+import { DASHBOARD, CREATE_VIEW, QUIZ, VIEW_SET, WRONG_ANSWER, CORRECT_ANSWER } from '../constants'
+import { func, array } from 'prop-types';
 
-const CORRECT_ANSWER = '2px solid green'
-const WRONG_ANSWER = '2px solid red'
+
 // const flashCard = (value, isCorrect, isWrong) => {
 //     if(isWrong){
 //     return(<div onClick={isCorrect} style={{border: CORRECT_ANSWER}} className="box flashcard-box">
@@ -67,7 +66,7 @@ cards = chooseRightCard(cards)
 class Quiz extends Component {
     state={
         cardSelectedBorder: '',
-        cards: cards,
+        cards: this.props.selectedQuizCards,
         // cards : [
         //     {
         //         "term" : "WWII",
@@ -111,7 +110,7 @@ class Quiz extends Component {
         <div>
             <div className="level level-set">
                 <div className="box flashcard-box">
-                        <h1>{this.state.cards[randomNumber].term}</h1>
+                        <h1>{this.state.cards[this.props.randomNumber].term}</h1>
                     </div>
                 </div>
             <div className='level level-flashcards'>
@@ -141,6 +140,7 @@ class Quiz extends Component {
 }
 
 Quiz.propTypes = {
+    selectedFlashCards: array,
     changePageName: func,
 };
 
