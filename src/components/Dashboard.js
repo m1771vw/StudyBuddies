@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { func } from 'prop-types';
+import {DASHBOARD, CREATE_VIEW, VIEW_SET } from '../constants'
 
-const DASHBOARD = 'DASHBOARD';
-const CREATE_VIEW = 'CREATE';
-const VIEW_SET = 'VIEW';
 
 class Dashboard extends Component {
     render() {

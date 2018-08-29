@@ -1,18 +1,20 @@
-import React from 'react';
-import { DASHBOARD, CREATE_VIEW, QUIZ } from '../constants'
+import React, { Component } from 'react';
+import { DASHBOARD, CREATE_VIEW, QUIZ, VIEW_SET } from '../constants'
 import { func } from 'prop-types';
 
-const Viewset = props => {
+class Quiz extends Component {
+
+    render() {
     return (
         <div>
             <div className="level level-set">
                 <div className="box setname-box">
-                    <h1>SET NAME</h1>
+                    <h1>QUIZ</h1>
                 </div>
-                <a className="button is-danger" onClick={() => {props.changePageName(CREATE_VIEW)}}>Edit</a>
-                <a className="button is-success" onClick={() => {props.changePageName(QUIZ)}}>Quiz!</a>
+                <a className="button is-danger" onClick={() => {this.changePageName(CREATE_VIEW)}}>Edit</a>
+                <a className="button is-success" onClick={() => {this.changePageName(QUIZ)}}>Quiz!</a>
                 <div className="box description-box">
-                    <h1>This will be the description box</h1>
+                    <h1>QUIZ</h1>
                 </div>
             </div>
 
@@ -33,10 +35,11 @@ const Viewset = props => {
     );
 
 }
+}
 
-Viewset.propTypes = {
+Quiz.propTypes = {
     changePageName: func,
 };
 
 
-export default Viewset
+export default Quiz;
