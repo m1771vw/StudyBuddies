@@ -39,7 +39,7 @@ class App extends Component {
         <UserHeader 
           changePageName={this.changePageName}
         /> 
-        <div className="container is-fluid main-content">
+        <div className="container main-content">
           {this.setPage(this.state.pageName)}
         </div>
       </div>

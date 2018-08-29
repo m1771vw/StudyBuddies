@@ -11,26 +11,27 @@
   width: 300px;
   height: 200px;
   background-color: rgb(233, 233, 233);
-  
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .setname-box{
   width: 400px;
-  
 }
 
 .description-box{
   width: 400px;
-  height: 250px;
-  margin-top: 125px;
+  height: 100px;
+  margin-top: 50px;
   margin-bottom: 50px;
 }
 
 .box{
-  margin-left: 150px;
-  margin-right: 150px;
+  /* margin-left: 50px;
+  margin-right: 50px; */
 }
 
-.level-set{
-  justify-content: space-evenly
+
+.level-flashcards{
+  border: 1px solid black;
 }
