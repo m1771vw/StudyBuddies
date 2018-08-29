@@ -4,8 +4,9 @@ import CreateView from './components/CreateView';
 import ViewSet from './components/ViewSet';
 import UserHeader from './components/UserHeader';
 import Dashboard from './components/Dashboard';
+import Quiz from './components/Quiz';
 
-import { DASHBOARD, CREATE_VIEW, VIEW_SET } from './constants'
+import { DASHBOARD, CREATE_VIEW, VIEW_SET, QUIZ } from './constants'
 
 class App extends Component {
   state = {
@@ -25,7 +26,9 @@ class App extends Component {
       case CREATE_VIEW:
         return(<CreateView />)
       case VIEW_SET:
-        return(<ViewSet />)
+        return(<ViewSet changePageName={this.changePageName}/>)
+      case QUIZ:
+        return(<Quiz />)  
       default:
         return null;
     }
