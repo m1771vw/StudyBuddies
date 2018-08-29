@@ -2,20 +2,41 @@ import React, { Component } from 'react';
 
 
 class CreateView extends Component {
+
+
+    
     render() {
         return (
             <div>
-                <div>
-                <h1>SET NAME PLACEHOLDER</h1>
-                <h1>DESCRIPTION BOX PLACEHOLDER</h1>
+                <div className="level">
+                    <div className="level-item has-text-centered">
+                    <input className="input is-primary" type="text" placeholder="Term" />
+                        
+                    </div>
                 </div>
 
-                <div className="input-group mb-3">
-                    <div className="input-group-prepend">
-                        <span clasNames="input-group-text" id="inputGroup-sizing-default">Default</span>
+                <div className="level">
+                    <div className="level-item has-text-centered">
+                    <textarea class="textarea" placeholder="Enter description here..."></textarea>
                     </div>
-                
+                </div>   
+
+                <div className="field level">
+                    <div className="term div"> 
+                        <input className="input is-primary" type="text" placeholder="Term" />
+                        <input className="input is-primary" type="text" placeholder="Term" />
+                        <input className="input is-primary" type="text" placeholder="Term" />
+                        <input className="input is-primary" type="text" placeholder="Term" />
+                    </div>
+                    <div className ="definition-div">
+                        <input className="input is-primary" type="text" placeholder="Definition" />
+                        <input className="input is-primary" type="text" placeholder="Definition" />
+                        <input className="input is-primary" type="text" placeholder="Definition" />
+                        <input className="input is-primary" type="text" placeholder="Definition" /> 
+                    </div>
                 </div>
+               
+
             </div>
         );
     }
