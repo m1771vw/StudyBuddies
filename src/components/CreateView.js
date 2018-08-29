@@ -1,11 +1,29 @@
 import React, { Component } from 'react';
-
+import TermDef from './TermDef'
 
 class CreateView extends Component {
 
-createRow = () =>{
+    state = {
+        cards: [{term:'', definition:''},{term:'', definition:''},{term:'', definition:''},{term:'', definition:''}],
+    }
+
+
+change = (property,index,newValue) =>{
+    let copy= {...this.state.cards[index]};
+    copy[property]=newValue;
+
+    let newCards = [...this.state.cards.slice(0,index),
+        copy, ...this.state.cards.slice(index + 1)];
     
+        this.setState({cards: newCards})
 }
+
+addCard = e => {
+    let newCards = [...this.state.cards, {term:'', definition:''}];
+    this.setState({cards:newCards})
+}
+
+
 
     render() {
         return (
@@ -20,24 +38,20 @@ createRow = () =>{
                 <div className="level text-area-level">
                         <textarea class="textarea" placeholder="Enter description here..." rows="7"></textarea>
                 </div>
+                <div>
+                    {this.state.cards.map((card,index) =>(
+                        <TermDef
+                        key={index}
+                        index={index}
+                        change={this.change}
+                        />
+                    ))}
 
-                <div className="field level">
-                    <div className="term-div">
-                        <input className="input is-primary" type="text" placeholder="Term" />
-                        <input className="input is-primary" type="text" placeholder="Term" />
-                        <input className="input is-primary" type="text" placeholder="Term" />
-                        <input className="input is-primary" type="text" placeholder="Term" />
-                    </div>
-                    <div className="definition-div">
-                        <input className="input is-primary" type="text" placeholder="Definition" />
-                        <input className="input is-primary" type="text" placeholder="Definition" />
-                        <input className="input is-primary" type="text" placeholder="Definition" />
-                        <input className="input is-primary" type="text" placeholder="Definition" />
-                    </div>
+
                 </div>
                 <div className="level" id="createbutton1">
-                <button className="button is-large level-item">+</button>
-                <button className="button is-large level-item">Submit Set</button>
+                    <button className="button is-large level-item" onClick={this.addCard}>+</button>
+                    <button className="button is-large level-item">Submit Set</button>
                 </div>
 
 
