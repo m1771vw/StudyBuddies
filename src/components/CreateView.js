@@ -5,7 +5,17 @@ class CreateView extends Component {
     render() {
         return (
             <div>
-                <h1>Create View view</h1>
+                <div>
+                <h1>SET NAME PLACEHOLDER</h1>
+                <h1>DESCRIPTION BOX PLACEHOLDER</h1>
+                </div>
+
+                <div className="input-group mb-3">
+                    <div className="input-group-prepend">
+                        <span clasNames="input-group-text" id="inputGroup-sizing-default">Default</span>
+                    </div>
+                
+                </div>
             </div>
         );
     }
