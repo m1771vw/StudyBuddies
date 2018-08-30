@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TermDefInput from './TermDefInput'
 
-class CreateView extends Component {
+class EditView extends Component {
 
     state = {
         setname: '',
@@ -9,6 +9,7 @@ class CreateView extends Component {
         cards: [{ term: '', definition: '' }, { term: '', definition: '' },
         { term: '', definition: '' }, { term: '', definition: '' }],
     }
+
 
     change = (property, index, newValue) => {
         let copy = { ...this.state.cards[index] };
@@ -19,6 +20,7 @@ class CreateView extends Component {
 
         this.setState({ cards: newCards })
     }
+
 
     addCard = e => {
         let newCards = [...this.state.cards, { term: '', definition: '' }];
@@ -36,6 +38,11 @@ class CreateView extends Component {
             description: event.target.value
         })
     }
+
+
+
+
+
 
     render() {
         return (
@@ -70,13 +77,9 @@ class CreateView extends Component {
                     <button className="button is-large level-item" onClick={this.addCard}>+</button>
                     <button className="button is-large level-item" onClick={() => {
                          this.props.addToCards(this.state)
-                         console.log(this.state.cards)
                          this.setState({
                              setname: '',
-                             description: '',
-                             cards:[{ term: '', definition: '' },{ term: '', definition: '' },
-                             { term: '', definition: '' },{ term: '', definition: '' }],
-
+                             description: ''
                          }) 
                         }
                         
@@ -91,8 +94,8 @@ class CreateView extends Component {
     }
 }
 
-CreateView.propTypes = {
+EditView.propTypes = {
 
 };
 
-export default CreateView;
+export default EditView;

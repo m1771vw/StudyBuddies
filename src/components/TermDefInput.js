@@ -21,7 +21,6 @@ oneChangeTwo = e =>{
     render() {
         return (
             <div>
-                
                 <div className="field level">
                     <div className="term-div level-item">
                         <input className="input is-primary" type="text" placeholder="Term"
@@ -32,9 +31,6 @@ oneChangeTwo = e =>{
                         value={this.state.definition} onChange={this.oneChangeTwo} />
                     </div>
                 </div>
-                 
-
-
             </div>
         );
     }
