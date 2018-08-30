@@ -6,15 +6,20 @@ import UserHeader from './components/UserHeader';
 import Dashboard from './components/Dashboard';
 import QuizResults from './components/QuizResults';
 import Quiz from './components/Quiz';
+import HomePage from './components/HomePage';
+import HomePageHeader from './components/HomePageHeader';
+import LoginView from './components/LoginView';
+import SignupView from './components/SignupView';
 import FlashCards from './data/flashcards';
-import { DASHBOARD, CREATE_VIEW, VIEW_SET, QUIZ, QUIZ_RESULTS } from './constants'
+import { HOMEPAGE, LOGIN_VIEW, SIGNUP_VIEW, DASHBOARD, CREATE_VIEW, VIEW_SET, QUIZ, QUIZ_RESULTS } from './constants'
 
 
 class App extends Component {
   state = {
-    pageName: DASHBOARD,
+    pageName: SIGNUP_VIEW,
     flashCardSets: FlashCards, // All the Cards
     selectedCardSet: [] // Selected card set of cards
+    // selectedCardSet: FlashCards[1] // Dummy data to have Quiz as Start Up page
   }
 
   addToCards = card => {
@@ -44,6 +49,12 @@ class App extends Component {
   }
   setPage = pageName => {
     switch(pageName){
+      case HOMEPAGE:
+        return(<HomePage changePageName={this.changePageName}/>)
+      case SIGNUP_VIEW:
+        return(<SignupView changePageName={this.changePageName}/>)
+      case LOGIN_VIEW:
+        return(<LoginView changePageName={this.changePageName}/>)
       case DASHBOARD:
         return(<Dashboard flashCardSets={this.state.flashCardSets}
                 changePageName={this.changePageName}
@@ -66,7 +77,7 @@ class App extends Component {
             changePageName={this.changePageName}
           />)
       default:
-        return null;
+        return <h1>404 Not Found</h1>;
     }
   }
   render() {

@@ -5,12 +5,12 @@ const flashCards = [
         "creator": "James",
         "cards" : [
             {
-                "term" : "penis",
-                "definition" : "da dick"
+                "term" : "monomer",
+                "definition" : "small unit that can join together with other small units"
             },
             {
-                "term" : "vagina",
-                "definition" : "da pussy"
+                "term" : "reactant",
+                "definition" : "elements or compounds that enter into chemical reaction"
             },
             {
                 "term" : "Kreb Cycle",
