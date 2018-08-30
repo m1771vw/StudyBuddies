@@ -4,17 +4,17 @@ import { DASHBOARD, CREATE_VIEW } from '../constants'
 class UserHeader extends Component {
     render() {
         return (
-            <nav className='level'>
+            <nav className='level header-flex-content'>
                 <div className=''>
-                    <button onClick={() => {this.props.changePageName(DASHBOARD)}} className='button is-rounded is-info'>Home</button>
-                    <button className='button is-rounded is-primary'>Card Sets</button> 
+                    <button onClick={() => {this.props.changePageName(DASHBOARD)}} className='button is-rounded is-info header-button'>Home</button>
+                    <button className='button is-rounded is-primary header-button'>Card Sets</button> 
                 </div>
                 <div className=''>
-                    <button onClick={() => {this.props.changePageName(DASHBOARD)}} className='button is-warning'>Home Logo</button> 
+                    <button onClick={() => {this.props.changePageName(DASHBOARD)}} className='button is-warning header-button home-logo'>Home Logo</button> 
                 </div>
                 <div className=''>
-                    <button onClick={() => {this.props.changePageName(CREATE_VIEW)}} className='button'>+</button>
-                    <button className='button is-dark'>Profile</button>  
+                    <button onClick={() => {this.props.changePageName(CREATE_VIEW)}} className='button header-button'>+</button>
+                    <button className='button is-dark header-button'>Profile</button>  
                 </div>
             </nav>
         );

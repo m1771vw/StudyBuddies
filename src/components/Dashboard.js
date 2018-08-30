@@ -7,7 +7,7 @@ class Dashboard extends Component {
     render() {
         return (
             <div>
-                <h1>Dashboard</h1>
+                <div id='dashboard-text'>Welcome To Your Dashboard!</div>
                 <div className='level'>
                     <div className='level-item'>
                         <button onClick={() => {this.props.changePageName(CREATE_VIEW)}} className='button is-primary dashboard-button'>Create Set</button>

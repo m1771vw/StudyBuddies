@@ -4,16 +4,37 @@
 }
 
 /* Dashboard CSS */
+
+#dashboard-text {
+  font-size: 2em;
+  font-weight: bold;
+}
 .dashboard-button {
   width: 200px;
   height: 100px;
 }
+
 
 /* UserHeader CSS */
 .navbar-container {
   border: 1px solid black;
 }
 
+.header-flex-content {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  margin: 10px;
+}
+
+.header-button {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.home-logo {
+  margin-left: auto;
+  margin-right: auto;
+}
 /* ViewSet CSS */
 .cardset-info-flex-container {
   display: flex;
