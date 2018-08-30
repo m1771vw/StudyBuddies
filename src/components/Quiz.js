@@ -1,129 +1,60 @@
 import React, { Component } from 'react';
-import { DASHBOARD, CREATE_VIEW, QUIZ, VIEW_SET, WRONG_ANSWER, CORRECT_ANSWER } from '../constants'
 import { func, array } from 'prop-types';
-
-
-// const flashCard = (value, isCorrect, isWrong) => {
-//     if(isWrong){
-//     return(<div onClick={isCorrect} style={{border: CORRECT_ANSWER}} className="box flashcard-box">
-//                         <h1>Flashcard RIGHT</h1>
-//     </div>
-//     )
-//     } else{
-//         return(<div onClick={isCorrect} style={{border: WRONG_ANSWER}} className="box flashcard-box">
-//                         <h1>Flashcard WRONG</h1>
-//                 </div>
-//         )
-//     }
-    
-// }
-let cards = [
-    {
-        "term" : "WWII",
-        "definition" : "Heil Hitler",
-
-    },
-    {
-        "term" : "china #2",
-        "definition" : "taiwan #1",
-
-    },
-    {
-        "term" : "9/11",
-        "definition" : "ALU AHKBAR",
-
-    },
-    {
-        "term" : "Trump Inauguration",
-        "definition" : "Did this really happen?",
-
-    }
-
-]
-var randomNumber = Math.floor(Math.random()*3)
-const chooseRightCard = (cards) => {
-
-    for(let i = 0; i < cards.length;i++){
-        cards[i]['answer'] = WRONG_ANSWER
-    }
-    cards[randomNumber]['answer'] = CORRECT_ANSWER
-    return cards
-}
-
-
-
-const scrambleArray = (cards) =>{
-    for (let i = cards.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [cards[i], cards[j]] = [cards[j], cards[i]];
-    }
-    return cards;
-}
-
-cards = scrambleArray(cards)
-cards = chooseRightCard(cards)
-
+import { scrambleCards, selectQuizCards } from '../helpers';
+import {QUIZ_RESULTS} from '../constants/'
 class Quiz extends Component {
     state={
-        cardSelectedBorder: '',
-        cards: this.props.selectedQuizCards,
-        // cards : [
-        //     {
-        //         "term" : "WWII",
-        //         "definition" : "Heil Hitler",
-        //         "answer": WRONG_ANSWER
-        //     },
-        //     {
-        //         "term" : "china #2",
-        //         "definition" : "taiwan #1",
-        //         "answer": CORRECT_ANSWER
-        //     },
-        //     {
-        //         "term" : "9/11",
-        //         "definition" : "ALU AHKBAR",
-        //         "answer": WRONG_ANSWER
-        //     },
-        //     {
-        //         "term" : "Trump Inauguration",
-        //         "definition" : "Did this really happen?",
-        //         "answer": WRONG_ANSWER
-        //     }
-        // ],
-        randomNumber: Math.floor(Math.random() * 3),
-        userHasChosen: false
+        userHasChosen: false,
+        shuffledCardSet: scrambleCards(this.props.selectedCardSet.cards), 
+        quizCardSet: (selectQuizCards(this.props.selectedCardSet.cards, 0)),
+        cardSetIndex: 0,
+        endOfSetReached: false
     }
-    checkAnswer = () => {
-        console.log("Clicking flashcard 1")
-        this.setState({
-            cardSelectedBorder: WRONG_ANSWER
-        })
-    }
-
     answerClicked = () => {
-
         this.setState({
-            userHasChosen: !this.state.userHasChosen
+            userHasChosen: true
         })
+    }
+    getNewSetOfCards = (cards, cardSetIndex) => {
+        let newQuizArray = selectQuizCards(cards, cardSetIndex)
+        this.setState({
+            quizCardSet: newQuizArray
+        })
+    }
+    showNextQuestion = () => {
+        if(this.state.cardSetIndex === this.state.shuffledCardSet.length-1){
+            this.setState({
+                cardSetIndex: 0,
+                userHasChosen: true
+            })
+            this.props.changePageName(QUIZ_RESULTS)
+        } else {
+            this.getNewSetOfCards(this.state.shuffledCardSet, this.state.cardSetIndex+1)
+            this.setState({
+                userHasChosen: false,
+                cardSetIndex: this.state.cardSetIndex + 1
+            })
+        }
     }
     render() {
     return (
         <div>
             <div className="level level-set">
                 <div className="box flashcard-box">
-                        <h1>{this.state.cards[this.props.randomNumber].term}</h1>
+                        <h1>{this.state.shuffledCardSet[this.state.cardSetIndex].term}</h1>
                     </div>
                 </div>
             <div className='level level-flashcards'>
                 {this.state.userHasChosen? 
-                this.state.cards.map( (card,index) => {
+                this.state.quizCardSet.map((card,index) => {
                     return(
                         <div key={card.term+index} className='level-item level-right'>
-                        <div onClick={this.answerClicked} style={{border: this.state.cards[index].answer}} className="box flashcard-box">
+                        <div onClick={this.showNextQuestion} style={{border: this.state.quizCardSet[index].answer}} className="box flashcard-box">
                             <h1>{card.definition}</h1>
                         </div>
                     </div> 
                     )
-                }): this.state.cards.map( (card,index) => {
+                }): this.state.quizCardSet.map((card,index) => {
                     return(
                         <div key={card.term+index} className='level-item level-right'>
                         <div onClick={this.answerClicked} className="box flashcard-box">
@@ -134,15 +65,12 @@ class Quiz extends Component {
             
             </div>
         </div>
-    );
-
-}
+    )};
 }
 
 Quiz.propTypes = {
     selectedFlashCards: array,
     changePageName: func,
 };
-
 
 export default Quiz;
