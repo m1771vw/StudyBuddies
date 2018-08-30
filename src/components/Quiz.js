@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { func, array } from 'prop-types';
 import { scrambleCards, selectQuizCards } from '../helpers';
-
+import {QUIZ_RESULTS} from '../constants/'
 class Quiz extends Component {
     state={
         userHasChosen: false,
         shuffledCardSet: scrambleCards(this.props.selectedCardSet.cards), 
         quizCardSet: (selectQuizCards(this.props.selectedCardSet.cards, 0)),
         cardSetIndex: 0,
+        endOfSetReached: false
     }
     answerClicked = () => {
         this.setState({
@@ -21,11 +22,19 @@ class Quiz extends Component {
         })
     }
     showNextQuestion = () => {
-        this.getNewSetOfCards(this.state.shuffledCardSet, this.state.cardSetIndex+1)
-        this.setState({
-            userHasChosen: false,
-            cardSetIndex: this.state.cardSetIndex + 1
-        })
+        if(this.state.cardSetIndex === this.state.shuffledCardSet.length-1){
+            this.setState({
+                cardSetIndex: 0,
+                userHasChosen: true
+            })
+            this.props.changePageName(QUIZ_RESULTS)
+        } else {
+            this.getNewSetOfCards(this.state.shuffledCardSet, this.state.cardSetIndex+1)
+            this.setState({
+                userHasChosen: false,
+                cardSetIndex: this.state.cardSetIndex + 1
+            })
+        }
     }
     render() {
     return (

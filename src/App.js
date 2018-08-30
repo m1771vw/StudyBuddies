@@ -4,9 +4,10 @@ import CreateView from './components/CreateView';
 import ViewSet from './components/ViewSet';
 import UserHeader from './components/UserHeader';
 import Dashboard from './components/Dashboard';
+import QuizResults from './components/QuizResults';
 import Quiz from './components/Quiz';
 import FlashCards from './data/flashcards';
-import { DASHBOARD, CREATE_VIEW, VIEW_SET, QUIZ } from './constants'
+import { DASHBOARD, CREATE_VIEW, VIEW_SET, QUIZ, QUIZ_RESULTS } from './constants'
 
 
 class App extends Component {
@@ -49,7 +50,12 @@ class App extends Component {
       case QUIZ:
         return(<Quiz
         selectedCardSet={this.state.selectedCardSet} 
+        changePageName={this.changePageName}
         />)  
+      case QUIZ_RESULTS:
+          return(<QuizResults 
+            changePageName={this.changePageName}
+          />)
       default:
         return null;
     }
