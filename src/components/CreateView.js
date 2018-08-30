@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-import TermDefInput from './TermDefInput'
+import TermDefInput from './TermDefInput';
 
 class CreateView extends Component {
 
     state = {
         setname: '',
         description: '',
-        cards: [{ term: '', definition: '' }, { term: '', definition: '' },
-        { term: '', definition: '' }, { term: '', definition: '' }],
+        cards: [
+            { term: '', definition: '' },
+            { term: '', definition: '' },
+            { term: '', definition: '' },
+            { term: '', definition: '' }
+        ],
     }
 
     change = (property, index, newValue) => {
@@ -37,6 +41,21 @@ class CreateView extends Component {
         })
     }
 
+    submitSet = () => {
+        this.props.addToCards(this.state);
+        console.log("SUBMITTED")
+        this.setState({
+            setname: '',
+            description: '',
+            cards: [
+                { term: '', definition: '' },
+                { term: '', definition: '' },
+                { term: '', definition: '' },
+                { term: '', definition: '' }
+            ]
+        })
+    }
+
     render() {
         return (
             <div>
@@ -58,6 +77,7 @@ class CreateView extends Component {
                     {this.state.cards.map((card, index) => (
                         <TermDefInput
                             key={index}
+                            card={card}
                             index={index}
                             change={this.change}
                             addToCards={this.props.addToCards}
@@ -68,20 +88,7 @@ class CreateView extends Component {
                 </div>
                 <div className="level" id="createbutton1">
                     <button className="button is-large level-item" onClick={this.addCard}>+</button>
-                    <button className="button is-large level-item" onClick={() => {
-                         this.props.addToCards(this.state)
-                         console.log(this.state.cards)
-                         this.setState({
-                             setname: '',
-                             description: '',
-                             cards:[{ term: '', definition: '' },{ term: '', definition: '' },
-                             { term: '', definition: '' },{ term: '', definition: '' }],
-
-                         }) 
-                        }
-                        
-                        } >
-
+                    <button className="button is-large level-item" onClick={this.submitSet} >
                         Submit Set</button>
                 </div>
 
