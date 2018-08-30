@@ -50,7 +50,7 @@ class EditView extends Component {
                 <div className="level">
                     <div className="level-item has-text-centered">
                         <input className="input is-primary set-name-field"
-                        {this.props.selectedCardSet.setname}
+                        // {this.props.selectedCardSet.setname}
                             // value={this.state.setname} onChange={this.onChange}
                             type="text" placeholder="Enter set name here..." />
 

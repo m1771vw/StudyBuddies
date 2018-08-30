@@ -5,7 +5,8 @@ class HomePageHeader extends Component {
     render() {
         return (
             <div>
-                
+                <button>Sign up</button>
+                <button>Log in</button>
             </div>
         );
     }

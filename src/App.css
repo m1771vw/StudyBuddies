@@ -4,15 +4,53 @@
 }
 
 /* Dashboard CSS */
+
+#dashboard-text {
+  font-size: 2em;
+  font-weight: bold;
+}
 .dashboard-button {
   width: 200px;
   height: 100px;
 }
+
+
 /* UserHeader CSS */
 .navbar-container {
   border: 1px solid black;
 }
+
+.header-flex-content {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  margin: 10px;
+}
+
+.header-button {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.home-logo {
+  margin-left: auto;
+  margin-right: auto;
+}
 /* ViewSet CSS */
+.cardset-info-flex-container {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+}
+.cardset-setname-flex-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.cardset-options-flex-container {
+  display: flex;
+  flex-direction: row; 
+}
 .flashcard-box{
   width: 275px;
   /* display: flex; */
@@ -20,32 +58,28 @@
   justify-content: space-evenly;
   height: 200px;
   background-color: rgb(233, 233, 233);
-  margin-left: auto;
-  margin-right: auto;
+  margin: 10px;
   border: 1px black solid;
 }
 
 .setname-box{
-  width: 400px;
+  width: 200px;
+  height: 100px;
 }
 
 .description-box{
-  width: 400px;
+  width: 300px;
   height: 100px;
   margin-top: 50px;
   margin-bottom: 50px;
 }
 
-.box{
-  /* margin-left: 50px;
-  margin-right: 50px; */
+.flashcard-flex-container {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-
-
-.level-flashcards{
-  /* border: 1px solid black; */
-}
-
 
 
 /*Create View css */
@@ -62,3 +96,39 @@
   width: 50px;
 }
 
+/* Quiz CSS */
+.flashcard-answer{
+  width: 275px;
+  /* display: flex; */
+  /* flex: 1; */
+  justify-content: space-evenly;
+  height: 200px;
+  background-color: rgb(233, 233, 233);
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px black solid;
+}
+
+.flashcard-question{
+  width: 300px;
+  /* display: flex; */
+  /* flex: 1; */
+  /* justify-content: space-evenly; */
+  height: 200px;
+  background-color: rgb(233, 233, 233);
+  /* margin-left: auto;
+  margin-right: auto; */
+  border: 1px black solid;
+}
+
+.flashcard-counter {
+  width: 100px;
+  /* margin-left:auto;
+  margin-right: auto; */
+}
+
+.quiz-question-flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
