@@ -7,6 +7,7 @@ import Dashboard from './components/Dashboard';
 import Quiz from './components/Quiz';
 import FlashCards from './data/flashcards';
 
+
 import { DASHBOARD, CREATE_VIEW, VIEW_SET, QUIZ, WRONG_ANSWER, CORRECT_ANSWER } from './constants'
 import { selectFlashCards, chooseRightCard, scrambleArray } from './helpers'
 var randomNumber = Math.floor(Math.random() * 4)
@@ -43,6 +44,13 @@ class App extends Component {
     selectedCardSet: []
   }
 
+  addToCards = card => {
+    let newCards = [...this.state.flashCardSets, card]
+    this.setState({
+      flashCardSets: newCards
+    })
+  }
+
   changePageName = name => {
 
     this.setState({
@@ -70,7 +78,7 @@ class App extends Component {
                 selectCardSet={this.selectCardSet}
                 />)
       case CREATE_VIEW:
-        return(<CreateView />)
+        return(<CreateView addToCards={this.addToCards}/>)
       case VIEW_SET:
         return(<ViewSet changePageName={this.changePageName}
           selectedCardSet={this.state.selectedCardSet}
