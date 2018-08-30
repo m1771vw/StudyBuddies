@@ -17,7 +17,7 @@ const Viewset = props => {
                     <h1>This will be the description box</h1>
                 </div>
             </div>
-
+            {/* James to do */}
             <div className="level level-flashcards">
                 <div className='level-item level-left'>
                     <div className="box flashcard-box">

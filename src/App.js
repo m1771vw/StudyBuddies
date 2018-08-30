@@ -37,18 +37,20 @@ var randomNumber = Math.floor(Math.random() * 4)
 
 class App extends Component {
   state = {
-    pageName: DASHBOARD,
-    flashCardSets: FlashCards,
-    selectedQuizCards: [],
-    selectedCardSet: []
+    pageName: QUIZ,
+    flashCardSets: FlashCards, // All the Cards
+    // selectedQuizCards: [],
+    selectedQuizCards: selectFlashCards(FlashCards[1].cards, randomNumber), // Shorter cards
+
+    // selectedCardSet: [] // View Set Cards
+    selectedCardSet: FlashCards[1].cards
   }
-
   changePageName = name => {
-
     this.setState({
       pageName: name
     })
   }
+
   selectCardSet = index => {
     this.setState({
       pageName: VIEW_SET,
@@ -59,6 +61,7 @@ class App extends Component {
     this.setState({
       pageName: QUIZ,
       quizFlashCards: this.state.quizFlashCards,
+      selectedCardSet: this.state.selectedCardSet,
       selectedQuizCards: selectFlashCards(this.state.selectedCardSet.cards, randomNumber)
     })
   }
@@ -77,7 +80,9 @@ class App extends Component {
           setupQuiz={this.setupQuiz}
         />)
       case QUIZ:
-        return(<Quiz randomNumber={randomNumber} selectedQuizCards={this.state.selectedQuizCards}/>)  
+        return(<Quiz randomNumber={randomNumber} 
+        selectedCardSet={this.state.selectedCardSet} 
+        selectedQuizCards={this.state.selectedQuizCards}/>)  
       default:
         return null;
     }
