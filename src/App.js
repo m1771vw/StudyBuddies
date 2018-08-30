@@ -23,7 +23,8 @@ class App extends Component {
     flashCardSets: FlashCards, // All the Cards
     selectedCardSet: [], // Selected card set of cards
     // selectedCardSet: FlashCards[1], // Dummy data to have Quiz as Start Up page
-    userLoggedIn: true
+    userLoggedIn: true,
+    selectedCardSetIndex: 0
   }
   authenticateUser = user => {
     if (this.state.userList.findIndex(x => x.email === user.email) > -1
@@ -57,7 +58,8 @@ class App extends Component {
   selectCardSet = index => {
     this.setState({
       pageName: VIEW_SET,
-      selectedCardSet: this.state.flashCardSets[index]
+      selectedCardSet: this.state.flashCardSets[index],
+      selectedCardSetIndex: index
     })
   }
   setupQuiz = (QUIZ, cardSet) => {

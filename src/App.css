@@ -94,10 +94,14 @@
   margin: auto;
 }
 
-#createbutton1{
+#create-button-set{
   width: 50px;
 }
 
+.create-card-form {
+  display: flex;
+  flex: 1;
+}
 /* Quiz CSS */
 .flashcard-answer{
   width: 275px;
