@@ -7,14 +7,15 @@ import Dashboard from './components/Dashboard';
 import QuizResults from './components/QuizResults';
 import Quiz from './components/Quiz';
 import FlashCards from './data/flashcards';
-import { DASHBOARD, CREATE_VIEW, VIEW_SET, QUIZ, QUIZ_RESULTS } from './constants'
+import EditView from './components/EditView';
+import { DASHBOARD, CREATE_VIEW, VIEW_SET, QUIZ, QUIZ_RESULTS, EDIT } from './constants'
 
 
 class App extends Component {
   state = {
     pageName: DASHBOARD,
     flashCardSets: FlashCards, // All the Cards
-    selectedCardSet: [] // Selected card set of cards
+    selectedCardSet: [], // Selected card set of cards
   }
 
   addToCards = card => {
@@ -64,6 +65,11 @@ class App extends Component {
       case QUIZ_RESULTS:
           return(<QuizResults 
             changePageName={this.changePageName}
+          />)
+      case EDIT:
+            return(<EditView 
+            changePageName={this.changePageName}
+            selectedCardSet={this.state.selectedCardSet}
           />)
       default:
         return null;

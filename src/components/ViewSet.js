@@ -1,5 +1,5 @@
 import React from 'react';
-import { CREATE_VIEW, QUIZ } from '../constants'
+import { CREATE_VIEW, QUIZ, EDIT } from '../constants'
 import { func } from 'prop-types';
 
 
@@ -11,7 +11,7 @@ const Viewset = props => {
                     <h1>SET NAME</h1>
                     <h2>{props.selectedCardSet.setname}</h2>
                 </div>
-                <a className="button is-danger" onClick={() => {props.changePageName(CREATE_VIEW)}}>Edit</a>
+                <a className="button is-danger" onClick={() => {props.changePageName(EDIT)}}>Edit</a>
                 <a className="button is-success" onClick={() => {props.setupQuiz(QUIZ, props.selectedCardSet)}}>Quiz!</a>
                 <div className="box description-box">
                     <h1>This will be the description box</h1>

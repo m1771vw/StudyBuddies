@@ -56,6 +56,23 @@ class CreateView extends Component {
         })
     }
 
+    deleteSet = index => {
+        let newSet = [
+            ...this.state.slice(0,index),
+            ...this.state.slice(index + 1)
+        ];
+        this.setState({
+            setname: '',
+            description: '',
+            cards: [
+                { term: '', definition: '' },
+                { term: '', definition: '' },
+                { term: '', definition: '' },
+                { term: '', definition: '' }
+            ]
+        })
+    }
+
     render() {
         return (
             <div>

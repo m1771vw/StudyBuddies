@@ -50,7 +50,8 @@ class EditView extends Component {
                 <div className="level">
                     <div className="level-item has-text-centered">
                         <input className="input is-primary set-name-field"
-                            value={this.state.setname} onChange={this.onChange}
+                        {this.props.selectedCardSet.setname}
+                            // value={this.state.setname} onChange={this.onChange}
                             type="text" placeholder="Enter set name here..." />
 
                     </div>
@@ -58,23 +59,24 @@ class EditView extends Component {
 
                 <div className="level text-area-level">
                     <textarea className="textarea"
-                        value={this.state.description} onChange={this.onChange2} placeholder="Enter description here..."
+                        // value={this.state.description} onChange={this.onChange2} placeholder="Enter description here..."
+                        
                         rows="7"></textarea>
                 </div>
                 <div>
-                    {this.state.cards.map((card, index) => (
+                    {/* {this.state.cards.map((card, index) => (
                         <TermDefInput
                             key={index}
                             index={index}
                             change={this.change}
                             addToCards={this.props.addToCards}
                         />
-                    ))}
+                    ))} */}
 
 
                 </div>
                 <div className="level" id="createbutton1">
-                    <button className="button is-large level-item" onClick={this.addCard}>+</button>
+                    {/* <button className="button is-large level-item" onClick={this.addCard}>+</button>
                     <button className="button is-large level-item" onClick={() => {
                          this.props.addToCards(this.state)
                          this.setState({
@@ -85,7 +87,7 @@ class EditView extends Component {
                         
                         } >
 
-                        Submit Set</button>
+                        Submit Set</button> */}
                 </div>
 
 
@@ -99,3 +101,6 @@ EditView.propTypes = {
 };
 
 export default EditView;
+
+
+// this.props.map to TermDefInput 
