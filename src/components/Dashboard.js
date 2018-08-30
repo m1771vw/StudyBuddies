@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { array, func } from 'prop-types';
-import {QUIZ, CREATE_VIEW, VIEW_SET } from '../constants'
+import { CREATE_VIEW } from '../constants'
 
 
 class Dashboard extends Component {
@@ -15,7 +15,7 @@ class Dashboard extends Component {
                     </div>
                 {this.props.flashCardSets.map((cardsets, index) => {
                     return(
-                        <div className='level-item'>
+                        <div key={cardsets+index} className='level-item'>
                             <button onClick={() => {this.props.selectCardSet(index)}} className='button is-success dashboard-button'>{cardsets.setname}</button>
                         </div>
                 )})}

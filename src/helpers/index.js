@@ -15,32 +15,30 @@ const generateArray = (cardSetLength, excludeIndex) => {
     return arr
 }
 
-export const selectFlashCards = (cards, cardSetIndex) => {
-    let randomCardIndex = generateArray(cards.length, cardSetIndex)
+export const selectQuizCards = (cardSet, cardSetIndex) => {
+    let randomCardIndex = generateArray(cardSet.length, cardSetIndex)
     let quizSet = [];
-    // cards = scrambleArray(cards)
-    quizSet[0] = cards[cardSetIndex];
-    quizSet[1] = cards[randomCardIndex.pop()]
-    quizSet[2] = cards[randomCardIndex.pop()]
-    quizSet[3] = cards[randomCardIndex.pop()]
+    quizSet[0] = cardSet[cardSetIndex];
+    quizSet[1] = cardSet[randomCardIndex.pop()]
+    quizSet[2] = cardSet[randomCardIndex.pop()]
+    quizSet[3] = cardSet[randomCardIndex.pop()]
     quizSet = chooseRightCard(quizSet, cardSetIndex)
-    // quizSet = cards.slice(0, 4)
-    return scrambleArray(quizSet)
+    return scrambleCards(quizSet)
   }
   
-  export const chooseRightCard = (cards, cardSetIndex) => {
+  export const chooseRightCard = (cardSet, cardSetIndex) => {
   
-    for(let i = 0; i < cards.length;i++){
-        cards[i]['answer'] = WRONG_ANSWER
+    for(let i = 0; i < cardSet.length;i++){
+        cardSet[i]['answer'] = WRONG_ANSWER
     }
-    cards[0]['answer'] = CORRECT_ANSWER
-    return cards
+    cardSet[0]['answer'] = CORRECT_ANSWER
+    return cardSet
   }
   
-  export const scrambleArray = (cards) =>{
-    for (let i = cards.length - 1; i > 0; i--) {
+  export const scrambleCards = (cardSet) =>{
+    for (let i = cardSet.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [cards[i], cards[j]] = [cards[j], cards[i]];
+        [cardSet[i], cardSet[j]] = [cardSet[j], cardSet[i]];
     }
-    return cards;
+    return cardSet;
   }
