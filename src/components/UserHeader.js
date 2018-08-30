@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { DASHBOARD, CREATE_VIEW } from '../constants'
+import { DASHBOARD, CREATE_VIEW, PROFILE_VIEW } from '../constants'
 
 class UserHeader extends Component {
     render() {
@@ -14,7 +14,7 @@ class UserHeader extends Component {
                 </div>
                 <div className=''>
                     <button onClick={() => {this.props.changePageName(CREATE_VIEW)}} className='button header-button'>+</button>
-                    <button className='button is-dark header-button'>Profile</button>  
+                    <button onClick={() => {this.props.changePageName(PROFILE_VIEW)}} className='button is-dark header-button'>Profile</button>  
                 </div>
             </nav>
         );

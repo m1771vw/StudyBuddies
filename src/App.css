@@ -58,7 +58,9 @@
   justify-content: space-evenly;
   height: 200px;
   background-color: rgb(233, 233, 233);
-  margin: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
   border: 1px black solid;
 }
 
@@ -92,10 +94,14 @@
   margin: auto;
 }
 
-#createbutton1{
+#create-button-set{
   width: 50px;
 }
 
+.create-card-form {
+  display: flex;
+  flex: 1;
+}
 /* Quiz CSS */
 .flashcard-answer{
   width: 275px;

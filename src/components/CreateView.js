@@ -91,18 +91,20 @@ class CreateView extends Component {
                 </div>
                 <div>
                     {this.state.cards.map((card, index) => (
-                        <TermDefInput
-                            key={index}
-                            card={card}
-                            index={index}
-                            change={this.change}
-                            addToCards={this.props.addToCards}
-                        />
+                        <div className='create-card-form'>
+                            <button onClick={this.deleteClicked} className='button'>X</button>
+                            <TermDefInput
+                                key={index}
+                                card={card}
+                                index={index}
+                                change={this.change}
+                            />
+                        </div>
                     ))}
 
 
                 </div>
-                <div className="level" id="createbutton1">
+                <div className="level" id="create-button-set">
                     <button className="button is-large level-item" onClick={this.addCard}>+</button>
                     <button className="button is-large level-item" onClick={this.submitSet} >
                         Submit Set</button>

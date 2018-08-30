@@ -10,10 +10,11 @@ import HomePage from './components/HomePage';
 import HomePageHeader from './components/HomePageHeader';
 import LoginView from './components/LoginView';
 import SignupView from './components/SignupView';
+import ProfileView from './components/ProfileView';
 import FlashCards from './data/flashcards';
 import Users from './data/users';
 import EditView from './components/EditView';
-import { HOMEPAGE, LOGIN_VIEW, SIGNUP_VIEW, DASHBOARD, CREATE_VIEW, VIEW_SET, QUIZ, QUIZ_RESULTS, EDIT } from './constants'
+import { HOMEPAGE, LOGIN_VIEW, SIGNUP_VIEW, PROFILE_VIEW, DASHBOARD, CREATE_VIEW, VIEW_SET, QUIZ, QUIZ_RESULTS, EDIT } from './constants'
 
 
 class App extends Component {
@@ -23,7 +24,8 @@ class App extends Component {
     flashCardSets: FlashCards, // All the Cards
     selectedCardSet: [], // Selected card set of cards
     // selectedCardSet: FlashCards[1], // Dummy data to have Quiz as Start Up page
-    userLoggedIn: true
+    userLoggedIn: true,
+    selectedCardSetIndex: 0
   }
 
 
@@ -49,7 +51,6 @@ class App extends Component {
   
    
   authenticateUser = user => {
-    
     if (this.state.userList.findIndex(x => x.email === user.email) > -1
      && this.state.userList.findIndex(x => x.password === user.password) > -1) {
       console.log("User logged in!")
@@ -58,6 +59,12 @@ class App extends Component {
       console.log("User trying to log!")
       this.setState({ userLoggedIn: false });
     }
+  }
+  logOut = () => {
+    this.setState({
+      pageName: HOMEPAGE,
+      userLoggedIn : false
+    })
   }
   addToCards = card => {
     let newCards = [...this.state.flashCardSets, card]
@@ -75,7 +82,8 @@ class App extends Component {
   selectCardSet = index => {
     this.setState({
       pageName: VIEW_SET,
-      selectedCardSet: this.state.flashCardSets[index]
+      selectedCardSet: this.state.flashCardSets[index],
+      selectedCardSetIndex: index
     })
   }
   setupQuiz = (QUIZ, cardSet) => {
@@ -99,6 +107,11 @@ class App extends Component {
         return(<Dashboard flashCardSets={this.state.flashCardSets}
                 changePageName={this.changePageName}
                 selectCardSet={this.selectCardSet}
+                />)
+      case PROFILE_VIEW:
+        return(<ProfileView 
+                changePageName={this.changePageName}
+                logOut={this.logOut}
                 />)
       case CREATE_VIEW:
         return(<CreateView addToCards={this.addToCards}/>)

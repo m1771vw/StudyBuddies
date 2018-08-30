@@ -14,11 +14,12 @@ class TermDefInput extends Component {
         return (
             <div>
                 <div className="field level">
-                    <div className="term-div level-item">
+                    <div className="level-item">
+                        
                         <input className="input is-primary" type="text" placeholder="Term"
                             value={this.props.card.term} onChange={this.onChangeOne} />
                     </div>
-                    <div className="definition-div level-item">
+                    <div className="level-item">
                         <input className="input is-primary" type="text" placeholder="Definition"
                             value={this.props.card.definition} onChange={this.oneChangeTwo} />
                     </div>

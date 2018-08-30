@@ -33,11 +33,11 @@ const flashCards = [
             },
             {
                 "term" : "WWII",
-                "definition" : "Heil Hitler"
+                "definition" : "Germany vs the World"
             },
             {
                 "term" : "9/11",
-                "definition" : "ALU AHKBAR"
+                "definition" : "Twin Towers Destroyed"
             },
             {
                 "term" : "Trump Inauguration",

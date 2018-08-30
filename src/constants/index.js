@@ -1,6 +1,7 @@
 export const HOMEPAGE = 'HOMEPAGE';
 export const LOGIN_VIEW = 'LOGIN_VIEW';
 export const SIGNUP_VIEW = 'SIGNUP_VIEW';
+export const PROFILE_VIEW = 'PROFILE_VIEW';
 export const DASHBOARD = 'DASHBOARD';
 export const CREATE_VIEW = 'CREATE';
 export const VIEW_SET = 'VIEW';

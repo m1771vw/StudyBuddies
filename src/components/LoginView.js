@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {func} from 'prop-types';
-import {DASHBOARD} from '../constants/'
+
 class LoginView extends Component {
     state = {
         email: 'wyang@gmail.com',
