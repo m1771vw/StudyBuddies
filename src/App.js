@@ -47,7 +47,8 @@ class App extends Component {
   addToCards = card => {
     let newCards = [...this.state.flashCardSets, card]
     this.setState({
-      flashCardSets: newCards
+      flashCardSets: newCards,
+      
     })
   }
 
