@@ -25,6 +25,29 @@ class App extends Component {
     // selectedCardSet: FlashCards[1], // Dummy data to have Quiz as Start Up page
     userLoggedIn: true
   }
+
+
+
+
+  /**
+   * Edit function that changes 'this.state.flashCardSets' to include the new collection
+   * 
+   * Requires two input: setname, new collection to insert
+   * 
+   * use 'setname' to find index to update
+   * 
+   * Meant for 'EditView.js'
+   */
+
+  updateSet = cardSet =>{
+    let newCollection = this.state.flashCardSets
+    this.setState({
+      
+
+    })
+  }
+  
+   
   authenticateUser = user => {
     
     if (this.state.userList.findIndex(x => x.email === user.email) > -1

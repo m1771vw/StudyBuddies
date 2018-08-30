@@ -1,6 +1,6 @@
 import React from 'react';
-import { CREATE_VIEW, QUIZ, EDIT } from '../constants'
-import { func, array } from 'prop-types';
+import {  QUIZ, EDIT } from '../constants'
+import { func, object } from 'prop-types';
 
 
 const Viewset = props => {
@@ -44,7 +44,7 @@ const Viewset = props => {
 
 Viewset.propTypes = {
     changePageName:func,
-    selectedCardSet:array,
+    selectedCardSet:object,
     setupQuiz:func
 };
 
