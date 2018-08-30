@@ -43,7 +43,23 @@ class CreateView extends Component {
 
     submitSet = () => {
         this.props.addToCards(this.state);
-        console.log("SUBMITTED")
+        this.setState({
+            setname: '',
+            description: '',
+            cards: [
+                { term: '', definition: '' },
+                { term: '', definition: '' },
+                { term: '', definition: '' },
+                { term: '', definition: '' }
+            ]
+        })
+    }
+
+    deleteSet = index => {
+        let newSet = [
+            ...this.state.slice(0,index),
+            ...this.state.slice(index + 1)
+        ];
         this.setState({
             setname: '',
             description: '',

@@ -13,7 +13,8 @@ import SignupView from './components/SignupView';
 import ProfileView from './components/ProfileView';
 import FlashCards from './data/flashcards';
 import Users from './data/users';
-import { HOMEPAGE, LOGIN_VIEW, SIGNUP_VIEW, PROFILE_VIEW, DASHBOARD, CREATE_VIEW, VIEW_SET, QUIZ, QUIZ_RESULTS } from './constants'
+import EditView from './components/EditView';
+import { HOMEPAGE, LOGIN_VIEW, SIGNUP_VIEW, PROFILE_VIEW, DASHBOARD, CREATE_VIEW, VIEW_SET, QUIZ, QUIZ_RESULTS, EDIT } from './constants'
 
 
 class App extends Component {
@@ -26,6 +27,29 @@ class App extends Component {
     userLoggedIn: true,
     selectedCardSetIndex: 0
   }
+
+
+
+
+  /**
+   * Edit function that changes 'this.state.flashCardSets' to include the new collection
+   * 
+   * Requires two input: setname, new collection to insert
+   * 
+   * use 'setname' to find index to update
+   * 
+   * Meant for 'EditView.js'
+   */
+
+  updateSet = cardSet =>{
+    let newCollection = this.state.flashCardSets
+    this.setState({
+      
+
+    })
+  }
+  
+   
   authenticateUser = user => {
     if (this.state.userList.findIndex(x => x.email === user.email) > -1
      && this.state.userList.findIndex(x => x.password === user.password) > -1) {
@@ -104,6 +128,11 @@ class App extends Component {
       case QUIZ_RESULTS:
           return(<QuizResults 
             changePageName={this.changePageName}
+          />)
+      case EDIT:
+            return(<EditView 
+            changePageName={this.changePageName}
+            selectedCardSet={this.state.selectedCardSet}
           />)
       default:
         return <h1>404 Not Found</h1>;

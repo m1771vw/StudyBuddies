@@ -1,5 +1,5 @@
 import React from 'react';
-import { CREATE_VIEW, QUIZ } from '../constants'
+import {  QUIZ, EDIT } from '../constants'
 import { func, object } from 'prop-types';
 
 
@@ -14,7 +14,7 @@ const Viewset = props => {
                             <h2>{props.selectedCardSet.setname}</h2>
                         </div>
                         <div className='cardset-options-flex-container'>
-                            <button className="button is-danger" onClick={() => {props.changePageName(CREATE_VIEW)}}>Edit</button>
+                            <button className="button is-danger" onClick={() => {props.changePageName(EDIT)}}>Edit</button>
                             <button className="button is-success" onClick={() => {props.setupQuiz(QUIZ, props.selectedCardSet)}}>Quiz!</button>
                         </div>
                     </div>

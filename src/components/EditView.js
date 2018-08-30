@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import TermDefInput from './TermDefInput'
+import TermDefInput from './TermDefInput';
+
 
 class EditView extends Component {
 
     state = {
-        setname: '',
-        description: '',
-        cards: [{ term: '', definition: '' }, { term: '', definition: '' },
-        { term: '', definition: '' }, { term: '', definition: '' }],
+        setname: this.props.selectedCardSet.setname,
+        description: this.props.selectedCardSet.description,
+        cards: this.props.selectedCardSet.cards,
     }
 
 
@@ -15,8 +15,11 @@ class EditView extends Component {
         let copy = { ...this.state.cards[index] };
         copy[property] = newValue;
 
-        let newCards = [...this.state.cards.slice(0, index),
-            copy, ...this.state.cards.slice(index + 1)];
+        let newCards = [
+            ...this.state.cards.slice(0, index),
+            copy,
+            ...this.state.cards.slice(index + 1)
+        ];
 
         this.setState({ cards: newCards })
     }
@@ -41,16 +44,13 @@ class EditView extends Component {
 
 
 
-
-
-
     render() {
         return (
             <div>
                 <div className="level">
                     <div className="level-item has-text-centered">
                         <input className="input is-primary set-name-field"
-                            value={this.state.setname} onChange={this.onChange}
+                        value={this.state.setname}
                             type="text" placeholder="Enter set name here..." />
 
                     </div>
@@ -58,21 +58,19 @@ class EditView extends Component {
 
                 <div className="level text-area-level">
                     <textarea className="textarea"
-                        value={this.state.description} onChange={this.onChange2} placeholder="Enter description here..."
+                        value={this.state.description}
                         rows="7"></textarea>
                 </div>
-                <div>
-                    {this.state.cards.map((card, index) => (
+                {this.state.cards.map((card, index) => (
                         <TermDefInput
                             key={index}
-                            index={index}
+                            card={card}
                             change={this.change}
-                            addToCards={this.props.addToCards}
+                            index={index}
                         />
                     ))}
+            
 
-
-                </div>
                 <div className="level" id="createbutton1">
                     <button className="button is-large level-item" onClick={this.addCard}>+</button>
                     <button className="button is-large level-item" onClick={() => {
