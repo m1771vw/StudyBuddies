@@ -42,7 +42,7 @@ class Quiz extends Component {
             <div className="level">
                 <div className="quiz-question-flex-container">
                     
-                    <div className=" box flashcard-question">
+                    <div className=" box flashcard-box">
                         <h1>{this.state.shuffledCardSet[this.state.cardSetIndex].term}</h1>
                     </div>
                     <div className=" flashcard-counter">
@@ -64,7 +64,7 @@ class Quiz extends Component {
                 }): this.state.quizCardSet.map((card,index) => {
                     return(
                         <div key={card.term+index} className='level-item level-right'>
-                        <div onClick={this.answerClicked} className="box flashcard-answer">
+                        <div onClick={this.answerClicked} className="box flashcard-box">
                             <h1>{card.definition}</h1>
                         </div>
                     </div>

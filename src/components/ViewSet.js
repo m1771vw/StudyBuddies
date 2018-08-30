@@ -1,12 +1,12 @@
 import React from 'react';
 import { CREATE_VIEW, QUIZ } from '../constants'
-import { func, array } from 'prop-types';
+import { func, object } from 'prop-types';
 
 
 const Viewset = props => {
     return (
         <div>
-            <div className="level level-set">
+            <div className="level">
                 <div className="cardset-info-flex-container">
                     <div className='cardset-setname-flex-container'>
                         <div className="box setname-box">
@@ -24,7 +24,7 @@ const Viewset = props => {
                     </div>
                 </div>
             </div>
-            <div className='level level-flashcards'>
+            <div className='level'>
                 <div className='flashcard-flex-container'>
                     {props.selectedCardSet.cards.map( (card, index) => {
                         return(
@@ -44,7 +44,7 @@ const Viewset = props => {
 
 Viewset.propTypes = {
     changePageName:func,
-    selectedCardSet:array,
+    selectedCardSet:object,
     setupQuiz:func
 };
 

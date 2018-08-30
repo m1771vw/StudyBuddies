@@ -58,7 +58,9 @@
   justify-content: space-evenly;
   height: 200px;
   background-color: rgb(233, 233, 233);
-  margin: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
   border: 1px black solid;
 }
 

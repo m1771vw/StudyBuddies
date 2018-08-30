@@ -10,9 +10,10 @@ import HomePage from './components/HomePage';
 import HomePageHeader from './components/HomePageHeader';
 import LoginView from './components/LoginView';
 import SignupView from './components/SignupView';
+import ProfileView from './components/ProfileView';
 import FlashCards from './data/flashcards';
 import Users from './data/users';
-import { HOMEPAGE, LOGIN_VIEW, SIGNUP_VIEW, DASHBOARD, CREATE_VIEW, VIEW_SET, QUIZ, QUIZ_RESULTS } from './constants'
+import { HOMEPAGE, LOGIN_VIEW, SIGNUP_VIEW, PROFILE_VIEW, DASHBOARD, CREATE_VIEW, VIEW_SET, QUIZ, QUIZ_RESULTS } from './constants'
 
 
 class App extends Component {
@@ -25,7 +26,6 @@ class App extends Component {
     userLoggedIn: true
   }
   authenticateUser = user => {
-    
     if (this.state.userList.findIndex(x => x.email === user.email) > -1
      && this.state.userList.findIndex(x => x.password === user.password) > -1) {
       console.log("User logged in!")
@@ -34,6 +34,12 @@ class App extends Component {
       console.log("User trying to log!")
       this.setState({ userLoggedIn: false });
     }
+  }
+  logOut = () => {
+    this.setState({
+      pageName: HOMEPAGE,
+      userLoggedIn : false
+    })
   }
   addToCards = card => {
     let newCards = [...this.state.flashCardSets, card]
@@ -75,6 +81,11 @@ class App extends Component {
         return(<Dashboard flashCardSets={this.state.flashCardSets}
                 changePageName={this.changePageName}
                 selectCardSet={this.selectCardSet}
+                />)
+      case PROFILE_VIEW:
+        return(<ProfileView 
+                changePageName={this.changePageName}
+                logOut={this.logOut}
                 />)
       case CREATE_VIEW:
         return(<CreateView addToCards={this.addToCards}/>)

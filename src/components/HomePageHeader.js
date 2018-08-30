@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { LOGIN_VIEW } from '../constants';
 
 
 class HomePageHeader extends Component {
@@ -6,7 +7,7 @@ class HomePageHeader extends Component {
         return (
             <div>
                 <button>Sign up</button>
-                <button>Log in</button>
+                <button onClick={()=>{this.props.changePageName(LOGIN_VIEW)}}>Log in</button>
             </div>
         );
     }
