@@ -11,17 +11,30 @@ import HomePageHeader from './components/HomePageHeader';
 import LoginView from './components/LoginView';
 import SignupView from './components/SignupView';
 import FlashCards from './data/flashcards';
+import Users from './data/users';
 import { HOMEPAGE, LOGIN_VIEW, SIGNUP_VIEW, DASHBOARD, CREATE_VIEW, VIEW_SET, QUIZ, QUIZ_RESULTS } from './constants'
 
 
 class App extends Component {
   state = {
-    pageName: SIGNUP_VIEW,
+    pageName: LOGIN_VIEW,
+    userList: Users,
     flashCardSets: FlashCards, // All the Cards
-    selectedCardSet: [] // Selected card set of cards
-    // selectedCardSet: FlashCards[1] // Dummy data to have Quiz as Start Up page
+    selectedCardSet: [], // Selected card set of cards
+    // selectedCardSet: FlashCards[1], // Dummy data to have Quiz as Start Up page
+    userLoggedIn: false
   }
-
+  authenticateUser = user => {
+    
+    if (this.state.userList.findIndex(x => x.email === user.email) > -1
+     && this.state.userList.findIndex(x => x.password === user.password) > -1) {
+      console.log("User logged in!")
+      this.setState({ userLoggedIn: true, pageName: DASHBOARD });
+    } else {
+      console.log("User trying to log!")
+      this.setState({ userLoggedIn: false });
+    }
+  }
   addToCards = card => {
     let newCards = [...this.state.flashCardSets, card]
     this.setState({
@@ -54,7 +67,10 @@ class App extends Component {
       case SIGNUP_VIEW:
         return(<SignupView changePageName={this.changePageName}/>)
       case LOGIN_VIEW:
-        return(<LoginView changePageName={this.changePageName}/>)
+        return(<LoginView 
+        changePageName={this.changePageName}
+        authenticateUser={this.authenticateUser}
+        />)
       case DASHBOARD:
         return(<Dashboard flashCardSets={this.state.flashCardSets}
                 changePageName={this.changePageName}
@@ -83,9 +99,14 @@ class App extends Component {
   render() {
     return (
       <div>
-        <UserHeader 
+        {this.state.userLoggedIn
+        ? <UserHeader 
           changePageName={this.changePageName}
         /> 
+        : <HomePageHeader 
+          changePageName={this.changePageName}
+        /> }
+        
         <div className="container is-fluid main-content">
           {this.setPage(this.state.pageName)}
         </div>
