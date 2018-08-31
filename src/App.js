@@ -19,11 +19,11 @@ import { HOMEPAGE, LOGIN_VIEW, SIGNUP_VIEW, PROFILE_VIEW, DASHBOARD, CREATE_VIEW
 
 class App extends Component {
   state = {
-    pageName: LOGIN_VIEW,
+    pageName: EDIT,
     userList: Users,
     flashCardSets: FlashCards, // All the Cards
-    selectedCardSet: [], // Selected card set of cards
-    // selectedCardSet: FlashCards[1], // Dummy data to have Quiz as Start Up page
+    // selectedCardSet: [], // Selected card set of cards
+    selectedCardSet: FlashCards[1], // Dummy data to have Quiz as Start Up page
     userLoggedIn: false,
     selectedCardSetIndex: 0
   }

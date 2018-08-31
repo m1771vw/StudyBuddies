@@ -59,6 +59,14 @@ class EditView extends Component {
         })
     }
 
+    deleteClicked = index => {
+        let newCards = [...this.state.cards.slice(0, index),
+        ...this.state.cards.slice(index + 1)]
+        this.setState({
+            cards: newCards
+        })
+    }
+
 
 
     render() {
@@ -79,12 +87,16 @@ class EditView extends Component {
                         rows="7"></textarea>
                 </div>
                 {this.state.cards.map((card, index) => (
+                    <div className='create-card-form'>
+                    <button onClick={() => { this.deleteClicked(index) }} className='button'>X</button>
                         <TermDefInput
                             key={index}
                             card={card}
                             change={this.change}
                             index={index}
+                            
                         />
+                        </div>
                     ))}
             
 

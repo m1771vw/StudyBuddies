@@ -79,6 +79,7 @@ class CreateView extends Component {
             cards: newCards
         })
     }
+    
     render() {
         return (
             <div>
