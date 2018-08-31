@@ -28,9 +28,6 @@ class App extends Component {
     selectedCardSetIndex: 0
   }
 
-
-
-
   /**
    * Edit function that changes 'this.state.flashCardSets' to include the new collection
    * 
@@ -56,7 +53,6 @@ class App extends Component {
     })
   }
   
-   
   authenticateUser = user => {
     if (this.state.userList.findIndex(x => x.email === user.email) > -1
      && this.state.userList.findIndex(x => x.password === user.password) > -1) {

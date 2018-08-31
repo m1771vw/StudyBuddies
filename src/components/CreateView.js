@@ -72,6 +72,13 @@ class CreateView extends Component {
         })
     }
 
+    deleteClicked = index => {
+        let newCards = [...this.state.cards.slice(0, index), 
+            ...this.state.cards.slice(index+1)]
+        this.setState({
+            cards: newCards
+        })
+    }
     render() {
         return (
             <div>
@@ -92,7 +99,7 @@ class CreateView extends Component {
                 <div>
                     {this.state.cards.map((card, index) => (
                         <div className='create-card-form'>
-                            <button onClick={this.deleteClicked} className='button'>X</button>
+                            <button onClick={() => {this.deleteClicked(index)}} className='button'>X</button>
                             <TermDefInput
                                 key={index}
                                 card={card}
