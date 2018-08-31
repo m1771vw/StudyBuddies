@@ -1,11 +1,24 @@
 import React, { Component } from 'react';
-import {func} from 'prop-types';
+import { func } from 'prop-types';
 
 class LoginView extends Component {
     state = {
         email: '',
         password: ''
     }
+
+    onChange = event => {
+        this.setState({
+            email: event.target.value
+        })
+    }
+
+    onChange2 = event => {
+        this.setState({
+            password: event.target.value
+        })
+    }
+
     onLoginClick = () => {
         this.props.authenticateUser(this.state)
         this.setState({
@@ -14,11 +27,32 @@ class LoginView extends Component {
         })
         // this.props.changePageName(DASHBOARD)
     }
+
+
     render() {
         return (
             <div>
-                <h1>Login View</h1>
-                
+                <div className="field">
+                    <label className="label is-medium">Email</label>
+                    <div className="control has-icons-left has-icons-right">
+                        <input className="input" type="email" placeholder="Email input"
+                            value={this.state.email} onChange={this.onChange} />
+                        <span className="icon is-small is-left">
+                            <i className="fas fa-envelope"></i>
+                        </span>
+
+                    </div>
+                </div>
+
+                <div className="field">
+                    <label className="label is-medium">Password</label>
+                    <div className="control">
+                        <input className="input" type="text"
+                            value={this.state.password} onChange={this.onChange2}
+                            placeholder="Password" />
+                    </div>
+                </div>
+
                 <button onClick={this.onLoginClick}>Login</button>
             </div>
         );

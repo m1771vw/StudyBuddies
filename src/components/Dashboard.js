@@ -11,16 +11,17 @@ class Dashboard extends Component {
                 <div className='level'>
                     <div className='flashcard-flex-container'>
                         <div className=''>
-                            <button onClick={() => {this.props.changePageName(CREATE_VIEW)}} className='button is-primary dashboard-button flashcard-box'>Create Set</button>
+                            <button onClick={() => { this.props.changePageName(CREATE_VIEW) }} className='button is-primary dashboard-button flashcard-box'>Create Set</button>
                         </div>
                         {this.props.flashCardSets.map((cardsets, index) => {
-                            return(
-                                <div key={cardsets+index} className=''>
-                                    <button onClick={() => {this.props.selectCardSet(index)}} className='button is-success dashboard-button flashcard-box'>{cardsets.setname}</button>
+                            return (
+                                <div key={cardsets + index} className=''>
+                                    <button onClick={() => { this.props.selectCardSet(index) }} className='button is-success dashboard-button flashcard-box'>{cardsets.setname}</button>
                                 </div>
-                        )})}
+                            )
+                        })}
                     </div>
-                </div>  
+                </div>
                 {/* <button onClick={() => {this.props.changePageName(VIEW_SET)}} className='button is-success'>View Set</button> */}
                 {/* <button onClick={() => {this.props.changePageName(QUIZ)}} className='button is-success'>Quiz</button> */}
             </div>

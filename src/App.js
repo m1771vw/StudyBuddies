@@ -19,7 +19,7 @@ import { HOMEPAGE, LOGIN_VIEW, SIGNUP_VIEW, PROFILE_VIEW, DASHBOARD, CREATE_VIEW
 
 class App extends Component {
   state = {
-    pageName: SIGNUP_VIEW,
+    pageName: LOGIN_VIEW,
     userList: Users,
     flashCardSets: FlashCards, // All the Cards
     selectedCardSet: [], // Selected card set of cards
@@ -38,24 +38,24 @@ class App extends Component {
    * Meant for 'EditView.js'
    */
 
-  updateCardSet = cards =>{
-    
+  updateCardSet = cards => {
+
     let tempSet = [
       ...this.state.flashCardSets.slice(0, this.state.selectedCardSetIndex),
       cards,
-      ...this.state.flashCardSets.slice( this.state.selectedCardSetIndex +1) 
+      ...this.state.flashCardSets.slice(this.state.selectedCardSetIndex + 1)
     ];
-    
+
     //   card, 
     //   ...this.state.flashCardSets(this.state.selectedCardSetIndex + 1)];
-      this.setState({
-        flashCardSets: tempSet
+    this.setState({
+      flashCardSets: tempSet
     })
   }
-  
+
   authenticateUser = user => {
     if (this.state.userList.findIndex(x => x.email === user.email) > -1
-     && this.state.userList.findIndex(x => x.password === user.password) > -1) {
+      && this.state.userList.findIndex(x => x.password === user.password) > -1) {
       console.log("User logged in!")
       this.setState({ userLoggedIn: true, pageName: DASHBOARD });
     } else {
@@ -66,12 +66,12 @@ class App extends Component {
   logOut = () => {
     this.setState({
       pageName: HOMEPAGE,
-      userLoggedIn : false
+      userLoggedIn: false
     })
   }
 
   addToUser = user => {
-    let newUser= [...this.state.userList, user]
+    let newUser = [...this.state.userList, user]
     this.setState({
       userList: newUser,
     })
@@ -81,7 +81,7 @@ class App extends Component {
     let newCards = [...this.state.flashCardSets, card]
     this.setState({
       flashCardSets: newCards,
-      
+
     })
   }
 
@@ -104,52 +104,52 @@ class App extends Component {
     })
   }
   setPage = pageName => {
-    switch(pageName){
+    switch (pageName) {
       case HOMEPAGE:
-        return(<HomePage changePageName={this.changePageName}/>)
+        return (<HomePage changePageName={this.changePageName} />)
       case SIGNUP_VIEW:
-        return(<SignupView 
+        return (<SignupView
           changePageName={this.changePageName}
-          addToUser={this.addToUser}/>)
+          addToUser={this.addToUser} />)
       case LOGIN_VIEW:
-        return(<LoginView 
-        changePageName={this.changePageName}
-        authenticateUser={this.authenticateUser}
+        return (<LoginView
+          changePageName={this.changePageName}
+          authenticateUser={this.authenticateUser}
         />)
       case DASHBOARD:
-        return(<Dashboard flashCardSets={this.state.flashCardSets}
-                changePageName={this.changePageName}
-                selectCardSet={this.selectCardSet}
-                />)
+        return (<Dashboard flashCardSets={this.state.flashCardSets}
+          changePageName={this.changePageName}
+          selectCardSet={this.selectCardSet}
+        />)
       case PROFILE_VIEW:
-        return(<ProfileView 
-                changePageName={this.changePageName}
-                logOut={this.logOut}
-                />)
+        return (<ProfileView
+          changePageName={this.changePageName}
+          logOut={this.logOut}
+        />)
       case CREATE_VIEW:
-        return(<CreateView addToCards={this.addToCards}/>)
+        return (<CreateView addToCards={this.addToCards} />)
       case VIEW_SET:
-        return(<ViewSet changePageName={this.changePageName}
+        return (<ViewSet changePageName={this.changePageName}
           selectedCardSet={this.state.selectedCardSet}
           setupQuiz={this.setupQuiz}
         />)
       case QUIZ:
-        return(<Quiz
-        selectedCardSet={this.state.selectedCardSet} 
-        changePageName={this.changePageName}
-        />)  
+        return (<Quiz
+          selectedCardSet={this.state.selectedCardSet}
+          changePageName={this.changePageName}
+        />)
       case QUIZ_RESULTS:
-          return(<QuizResults 
-            changePageName={this.changePageName}
-          />)
+        return (<QuizResults
+          changePageName={this.changePageName}
+        />)
       case EDIT:
-            return(<EditView 
-            changePageName={this.changePageName}
-            selectedCardSet={this.state.selectedCardSet}
-            selectedCardSetIndex={this.state.selectedCardSetIndex}
-            updateCardSet={this.updateCardSet}
-            
-          />)
+        return (<EditView
+          changePageName={this.changePageName}
+          selectedCardSet={this.state.selectedCardSet}
+          selectedCardSetIndex={this.state.selectedCardSetIndex}
+          updateCardSet={this.updateCardSet}
+
+        />)
       default:
         return <h1>404 Not Found</h1>;
     }
@@ -158,13 +158,13 @@ class App extends Component {
     return (
       <div>
         {this.state.userLoggedIn
-        ? <UserHeader 
-          changePageName={this.changePageName}
-        /> 
-        : <HomePageHeader 
-          changePageName={this.changePageName}
-        /> }
-        
+          ? <UserHeader
+            changePageName={this.changePageName}
+          />
+          : <HomePageHeader
+            changePageName={this.changePageName}
+          />}
+
         <div className="container is-fluid main-content">
           {this.setPage(this.state.pageName)}
         </div>

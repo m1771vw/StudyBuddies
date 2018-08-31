@@ -20,7 +20,7 @@ class SignupView extends Component {
             confirmPassword: ''
         })
     }
-        
+
 
     onChange = event => {
         this.setState({
@@ -55,7 +55,7 @@ class SignupView extends Component {
     render() {
         return (
             <div>
-                
+
                 <div className="field">
                     <label className="label is-medium">Name</label>
                     <div className="control">
@@ -84,7 +84,7 @@ class SignupView extends Component {
                         <span className="icon is-small is-left">
                             <i className="fas fa-envelope"></i>
                         </span>
-                        
+
                     </div>
                 </div>
 
@@ -94,7 +94,7 @@ class SignupView extends Component {
                         <input className="input" type="text"
                             value={this.state.password} onChange={this.onChange4}
                             placeholder="Password" />
-                    </div> 
+                    </div>
                 </div>
 
                 <div className="field">
@@ -103,7 +103,7 @@ class SignupView extends Component {
                         <input className="input" type="text"
                             value={this.state.confirmPassword} onChange={this.onChange5}
                             placeholder="Confirm password" />
-                    </div> 
+                    </div>
                 </div>
 
 

@@ -57,7 +57,7 @@ class CreateView extends Component {
 
     deleteSet = index => {
         let newSet = [
-            ...this.state.slice(0,index),
+            ...this.state.slice(0, index),
             ...this.state.slice(index + 1)
         ];
         this.setState({
@@ -73,8 +73,8 @@ class CreateView extends Component {
     }
 
     deleteClicked = index => {
-        let newCards = [...this.state.cards.slice(0, index), 
-            ...this.state.cards.slice(index+1)]
+        let newCards = [...this.state.cards.slice(0, index),
+        ...this.state.cards.slice(index + 1)]
         this.setState({
             cards: newCards
         })
@@ -99,7 +99,7 @@ class CreateView extends Component {
                 <div>
                     {this.state.cards.map((card, index) => (
                         <div className='create-card-form'>
-                            <button onClick={() => {this.deleteClicked(index)}} className='button'>X</button>
+                            <button onClick={() => { this.deleteClicked(index) }} className='button'>X</button>
                             <TermDefInput
                                 key={index}
                                 card={card}
