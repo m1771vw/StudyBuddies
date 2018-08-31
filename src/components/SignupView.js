@@ -91,7 +91,7 @@ class SignupView extends Component {
                 <div className="field">
                     <label className="label is-medium">Password</label>
                     <div className="control">
-                        <input className="input" type="text"
+                        <input className="input" type="password"
                             value={this.state.password} onChange={this.onChange4}
                             placeholder="Password" />
                     </div>
@@ -100,7 +100,7 @@ class SignupView extends Component {
                 <div className="field">
                     <label className="label is-medium">Confirm password</label>
                     <div className="control">
-                        <input className="input" type="text"
+                        <input className="input" type="password"
                             value={this.state.confirmPassword} onChange={this.onChange5}
                             placeholder="Confirm password" />
                     </div>
