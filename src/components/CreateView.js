@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TermDefInput from './TermDefInput';
-
+import { DASHBOARD } from '../constants/';
 class CreateView extends Component {
 
     state = {
@@ -43,16 +43,6 @@ class CreateView extends Component {
 
     submitSet = () => {
         this.props.addToCards(this.state);
-        this.setState({
-            setname: '',
-            description: '',
-            cards: [
-                { term: '', definition: '' },
-                { term: '', definition: '' },
-                { term: '', definition: '' },
-                { term: '', definition: '' }
-            ]
-        })
     }
 
     deleteSet = index => {

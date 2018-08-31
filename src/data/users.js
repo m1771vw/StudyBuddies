@@ -2,15 +2,13 @@ export const users = [
     {
         email: 'wyang@gmail.com',
         displayName: 'Will',
-        firstName: 'William',
-        lastName: 'Yang',
+        fullName: 'William Yang',
         password: '123'
     },
     {
         email: 'jtkd@gmail.com',
         displayName: 'James',
-        firstName: 'James',
-        lastName: 'Park',
+        fullName: 'James Park',
         password: '123'
     }
 ]

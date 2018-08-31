@@ -7,7 +7,7 @@ class ProfileView extends Component {
     render() {
         return (
             <div>
-                <h1>Your Profile</h1>
+                <div id='dashboard-text'>Welcome To Your Profile, {this.props.currentUser.fullName}!</div>
                 <button onClick={this.onLogOutClicked}>Log Out</button>
             </div>
         );

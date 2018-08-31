@@ -25,6 +25,7 @@ class App extends Component {
     selectedCardSet: [], // Selected card set of cards
     // selectedCardSet: FlashCards[1], // Dummy data to have Quiz as Start Up page
     userLoggedIn: true,
+    currentUser: Users[0],
     selectedCardSetIndex: 0
   }
 
@@ -73,8 +74,7 @@ class App extends Component {
     let newCards = [...this.state.flashCardSets, card]
     this.setState({
       flashCardSets: newCards,
-      
-    })
+    }, ()=>{this.selectCardSet(this.state.flashCardSets.length-1)})
   }
 
   changePageName = name => {
@@ -82,6 +82,7 @@ class App extends Component {
       pageName: name
     })
   }
+
   selectCardSet = index => {
     this.setState({
       pageName: VIEW_SET,
@@ -110,14 +111,20 @@ class App extends Component {
         return(<Dashboard flashCardSets={this.state.flashCardSets}
                 changePageName={this.changePageName}
                 selectCardSet={this.selectCardSet}
+                currentUser={this.state.currentUser}
                 />)
       case PROFILE_VIEW:
         return(<ProfileView 
                 changePageName={this.changePageName}
+                currentUser={this.state.currentUser}
                 logOut={this.logOut}
                 />)
       case CREATE_VIEW:
-        return(<CreateView addToCards={this.addToCards}/>)
+        return(<CreateView 
+        addToCards={this.addToCards}
+        flashCardSets={this.state.flashCardSets}
+        changePageName={this.changePageName}
+        />)
       case VIEW_SET:
         return(<ViewSet changePageName={this.changePageName}
           selectedCardSet={this.state.selectedCardSet}
@@ -125,8 +132,10 @@ class App extends Component {
         />)
       case QUIZ:
         return(<Quiz
+        selectCardSet={this.selectCardSet}
         selectedCardSet={this.state.selectedCardSet} 
         changePageName={this.changePageName}
+        selectedCardSetIndex={this.state.selectedCardSetIndex}
         />)  
       case QUIZ_RESULTS:
           return(<QuizResults 
@@ -134,7 +143,7 @@ class App extends Component {
           />)
       case EDIT:
             return(<EditView 
-            changePageName={this.changePageName}
+            selectCardSet={this.selectCardSet}
             selectedCardSet={this.state.selectedCardSet}
             selectedCardSetIndex={this.state.selectedCardSetIndex}
             updateCardSet={this.updateCardSet}
