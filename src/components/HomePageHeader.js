@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
-import { LOGIN_VIEW } from '../constants';
+import { LOGIN_VIEW, SIGNUP_VIEW } from '../constants';
 
 
 class HomePageHeader extends Component {
+
+
+
+
     render() {
         return (
+
             <div className='hero-head'>
                 <nav className="navbar is-transparent">
                 <div className="navbar-brand header-button">
@@ -21,7 +26,7 @@ class HomePageHeader extends Component {
                     <div className="navbar-item">
                         <div className="field is-grouped">
                         <p className="control">
-                            <a className="button">
+                            <a onClick={()=>{this.props.changePageName(SIGNUP_VIEW)}} className="button">
                             <span className="icon">
                             <i className="fas fa-user-plus"/>
                             </span>
@@ -31,7 +36,7 @@ class HomePageHeader extends Component {
                             </a>
                         </p>
                         <p className="control">
-                            <a className="button is-primary">
+                            <a onClick={()=>{this.props.changePageName(LOGIN_VIEW)}} className="button is-primary">
                             <span className="icon">
                             <i className="fas fa-sign-in-alt"/>
                             </span>
@@ -44,10 +49,6 @@ class HomePageHeader extends Component {
                 </div>
                 </nav>
             </div>
-            /* /* <div>
-                <button>Sign up</button>
-                <button onClick={()=>{this.props.changePageName(LOGIN_VIEW)}}>Log in</button>
-            </div> */ 
         );
     }
 }

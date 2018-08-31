@@ -23,10 +23,10 @@ class App extends Component {
     pageName: CREATE_VIEW,
     userList: Users,
     flashCardSets: FlashCards, // All the Cards
-    selectedCardSet: [], // Selected card set of cards
-    // selectedCardSet: FlashCards[1], // Dummy data to have Quiz as Start Up page
+    // selectedCardSet: [], // Selected card set of cards
+    selectedCardSet: FlashCards[1], // Dummy data to have Quiz as Start Up page
     userLoggedIn: true,
-    currentUser: Users[0],
+    currentUser: "",    
     selectedCardSetIndex: 0
   }
 
@@ -40,26 +40,26 @@ class App extends Component {
    * Meant for 'EditView.js'
    */
 
-  updateCardSet = cards =>{
-    
+  updateCardSet = cards => {
+
     let tempSet = [
       ...this.state.flashCardSets.slice(0, this.state.selectedCardSetIndex),
       cards,
-      ...this.state.flashCardSets.slice( this.state.selectedCardSetIndex +1) 
+      ...this.state.flashCardSets.slice(this.state.selectedCardSetIndex + 1)
     ];
-    
+
     //   card, 
     //   ...this.state.flashCardSets(this.state.selectedCardSetIndex + 1)];
-      this.setState({
-        flashCardSets: tempSet
+    this.setState({
+      flashCardSets: tempSet
     })
   }
-  
+
   authenticateUser = user => {
     if (this.state.userList.findIndex(x => x.email === user.email) > -1
-     && this.state.userList.findIndex(x => x.password === user.password) > -1) {
+      && this.state.userList.findIndex(x => x.password === user.password) > -1) {
       console.log("User logged in!")
-      this.setState({ userLoggedIn: true, pageName: DASHBOARD });
+      this.setState({ userLoggedIn: true, pageName: DASHBOARD, currentUser: this.state.userList[this.state.userList.findIndex(x => x.email === user.email)]});
     } else {
       console.log("User trying to log!")
       this.setState({ userLoggedIn: false });
@@ -68,9 +68,17 @@ class App extends Component {
   logOut = () => {
     this.setState({
       pageName: HOMEPAGE,
-      userLoggedIn : false
+      userLoggedIn: false
     })
   }
+
+  addToUser = user => {
+    let newUser = [...this.state.userList, user]
+    this.setState({
+      userList: newUser,
+    })
+  }
+
   addToCards = card => {
     let newCards = [...this.state.flashCardSets, card]
     this.setState({
@@ -98,15 +106,17 @@ class App extends Component {
     })
   }
   setPage = pageName => {
-    switch(pageName){
+    switch (pageName) {
       case HOMEPAGE:
-        return(<HomePage changePageName={this.changePageName}/>)
+        return (<HomePage changePageName={this.changePageName} />)
       case SIGNUP_VIEW:
-        return(<SignupView changePageName={this.changePageName}/>)
+        return (<SignupView
+          changePageName={this.changePageName}
+          addToUser={this.addToUser} />)
       case LOGIN_VIEW:
-        return(<LoginView 
-        changePageName={this.changePageName}
-        authenticateUser={this.authenticateUser}
+        return (<LoginView
+          changePageName={this.changePageName}
+          authenticateUser={this.authenticateUser}
         />)
       case DASHBOARD:
         return(<Dashboard flashCardSets={this.state.flashCardSets}
@@ -127,7 +137,7 @@ class App extends Component {
         changePageName={this.changePageName}
         />)
       case VIEW_SET:
-        return(<ViewSet changePageName={this.changePageName}
+        return (<ViewSet changePageName={this.changePageName}
           selectedCardSet={this.state.selectedCardSet}
           setupQuiz={this.setupQuiz}
         />)
@@ -139,9 +149,9 @@ class App extends Component {
         selectedCardSetIndex={this.state.selectedCardSetIndex}
         />)  
       case QUIZ_RESULTS:
-          return(<QuizResults 
-            changePageName={this.changePageName}
-          />)
+        return (<QuizResults
+          changePageName={this.changePageName}
+        />)
       case EDIT:
             return(<EditView 
             selectCardSet={this.selectCardSet}

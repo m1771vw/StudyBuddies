@@ -127,10 +127,10 @@
   width: 50px;
 }
 
-.create-card-form {
+/* .create-card-form {
   display: flex;
   flex: 1;
-}
+} */
 .button-border {
   border: 1px solid black;
 }

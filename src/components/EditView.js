@@ -30,11 +30,13 @@ class EditView extends Component {
         this.setState({ cards: newCards })
     }
 
+
     onChange = event => {
         this.setState({
             setname: event.target.value
         })
     }
+
 
     onChange2 = event => {
         this.setState({
@@ -42,6 +44,7 @@ class EditView extends Component {
         })
     }
 
+    
     updateSet = () =>{
         this.props.updateCardSet(this.state);
         this.setState({
@@ -53,6 +56,14 @@ class EditView extends Component {
                 { term: '', definition: '' },
                 { term: '', definition: '' }
             ]
+        })
+    }
+
+    deleteClicked = index => {
+        let newCards = [...this.state.cards.slice(0, index),
+        ...this.state.cards.slice(index + 1)]
+        this.setState({
+            cards: newCards
         })
     }
 
@@ -79,12 +90,16 @@ class EditView extends Component {
                         rows="7"></textarea>
                 </div>
                 {this.state.cards.map((card, index) => (
+                    <div className='create-card-form'>
+                    <button onClick={() => { this.deleteClicked(index) }} className='button'>X</button>
                         <TermDefInput
                             key={index}
                             card={card}
                             change={this.change}
                             index={index}
+                            
                         />
+                        </div>
                     ))}
             
 
@@ -106,7 +121,7 @@ class EditView extends Component {
                         
                         } >
 
-                        Submit Set</button>
+                        Update Set</button>
                 </div>
 
 

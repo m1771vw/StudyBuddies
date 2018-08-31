@@ -47,7 +47,7 @@ class CreateView extends Component {
 
     deleteSet = index => {
         let newSet = [
-            ...this.state.slice(0,index),
+            ...this.state.slice(0, index),
             ...this.state.slice(index + 1)
         ];
         this.setState({
@@ -63,12 +63,13 @@ class CreateView extends Component {
     }
 
     deleteClicked = index => {
-        let newCards = [...this.state.cards.slice(0, index), 
-            ...this.state.cards.slice(index+1)]
+        let newCards = [...this.state.cards.slice(0, index),
+        ...this.state.cards.slice(index + 1)]
         this.setState({
             cards: newCards
         })
     }
+    
     render() {
         return (
             <div>
