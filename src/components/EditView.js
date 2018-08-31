@@ -42,6 +42,20 @@ class EditView extends Component {
         })
     }
 
+    updateSet = () =>{
+        this.props.updateCardSet(this.state);
+        this.setState({
+            setname: '',
+            description: '',
+            cards: [
+                { term: '', definition: '' },
+                { term: '', definition: '' },
+                { term: '', definition: '' },
+                { term: '', definition: '' }
+            ]
+        })
+    }
+
 
 
     render() {
@@ -50,7 +64,7 @@ class EditView extends Component {
                 <div className="level">
                     <div className="level-item has-text-centered">
                         <input className="input is-primary set-name-field"
-                        value={this.state.setname}
+                        value={this.state.setname} onChange={this.onChange}
                             type="text" placeholder="Enter set name here..." />
 
                     </div>
@@ -58,7 +72,7 @@ class EditView extends Component {
 
                 <div className="level text-area-level">
                     <textarea className="textarea"
-                        value={this.state.description}
+                        value={this.state.description} onChange={this.onChange2}
                         rows="7"></textarea>
                 </div>
                 {this.state.cards.map((card, index) => (
@@ -74,10 +88,16 @@ class EditView extends Component {
                 <div className="level" id="createbutton1">
                     <button className="button is-large level-item" onClick={this.addCard}>+</button>
                     <button className="button is-large level-item" onClick={() => {
-                         this.props.addToCards(this.state)
+                         this.props.updateCardSet(this.state)
                          this.setState({
                              setname: '',
-                             description: ''
+                             description: '',
+                             cards: [
+                                { term: '', definition: '' },
+                                { term: '', definition: '' },
+                                { term: '', definition: '' },
+                                { term: '', definition: '' }
+                             ]
                          }) 
                         }
                         

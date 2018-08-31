@@ -41,11 +41,18 @@ class App extends Component {
    * Meant for 'EditView.js'
    */
 
-  updateSet = cardSet =>{
-    let newCollection = this.state.flashCardSets
-    this.setState({
-      
-
+  updateCardSet = cards =>{
+    
+    let tempSet = [
+      ...this.state.flashCardSets.slice(0, this.state.selectedCardSetIndex),
+      cards,
+      ...this.state.flashCardSets.slice( this.state.selectedCardSetIndex +1) 
+    ];
+    
+    //   card, 
+    //   ...this.state.flashCardSets(this.state.selectedCardSetIndex + 1)];
+      this.setState({
+        flashCardSets: tempSet
     })
   }
   
@@ -133,6 +140,9 @@ class App extends Component {
             return(<EditView 
             changePageName={this.changePageName}
             selectedCardSet={this.state.selectedCardSet}
+            selectedCardSetIndex={this.state.selectedCardSetIndex}
+            updateCardSet={this.updateCardSet}
+            
           />)
       default:
         return <h1>404 Not Found</h1>;
