@@ -5,12 +5,17 @@ import { func, object } from 'prop-types';
 
 class Viewset extends Component {
     state = {
-        showTerms: true
+        showTerms: true,
+        selectedCardSet: this.props.selectedCardSet.cards.map(x => ({ ...x, showTerms: true }))
     }
 
-    showOtherSide = () => {
+    showOtherSide = (index) => {
+        let cardSetCopy = [...this.state.selectedCardSet];
+        cardSetCopy[index]['showTerms'] = !cardSetCopy[index]['showTerms'] ;
+       
         this.setState({
-            showTerms: !this.state.showTerms
+            showTerms: !this.state.showTerms,
+            cards: cardSetCopy
         })
     }
     render() {
@@ -36,19 +41,17 @@ class Viewset extends Component {
             </div>
             <div className='level'>
                 <div className='flashcard-flex-container'>
-                    {this.props.selectedCardSet.cards.map( (card, index) => {
+                    {this.state.selectedCardSet.map( (card, index) => {
                         return( 
                         <div key={card+index} className='level-item level-left'>
-                            <div onClick={this.showOtherSide} className="box flashcard-box">
+                            <div onClick={() => {this.showOtherSide(index)}} className="box flashcard-box">
                                 {
-                                    this.state.showTerms
+                                    card['showTerms']
                                     ? <h1>{card.term}</h1>
                                     : <h1>{card.definition}</h1>
-                                }
-                                
+                                }  
                             </div>
-                        </div>
-                        
+                        </div>       
                     )})}
                 </div>
             </div>
