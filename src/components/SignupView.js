@@ -54,8 +54,8 @@ class SignupView extends Component {
 
     render() {
         return (
-            <div>
-
+            <div className="sign-up-container">
+            <div className="signup-field box sign-up-box" >
                 <div className="field">
                     <label className="label is-medium">Name</label>
                     <div className="control">
@@ -110,6 +110,8 @@ class SignupView extends Component {
 
 
                 <button className='button is-primary' onClick={this.addUser}>Sign Up</button>
+    
+            </div>
             </div>
         );
     }
