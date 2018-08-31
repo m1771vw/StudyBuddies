@@ -47,7 +47,7 @@ class LoginView extends Component {
                 <div className="field">
                     <label className="label is-medium">Password</label>
                     <div className="control">
-                        <input className="input" type="text"
+                        <input className="input" type="password"
                             value={this.state.password} onChange={this.onChange2}
                             placeholder="Password" />
                     </div>
