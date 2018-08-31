@@ -73,7 +73,10 @@ class EditView extends Component {
         return (
             <div>
                 <div className="level">
-                    <div className="level-item has-text-centered">
+                    <div className='level-item level-left'>
+                            <button onClick={() => {this.props.selectCardSet(this.props.selectedCardSetIndex)}} className='button is-primary'>Return to View</button>
+                        </div>
+                    <div className="level-item">
                         <input className="input is-primary set-name-field"
                         value={this.state.setname} onChange={this.onChange}
                             type="text" placeholder="Enter set name here..." />

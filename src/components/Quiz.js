@@ -41,7 +41,9 @@ class Quiz extends Component {
         <div>
             <div className="level">
                 <div className="quiz-question-flex-container">
-                    
+                    <div className='level-item level-left'>
+                            <button onClick={() => {this.props.selectCardSet(this.props.selectedCardSetIndex)}} className='button is-primary'>Return to View</button>
+                        </div>
                     <div className=" box flashcard-box">
                         <h1>{this.state.shuffledCardSet[this.state.cardSetIndex].term}</h1>
                     </div>

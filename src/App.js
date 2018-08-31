@@ -14,6 +14,7 @@ import ProfileView from './components/ProfileView';
 import FlashCards from './data/flashcards';
 import Users from './data/users';
 import EditView from './components/EditView';
+
 import { HOMEPAGE, LOGIN_VIEW, SIGNUP_VIEW, PROFILE_VIEW, DASHBOARD, CREATE_VIEW, VIEW_SET, QUIZ, QUIZ_RESULTS, EDIT } from './constants'
 
 
@@ -24,7 +25,8 @@ class App extends Component {
     flashCardSets: FlashCards, // All the Cards
     // selectedCardSet: [], // Selected card set of cards
     selectedCardSet: FlashCards[1], // Dummy data to have Quiz as Start Up page
-    userLoggedIn: false,
+    userLoggedIn: true,
+    currentUser: Users[0],    
     selectedCardSetIndex: 0
   }
 
@@ -81,8 +83,7 @@ class App extends Component {
     let newCards = [...this.state.flashCardSets, card]
     this.setState({
       flashCardSets: newCards,
-
-    })
+    }, ()=>{this.selectCardSet(this.state.flashCardSets.length-1)})
   }
 
   changePageName = name => {
@@ -90,6 +91,7 @@ class App extends Component {
       pageName: name
     })
   }
+
   selectCardSet = index => {
     this.setState({
       pageName: VIEW_SET,
@@ -117,39 +119,47 @@ class App extends Component {
           authenticateUser={this.authenticateUser}
         />)
       case DASHBOARD:
-        return (<Dashboard flashCardSets={this.state.flashCardSets}
-          changePageName={this.changePageName}
-          selectCardSet={this.selectCardSet}
-        />)
+        return(<Dashboard flashCardSets={this.state.flashCardSets}
+                changePageName={this.changePageName}
+                selectCardSet={this.selectCardSet}
+                currentUser={this.state.currentUser}
+                />)
       case PROFILE_VIEW:
-        return (<ProfileView
-          changePageName={this.changePageName}
-          logOut={this.logOut}
-        />)
+        return(<ProfileView 
+                changePageName={this.changePageName}
+                currentUser={this.state.currentUser}
+                logOut={this.logOut}
+                />)
       case CREATE_VIEW:
-        return (<CreateView addToCards={this.addToCards} />)
+        return(<CreateView 
+        addToCards={this.addToCards}
+        flashCardSets={this.state.flashCardSets}
+        changePageName={this.changePageName}
+        />)
       case VIEW_SET:
         return (<ViewSet changePageName={this.changePageName}
           selectedCardSet={this.state.selectedCardSet}
           setupQuiz={this.setupQuiz}
         />)
       case QUIZ:
-        return (<Quiz
-          selectedCardSet={this.state.selectedCardSet}
-          changePageName={this.changePageName}
-        />)
+        return(<Quiz
+        selectCardSet={this.selectCardSet}
+        selectedCardSet={this.state.selectedCardSet} 
+        changePageName={this.changePageName}
+        selectedCardSetIndex={this.state.selectedCardSetIndex}
+        />)  
       case QUIZ_RESULTS:
         return (<QuizResults
           changePageName={this.changePageName}
         />)
       case EDIT:
-        return (<EditView
-          changePageName={this.changePageName}
-          selectedCardSet={this.state.selectedCardSet}
-          selectedCardSetIndex={this.state.selectedCardSetIndex}
-          updateCardSet={this.updateCardSet}
-
-        />)
+            return(<EditView 
+            selectCardSet={this.selectCardSet}
+            selectedCardSet={this.state.selectedCardSet}
+            selectedCardSetIndex={this.state.selectedCardSetIndex}
+            updateCardSet={this.updateCardSet}
+            
+          />)
       default:
         return <h1>404 Not Found</h1>;
     }
@@ -158,16 +168,17 @@ class App extends Component {
     return (
       <div>
         {this.state.userLoggedIn
-          ? <UserHeader
-            changePageName={this.changePageName}
-          />
-          : <HomePageHeader
-            changePageName={this.changePageName}
-          />}
-
-        <div className="container is-fluid main-content">
+        ? <UserHeader 
+          changePageName={this.changePageName}
+          flashCardSets={this.state.flashCardSets}
+        /> 
+        : <HomePageHeader 
+          changePageName={this.changePageName}
+        /> }
+        
+        {/* <div className="container is-fluid main-content"> */}
           {this.setPage(this.state.pageName)}
-        </div>
+        {/* </div> */}
       </div>
     );
   }
