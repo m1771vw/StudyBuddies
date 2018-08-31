@@ -1,10 +1,13 @@
 /* HomePage CSS */
 .home-page-gradient {
   /* background-color: red; */
-  background-image: linear-gradient(to bottom left,
+  background-image: linear-gradient(to bottom left,  
+  rgb(245, 245, 177),
+  rgb(250, 229, 1));
+  /* background-image: linear-gradient(to bottom left,
    rgb(246, 252, 124) 1%,
    rgb(89, 233, 249) 75%,
-  rgb(1, 122, 250));
+  rgb(1, 122, 250)); */
 }
 .title-text {
   margin-left: 15%;
@@ -15,15 +18,25 @@
 }
 
 /* Main Page CSS  */
+#body-content {
+  background-color: rgb(242, 242, 242);
+  width: auto;
+  min-height: 100vh;
+  /* height: 1000px; */
+}
 .main-content {
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 /* Dashboard CSS */
 
+
 #dashboard-text {
   font-size: 2em;
   font-weight: bold;
+  text-align: center;
+  padding-top: 10px;
+  margin-bottom: 10px;
 }
 .dashboard-button {
   width: 200px;

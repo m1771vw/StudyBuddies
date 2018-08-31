@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import { array, func } from 'prop-types';
 import { CREATE_VIEW } from '../constants'
 
-const RANDOM_COLORS = ['#55DDE0', '#33658A', '#2F4858', '#FAFAC6']
+const RANDOM_COLORS = ['#55DDE0', '#33658A', '#2F4858', '#FAFAC6', '#8DAA91', '#28112B']
 class Dashboard extends Component {
+    randomNumber = () => {
+        return Math.floor(Math.random() * RANDOM_COLORS.length)
+    }
     render() {
         return (
             <div>
@@ -16,7 +19,7 @@ class Dashboard extends Component {
                         {this.props.flashCardSets.map((cardsets, index) => {
                             return(
                                 <div key={cardsets+index} className=''>
-                                    <button onClick={() => {this.props.selectCardSet(index)}} style={{backgroundColor:'#55DDE0'}} className='button is-success dashboard-button flashcard-box'>{cardsets.setname}</button>
+                                    <button onClick={() => {this.props.selectCardSet(index)}} style={{backgroundColor: RANDOM_COLORS[this.randomNumber()]}} className='button is-success dashboard-button flashcard-box'>{cardsets.setname}</button>
                                 </div>
                         )})}
                     </div>

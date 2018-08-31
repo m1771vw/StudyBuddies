@@ -6,21 +6,22 @@ class UserHeader extends Component {
         return (
             <nav className='level header-flex-content'>
                 <div className=''>
-                    
                     <div id="navbarExampleTransparentExample" className="navbar-menu">
                         <div className="navbar-start">
                         <button onClick={() => {this.props.changePageName(DASHBOARD)}} className='button is-rounded is-info header-button'>
                             <i class="fas fa-home"></i></button>
                             <div className="navbar-item has-dropdown is-hoverable">
-                            <a className="navbar-link is-rounded is-white header-button" href="/documentation/overview/start/">
+                            <a className="navbar-link is-rounded is-white header-button">
                                             Card Sets  
-                                            </a>
+                            </a>
                                 <div className="navbar-dropdown is-boxed">
+                                <a onClick={() => {this.props.changePageName(CREATE_VIEW)}} className="navbar-item">
+                                            Create New
+                                            </a>
+                                <hr class="dropdown-divider"/>
                                 {this.props.flashCardSets.map((cardsets, index) => {
                                     return (
-
-                                            
-                                            <a key={cardsets+index} className="navbar-item" href="/documentation/overview/start/">
+                                            <a onClick={() => {this.props.selectCardSet(index)}} key={cardsets+index} className="navbar-item">
                                                 {cardsets.setname}
                                             </a>
                                     )

@@ -20,7 +20,7 @@ import { HOMEPAGE, LOGIN_VIEW, SIGNUP_VIEW, PROFILE_VIEW, DASHBOARD, CREATE_VIEW
 
 class App extends Component {
   state = {
-    pageName: HOMEPAGE,
+    pageName: DASHBOARD,
     userList: Users,
     flashCardSets: FlashCards, // All the Cards
     selectedCardSet: [], // Selected card set of cards
@@ -158,17 +158,27 @@ class App extends Component {
     return (
       <div>
         {this.state.userLoggedIn
-        ? <UserHeader 
-          changePageName={this.changePageName}
-          flashCardSets={this.state.flashCardSets}
-        /> 
-        : <HomePageHeader 
-          changePageName={this.changePageName}
-        /> }
+        ? 
+          <div>
+            <UserHeader 
+            changePageName={this.changePageName}
+            flashCardSets={this.state.flashCardSets}
+            selectCardSet={this.selectCardSet}
+            /> 
+            <div id='body-content'>
+              <div className="container is-fluid main-content"> 
+              {this.setPage(this.state.pageName)}
+            </div>
+            </div>
+         </div> 
+        : <div>
+          <HomePageHeader 
+            changePageName={this.changePageName}/>
+            {this.setPage(this.state.pageName)}
+        </div>
+       }
         
-        {/* <div className="container is-fluid main-content"> */}
-          {this.setPage(this.state.pageName)}
-        {/* </div> */}
+        
       </div>
     );
   }
