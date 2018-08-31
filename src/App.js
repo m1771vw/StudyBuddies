@@ -14,12 +14,13 @@ import ProfileView from './components/ProfileView';
 import FlashCards from './data/flashcards';
 import Users from './data/users';
 import EditView from './components/EditView';
+
 import { HOMEPAGE, LOGIN_VIEW, SIGNUP_VIEW, PROFILE_VIEW, DASHBOARD, CREATE_VIEW, VIEW_SET, QUIZ, QUIZ_RESULTS, EDIT } from './constants'
 
 
 class App extends Component {
   state = {
-    pageName: DASHBOARD,
+    pageName: HOMEPAGE,
     userList: Users,
     flashCardSets: FlashCards, // All the Cards
     selectedCardSet: [], // Selected card set of cards
@@ -159,14 +160,15 @@ class App extends Component {
         {this.state.userLoggedIn
         ? <UserHeader 
           changePageName={this.changePageName}
+          flashCardSets={this.state.flashCardSets}
         /> 
         : <HomePageHeader 
           changePageName={this.changePageName}
         /> }
         
-        <div className="container is-fluid main-content">
+        {/* <div className="container is-fluid main-content"> */}
           {this.setPage(this.state.pageName)}
-        </div>
+        {/* </div> */}
       </div>
     );
   }

@@ -6,8 +6,29 @@ class UserHeader extends Component {
         return (
             <nav className='level header-flex-content'>
                 <div className=''>
-                    <button onClick={() => {this.props.changePageName(DASHBOARD)}} className='button is-rounded is-info header-button'>Home</button>
-                    <button className='button is-rounded is-primary header-button'>Card Sets</button> 
+                    
+                    <div id="navbarExampleTransparentExample" className="navbar-menu">
+                        <div className="navbar-start">
+                        <button onClick={() => {this.props.changePageName(DASHBOARD)}} className='button is-rounded is-info header-button'>
+                            <i class="fas fa-home"></i></button>
+                            <div className="navbar-item has-dropdown is-hoverable">
+                            <a className="navbar-link is-rounded is-white header-button" href="/documentation/overview/start/">
+                                            Card Sets  
+                                            </a>
+                                <div className="navbar-dropdown is-boxed">
+                                {this.props.flashCardSets.map((cardsets, index) => {
+                                    return (
+
+                                            
+                                            <a key={cardsets+index} className="navbar-item" href="/documentation/overview/start/">
+                                                {cardsets.setname}
+                                            </a>
+                                    )
+                                    })}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div className=''>
                     <button onClick={() => {this.props.changePageName(DASHBOARD)}} className='button is-warning header-button home-logo'>Home Logo</button> 
