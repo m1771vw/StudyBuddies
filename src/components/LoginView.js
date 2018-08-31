@@ -3,8 +3,8 @@ import {func} from 'prop-types';
 
 class LoginView extends Component {
     state = {
-        email: 'wyang@gmail.com',
-        password: '123'
+        email: '',
+        password: ''
     }
     onLoginClick = () => {
         this.props.authenticateUser(this.state)

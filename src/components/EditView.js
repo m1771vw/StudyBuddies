@@ -30,11 +30,13 @@ class EditView extends Component {
         this.setState({ cards: newCards })
     }
 
+
     onChange = event => {
         this.setState({
             setname: event.target.value
         })
     }
+
 
     onChange2 = event => {
         this.setState({
@@ -42,6 +44,7 @@ class EditView extends Component {
         })
     }
 
+    
     updateSet = () =>{
         this.props.updateCardSet(this.state);
         this.setState({
@@ -103,7 +106,7 @@ class EditView extends Component {
                         
                         } >
 
-                        Submit Set</button>
+                        Update Set</button>
                 </div>
 
 

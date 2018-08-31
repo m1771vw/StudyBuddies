@@ -19,12 +19,12 @@ import { HOMEPAGE, LOGIN_VIEW, SIGNUP_VIEW, PROFILE_VIEW, DASHBOARD, CREATE_VIEW
 
 class App extends Component {
   state = {
-    pageName: DASHBOARD,
+    pageName: SIGNUP_VIEW,
     userList: Users,
     flashCardSets: FlashCards, // All the Cards
     selectedCardSet: [], // Selected card set of cards
     // selectedCardSet: FlashCards[1], // Dummy data to have Quiz as Start Up page
-    userLoggedIn: true,
+    userLoggedIn: false,
     selectedCardSetIndex: 0
   }
 
@@ -69,6 +69,14 @@ class App extends Component {
       userLoggedIn : false
     })
   }
+
+  addToUser = user => {
+    let newUser= [...this.state.userList, user]
+    this.setState({
+      userList: newUser,
+    })
+  }
+
   addToCards = card => {
     let newCards = [...this.state.flashCardSets, card]
     this.setState({
@@ -100,7 +108,9 @@ class App extends Component {
       case HOMEPAGE:
         return(<HomePage changePageName={this.changePageName}/>)
       case SIGNUP_VIEW:
-        return(<SignupView changePageName={this.changePageName}/>)
+        return(<SignupView 
+          changePageName={this.changePageName}
+          addToUser={this.addToUser}/>)
       case LOGIN_VIEW:
         return(<LoginView 
         changePageName={this.changePageName}
