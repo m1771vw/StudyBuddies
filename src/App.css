@@ -22,6 +22,7 @@
   background-color: rgb(242, 242, 242);
   width: auto;
   min-height: 100vh;
+  padding-bottom: 100px;
   /* height: 1000px; */
 }
 .main-content {
@@ -188,6 +189,17 @@
 
 }
 
+.sign-up-container{
+  padding-top: 65px;
+  background-image: linear-gradient(to bottom left,
+   rgb(246, 252, 124) 1%,
+   rgb(89, 233, 249) 75%,
+   rgb(1, 122, 250));
+   min-height: 100vh;
+}
+
+
+
 /* LOG IN VIEW
 */
 .login-field{
@@ -197,5 +209,17 @@
   margin-right: auto;
   padding-top: 30px;
   padding-bottom: 25px;
+  background-color: white;
+  padding-left: 20px;
+  padding-right: 20px;
 
+}
+
+.log-in-container{
+  padding-top: 175px;
+  background-image: linear-gradient(to bottom left,
+   rgb(246, 252, 124) 1%,
+   rgb(89, 233, 249) 75%,
+   rgb(1, 122, 250));
+   min-height: 100vh;
 }
