@@ -14,8 +14,8 @@ class TermDefInput extends Component {
         return (
             <div>
                 <div className="field level">
+                <button onClick={() => {this.props.deleteClicked(this.props.index)}} className='button button-border'>X</button>
                     <div className="level-item">
-                        
                         <input className="input is-primary" type="text" placeholder="Term"
                             value={this.props.card.term} onChange={this.onChangeOne} />
                     </div>

@@ -131,6 +131,9 @@
   display: flex;
   flex: 1;
 }
+.button-border {
+  border: 1px solid black;
+}
 /* Quiz CSS */
 .flashcard-answer{
   width: 275px;
