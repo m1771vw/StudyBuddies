@@ -31,7 +31,7 @@ class LoginView extends Component {
 
     render() {
         return (
-            <div>
+            <div className="login-field">
                 <div className="field">
                     <label className="label is-medium">Email</label>
                     <div className="control has-icons-left has-icons-right">
@@ -53,7 +53,7 @@ class LoginView extends Component {
                     </div>
                 </div>
 
-                <button onClick={this.onLoginClick}>Login</button>
+                <button className='button is-primary' onClick={this.onLoginClick}>Login</button>
             </div>
         );
     }

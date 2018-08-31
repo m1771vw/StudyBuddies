@@ -170,3 +170,32 @@
   align-items: center;
   justify-content: center;
 }
+
+
+
+/* SIGNUP VIEW
+*/
+.signup-field{
+  text-align: left;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 30px;
+  padding-bottom: 25px;
+  background-color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+
+/* LOG IN VIEW
+*/
+.login-field{
+  text-align: left;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 30px;
+  padding-bottom: 25px;
+
+}
