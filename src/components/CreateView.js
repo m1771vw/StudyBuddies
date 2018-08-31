@@ -72,7 +72,7 @@ class CreateView extends Component {
     
     render() {
         return (
-            <div>
+            <div id='create-view-form'>
                 <div className="level">
                     <div className="level-item has-text-centered">
                         <input className="input is-primary set-name-field"
@@ -83,13 +83,13 @@ class CreateView extends Component {
                 </div>
 
                 <div className="level text-area-level">
-                    <textarea className="textarea"
+                    <textarea className="is-primary textarea"
                         value={this.state.description} onChange={this.onChange2} placeholder="Enter description here..."
                         rows="7"></textarea>
-                </div>
-                <div className='field'>
+                </div>  
+                <div className='field input-forms-container'>
                     {this.state.cards.map((card, index) => (
-                        <div className='control'>
+                        <div className='control term-def-container'>
                             <TermDefInput
                                 key={index}
                                 card={card}
@@ -102,13 +102,15 @@ class CreateView extends Component {
 
 
                 </div>
-                <div className="level" id="create-button-set">
-                    <button className="button button-border is-large level-item" onClick={this.addCard}>+</button>
-                    <button className="button button-border is-large level-item level-right" onClick={this.submitSet} >
+                <div className="level" id="create-button-container">
+                    <div className='add-button-container'>
+                    <button className="button button-border is-large" onClick={this.addCard}>+</button>
+                    </div>
+                    <div className='submit-button-container'>
+                    <button className="button button-border is-large" onClick={this.submitSet} >
                         Submit Set</button>
+                    </div>
                 </div>
-
-
             </div>
         );
     }

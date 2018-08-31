@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { array, func } from 'prop-types';
-import { CREATE_VIEW } from '../constants'
+import { RANDOM_COLORS, CREATE_VIEW } from '../constants'
 
-const RANDOM_COLORS = ['#55DDE0', '#33658A', '#2F4858', '#FAFAC6', '#8DAA91', '#28112B']
+
 class Dashboard extends Component {
     randomNumber = () => {
         return Math.floor(Math.random() * RANDOM_COLORS.length)

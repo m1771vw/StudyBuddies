@@ -1,3 +1,6 @@
+h1 {
+  font-weight: bold;
+}
 /* HomePage CSS */
 .home-page-gradient {
   /* background-color: red; */
@@ -114,6 +117,9 @@
 
 
 /*Create View css */
+#create-view-form {
+  padding-top: 20px;
+}
 .set-name-field{
   width: 400px;
 }
@@ -122,17 +128,42 @@
   width: 400px ;
   margin: auto;
 }
+.input-forms-container {
+  /* display: flex;
+  flex-wrap: wrap;
+  align-content: space-evenly;
+  align-items: center;
+  justify-content: center; */
+  margin-right: 25px;
 
-#create-button-set{
-  width: 50px;
+}
+.add-button-container{
+  /* width: 100px; */
+  margin-left: 48%
 }
 
-/* .create-card-form {
-  display: flex;
-  flex: 1;
-} */
+.submit-button-container {
+  padding-right: 10px;
+  margin-right: 3%;
+}
+#create-button-container {
+  padding-top: 20px;
+  flex-direction: row;
+
+}
+.term-input {
+  width: 90%;
+}
+
+.create-card-form {
+  margin: 10px 5px;
+}
 .button-border {
   border: 1px solid black;
+}
+
+.term-def-container {
+  padding-right: 10px
 }
 /* Quiz CSS */
 .flashcard-answer{

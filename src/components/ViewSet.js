@@ -47,8 +47,14 @@ class Viewset extends Component {
                                     <div onClick={() => { this.showOtherSide(index) }} className="box flashcard-box">
                                         {
                                             card['showTerms']
-                                                ? <h1>{card.term}</h1>
-                                                : <h1>{card.definition}</h1>
+                                                ? (<div className='has-text-centered'>
+                                                    <h1>Term: </h1>
+                                                    <h1>{card.term}</h1>
+                                                    </div>)
+                                                : (<div className='has-text-centered'>
+                                                    <h1>Definition: </h1>
+                                                    <h1>{card.definition}</h1>
+                                                    </div>)
                                         }
                                     </div>
                                 </div>
