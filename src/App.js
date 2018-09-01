@@ -26,7 +26,7 @@ class App extends Component {
     // selectedCardSet: [], // Selected card set of cards
     selectedCardSet: FlashCards[1], // Dummy data to have Quiz as Start Up page
     userLoggedIn: true,
-    currentUser: "",    
+    currentUser: [],    
     selectedCardSetIndex: 0
   }
 
@@ -68,7 +68,8 @@ class App extends Component {
   logOut = () => {
     this.setState({
       pageName: HOMEPAGE,
-      userLoggedIn: false
+      userLoggedIn: false,
+      currentUser: []
     })
   }
 

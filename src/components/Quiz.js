@@ -10,7 +10,8 @@ class Quiz extends Component {
         cardSetIndex: 0,
         endOfSetReached: false
     }
-    answerClicked = () => {
+    answerClicked = index => {
+        console.log("Card: " + index + " has been clicked.")
         this.setState({
             userHasChosen: true
         })
@@ -68,7 +69,7 @@ class Quiz extends Component {
                 }): this.state.quizCardSet.map((card,index) => {
                     return(
                         <div key={card.term+index} className='level-item level-right'>
-                        <div onClick={this.answerClicked} className="box flashcard-box has-text-centered">
+                        <div onClick={() => {this.answerClicked(index)}} className="box flashcard-box has-text-centered">
                             <h1>Definition: </h1>
                             <h1>{card.definition}</h1>
                         </div>

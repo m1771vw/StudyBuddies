@@ -8,7 +8,9 @@ class ProfileView extends Component {
         return (
             <div>
                 <div id='dashboard-text'>Welcome To Your Profile, {this.props.currentUser.fullName}!</div>
-                <button onClick={this.onLogOutClicked}>Log Out</button>
+                <h1>Email: {this.props.currentUser.email}</h1>
+                
+                <button className='button is-warning' onClick={this.onLogOutClicked}>Log Out</button>
             </div>
         );
     }

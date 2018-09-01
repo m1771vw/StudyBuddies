@@ -4,13 +4,13 @@ import React, { Component } from 'react';
 class HomePage extends Component {
     render() {
         return (
-            <section class="hero is-large home-page-gradient">
-            <div class="hero-body">
-            <div class="container title-text">
-                <h1 class="title">
+            <section className="hero is-large home-page-gradient">
+            <div className="hero-body">
+            <div className="container title-text">
+                <h1 className="title">
                         Study Buddies
                 </h1>
-                <h2 class="subtitle">
+                <h2 className="subtitle">
                         Friends to study with
                 </h2>
             </div>
