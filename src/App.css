@@ -1,6 +1,7 @@
 h1 {
   font-weight: bold;
 }
+
 /* HomePage CSS */
 .home-page-gradient {
   /* background-color: red; */
@@ -251,6 +252,10 @@ h1 {
    min-height: 100vh;
 }
 
+.sign-title{
+  font-size: 28px;
+  padding-bottom: 15px;
+}
 
 
 /* LOG IN VIEW

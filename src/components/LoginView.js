@@ -33,6 +33,8 @@ class LoginView extends Component {
         return (
             <div className="log-in-container">
             <div className="login-field box">
+            <h1 className="sign-title">Log in to Study Buddies
+                </h1>
                 <div className="field">
                     <label className="label is-medium">Email</label>
                     <div className="control has-icons-left has-icons-right">

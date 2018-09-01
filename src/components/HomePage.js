@@ -20,7 +20,7 @@ class HomePage extends Component {
             </div>
             </section>
         
-            <section className="hero is-large secondGrad home-page-gradient">
+            <footer className="hero is-large secondGrad home-page-gradient">
             <div className="hero-body">
             <div className="container title-text2">
             <h1 className="title">
@@ -33,7 +33,7 @@ class HomePage extends Component {
                 
             </div>
             </div>
-            </section>
+            </footer>
        
         </div>
         );
