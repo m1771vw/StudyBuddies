@@ -40,7 +40,7 @@ h1 {
   font-weight: bold;
   text-align: center;
   padding-top: 10px;
-  margin-bottom: 10px;
+  padding-bottom: 10px;
 }
 .dashboard-button {
   width: 200px;
@@ -57,9 +57,13 @@ h1 {
   display: flex;
   align-items: center;
   /* justify-content: center; */
-  margin: 10px;
+  padding: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgb(219, 219, 219);
 }
-
+.level.header-flex-content {
+  margin-bottom: 0;
+}
 .header-button {
   margin-left: 5px;
   margin-right: 5px;
@@ -171,6 +175,7 @@ h1 {
   width: 275px;
   /* display: flex; */
   /* flex: 1; */
+  flex-wrap: wrap;
   justify-content: space-evenly;
   height: 200px;
   background-color: rgb(233, 233, 233);
@@ -199,11 +204,18 @@ h1 {
 
 .quiz-question-flex-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  /* flex-direction: column; */
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding-top: 25px;
 }
 
-
+.return-to-view-button {
+  margin-right:auto;
+}
+.quiz-term-box {
+  margin-right:auto;
+}
 
 /* SIGNUP VIEW
 */

@@ -99,8 +99,6 @@ class CreateView extends Component {
                             />
                         </div>
                     ))}
-
-
                 </div>
                 <div className="level" id="create-button-container">
                     <div className='add-button-container'>

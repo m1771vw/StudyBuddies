@@ -40,12 +40,13 @@ class Quiz extends Component {
     return (
         <div>
             <div className="level">
-                <div className="quiz-question-flex-container">
-                    <div className='level-item level-left'>
+                <div className="quiz-question-flex-container level-item">
+                    <div className='level-item level-left return-to-view-button'>
                             <button onClick={() => {this.props.selectCardSet(this.props.selectedCardSetIndex)}} className='button is-primary'>Return to View</button>
                         </div>
-                    <div className=" box flashcard-box">
-                        <h1>{this.state.shuffledCardSet[this.state.cardSetIndex].term}</h1>
+                    <div className=" box flashcard-box quiz-term-box has-text-centered">
+                        <h1>Term:</h1>
+                        <h1> {this.state.shuffledCardSet[this.state.cardSetIndex].term}</h1>
                     </div>
                     <div className=" flashcard-counter">
                         <h1>{this.state.cardSetIndex+1} / {this.state.shuffledCardSet.length}</h1>
@@ -58,7 +59,8 @@ class Quiz extends Component {
                 this.state.quizCardSet.map((card,index) => {
                     return(
                         <div key={card.term+index} className='level-item level-right'>
-                        <div onClick={this.showNextQuestion} style={{border: this.state.quizCardSet[index].answer}} className="box flashcard-box">
+                        <div onClick={this.showNextQuestion} style={{border: this.state.quizCardSet[index].answer}} className="box flashcard-box has-text-centered">
+                            <h1>Definition: </h1>
                             <h1>{card.definition}</h1>
                         </div>
                     </div> 
@@ -66,7 +68,8 @@ class Quiz extends Component {
                 }): this.state.quizCardSet.map((card,index) => {
                     return(
                         <div key={card.term+index} className='level-item level-right'>
-                        <div onClick={this.answerClicked} className="box flashcard-box">
+                        <div onClick={this.answerClicked} className="box flashcard-box has-text-centered">
+                            <h1>Definition: </h1>
                             <h1>{card.definition}</h1>
                         </div>
                     </div>
