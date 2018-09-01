@@ -12,8 +12,18 @@ h1 {
    rgb(89, 233, 249) 75%,
   rgb(1, 122, 250)); */
 }
+
+.secondGrad{
+  background-image: linear-gradient(to top left,  
+  rgb(245, 245, 177),
+  rgb(250, 229, 1));
+}
+
 .title-text {
   margin-left: 15%;
+}
+.title-text2 {
+  margin-left: 15%
 }
 /* HomePageHeader CSS */
 .header-button {
@@ -233,7 +243,7 @@ h1 {
 }
 
 .sign-up-container{
-  padding-top: 65px;
+  padding-top: 85px;
   background-image: linear-gradient(to bottom left,
    rgb(246, 252, 124) 1%,
    rgb(89, 233, 249) 75%,
@@ -265,4 +275,8 @@ h1 {
    rgb(89, 233, 249) 75%,
    rgb(1, 122, 250));
    min-height: 100vh;
+}
+
+.checkbox{
+  padding-bottom: 15px;
 }

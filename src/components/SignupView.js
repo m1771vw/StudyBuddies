@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 class SignupView extends Component {
     state = {
         email: '',
@@ -105,10 +104,6 @@ class SignupView extends Component {
                             placeholder="Confirm password" />
                     </div>
                 </div>
-
-
-
-
                 <button className='button is-primary' onClick={this.addUser}>Sign Up</button>
     
             </div>

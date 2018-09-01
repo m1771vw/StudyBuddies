@@ -77,7 +77,7 @@ class App extends Component {
     let newUser = [...this.state.userList, user]
     this.setState({
       userList: newUser,
-    })
+    }, ()=>{this.changePageName(LOGIN_VIEW)})
   }
 
   addToCards = card => {
