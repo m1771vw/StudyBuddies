@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TermDefInput from './TermDefInput';
-import { DASHBOARD } from '../constants/';
+import { DASHBOARD, VIEW_SET } from '../constants/';
 class CreateView extends Component {
 
     state = {
@@ -107,7 +107,7 @@ class CreateView extends Component {
                     <button className="button button-border is-large" onClick={this.addCard}>+</button>
                     </div>
                     <div className='submit-button-container'>
-                    <button className="button button-border is-large" onClick={this.submitSet} >
+                    <button className="button button-border is-large" onClick={this.submitSet}>
                         Submit Set</button>
                     </div>
                 </div>

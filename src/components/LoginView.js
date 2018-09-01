@@ -53,10 +53,16 @@ class LoginView extends Component {
                             placeholder="Password" />
                     </div>
                 </div>
-
+                <label className="checkbox"> <input type="checkbox"></input> Remember me</label>
+                
+                <div>
                 <button className='button is-primary' onClick={this.onLoginClick}>Login</button>
+                </div>
+                
             </div>
-            </div>
+        </div>
+                
+            
         );
     }
 }

@@ -1,21 +1,41 @@
 import React, { Component } from 'react';
+import { SIGNUP_VIEW } from '../constants';
 
 
 class HomePage extends Component {
     render() {
         return (
-            <section class="hero is-large home-page-gradient">
-            <div class="hero-body">
-            <div class="container title-text">
-                <h1 class="title">
+            <div>
+            <section className="hero is-large home-page-gradient">
+            <div className="hero-body">
+            <div className="container title-text">
+                <h1 className="title">
                         Study Buddies
                 </h1>
-                <h2 class="subtitle">
-                        Friends to study with
+                <h2 className="subtitle">
+                        Share and create flashcards! 
                 </h2>
+                <button onClick={() => {this.props.changePageName(SIGNUP_VIEW)}} className="button is-primary">Sign up for free </button>
             </div>
             </div>
             </section>
+        
+            <section className="hero is-large secondGrad home-page-gradient">
+            <div className="hero-body">
+            <div className="container title-text2">
+            <h1 className="title">
+                        Study Buddies </h1>
+            <h2>About</h2>
+            <p>Creators</p>
+            <p>Privacy</p>
+            <p>Jobs</p>
+            <p>Terms</p>
+                
+            </div>
+            </div>
+            </section>
+       
+        </div>
         );
     }
 }
