@@ -6,9 +6,10 @@ class ProfileView extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="level">
                 <div id='dashboard-text'>Welcome To Your Profile, {this.props.currentUser.fullName}!</div>
-                <button onClick={this.onLogOutClicked}>Log Out</button>
+                
+                <div><button className="button is-danger"onClick={this.onLogOutClicked}>Log Out</button></div>
             </div>
         );
     }
