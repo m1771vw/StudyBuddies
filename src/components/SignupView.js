@@ -56,6 +56,8 @@ class SignupView extends Component {
         return (
             <div className="sign-up-container">
             <div className="signup-field box sign-up-box" >
+            <h1 className="sign-title">Create your account
+                </h1>
                 <div className="field">
                     <label className="label is-medium">Name</label>
                     <div className="control">
