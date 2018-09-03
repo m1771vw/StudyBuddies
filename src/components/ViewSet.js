@@ -43,8 +43,8 @@ class Viewset extends Component {
                     <div className='flashcard-flex-container'>
                         {this.state.selectedCardSet.map((card, index) => {
                             return (
-                                <div key={card + index} className='level-item level-left'>
-                                    <div onClick={() => { this.showOtherSide(index) }} className="box flashcard-box">
+                                <div onMouseEnter={() => { this.showOtherSide(index) }} onMouseLeave={() => { this.showOtherSide(index) }} key={card + index} className='level-item level-left'>
+                                    <div className="box flashcard-box">
                                         {
                                             card['showTerms']
                                                 ? (<div className='has-text-centered'>
