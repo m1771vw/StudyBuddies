@@ -58,7 +58,7 @@ class LoginView extends Component {
                 <label className="checkbox"> <input type="checkbox"></input> Remember me</label>
                 
                 <div>
-                <button className='button is-primary' onClick={this.onLoginClick}>Login</button>
+                <button className='button is-watermelon' onClick={this.onLoginClick}>Login</button>
                 </div>
                 
             </div>

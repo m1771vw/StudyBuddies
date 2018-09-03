@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { DASHBOARD, CREATE_VIEW, PROFILE_VIEW } from '../constants'
-
+import StudyBuddyLogo from '../img/studybuddieslogo.png'
 class UserHeader extends Component {
     render() {
         return (
@@ -31,12 +31,16 @@ class UserHeader extends Component {
                         </div>
                     </div>
                 </div>
-                <div className=''>
+                {/* <div className=''>
                     <button onClick={() => {this.props.changePageName(DASHBOARD)}} className='button is-warning header-button home-logo'>Home Logo</button> 
+                </div> */}
+                <div className='user-home-logo level-item level-right' >
+                    <img onClick={() => {this.props.changePageName(DASHBOARD)}} src={StudyBuddyLogo} alt="Logo" width={170+'px'} height={37+'px'}/>
                 </div>
                 <div className=''>
-                    <button onClick={() => {this.props.changePageName(CREATE_VIEW)}} className='button header-button'>+</button>
-                    <button onClick={() => {this.props.changePageName(PROFILE_VIEW)}} className='button is-dark header-button'>Profile</button>  
+                    <button onClick={() => {this.props.changePageName(CREATE_VIEW)}} className='button header-button button-border'>+</button>
+                    <button onClick={() => {this.props.changePageName(PROFILE_VIEW)}} className='button is-dark header-button'>
+                    <i class="fas fa-user-alt"/></button>  
                 </div>
             </nav>
         );

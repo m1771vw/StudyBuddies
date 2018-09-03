@@ -5,7 +5,7 @@ class QuizResults extends Component {
         return (
             <div>
                 <h1>You reached the end of the quiz</h1>
-                <button onClick={() => {this.props.changePageName(VIEW_SET)}}>Return to Card Set</button>
+                <button className='button is-watermelon' onClick={() => {this.props.changePageName(VIEW_SET)}}>Return to Card Set</button>
             </div>
         );
     }

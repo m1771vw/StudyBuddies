@@ -20,7 +20,7 @@ import { HOMEPAGE, LOGIN_VIEW, SIGNUP_VIEW, PROFILE_VIEW, DASHBOARD, CREATE_VIEW
 
 class App extends Component {
   state = {
-    pageName: PROFILE_VIEW,
+    pageName: HOMEPAGE,
     userList: Users,
     flashCardSets: FlashCards, // All the Cards
     // selectedCardSet: [], // Selected card set of cards
