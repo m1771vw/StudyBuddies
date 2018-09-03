@@ -155,9 +155,8 @@ h1 {
 }
 /* ViewSet CSS */
 .cardset-info-flex-container {
-  display: flex;
-  flex: 1;
-  justify-content: space-around;
+  margin-left: 7.5%;
+
 }
 .cardset-setname-flex-container {
   display: flex;
@@ -168,7 +167,14 @@ h1 {
 .cardset-options-flex-container {
   display: flex;
   flex-direction: row; 
-  justify-content: space-between;
+  align-self: flex-start;
+}
+.viewset-flashcard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 .flashcard-box{
   width: 275px;
@@ -184,8 +190,9 @@ h1 {
 }
 
 .setname-box{
-  width: 150px;
-  height: 75px;
+  width: 50vw;
+
+  margin-bottom: 20px;
 }
 
 .setname-text {
@@ -269,13 +276,16 @@ h1 {
   margin-right: auto;
   border: 1px black solid;
 }
-
+.flashcard-answer-container {
+  width: 90vw;
+    
+}
 .flashcard-question{
-  width: 300px;
+  width: 400px;
   /* display: flex; */
   /* flex: 1; */
   /* justify-content: space-evenly; */
-  height: 200px;
+  height: 300px;
   background-color: rgb(233, 233, 233);
   /* margin-left: auto;
   margin-right: auto; */
@@ -287,7 +297,9 @@ h1 {
   /* margin-left:auto;
   margin-right: auto; */
 }
-
+.term-text {
+  font-size: 2.0em;
+}
 .quiz-question-flex-container {
   display: flex;
   /* flex-direction: column; */
@@ -297,10 +309,18 @@ h1 {
 }
 
 .return-to-view-button {
-  margin-right:auto;
+  margin-left: 2%;
 }
 .quiz-term-box {
+  display: flex;
+  margin-left:auto;
   margin-right:auto;
+  width: 400px;
+  height: 250px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 
 .is-correct-card {
@@ -309,6 +329,13 @@ h1 {
 
 .is-wrong-card {
   background-color: rgb(255, 71, 71);
+}
+.red-text {
+  color: rgb(255, 71, 71);
+}
+
+.green-text {
+  color: rgb(0, 180, 0);
 }
 /* SIGNUP VIEW
 */

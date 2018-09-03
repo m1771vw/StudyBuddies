@@ -1,7 +1,7 @@
 const flashCards = [
     {
         "setname": "Biology",
-        "description" : "Da science",
+        "description" : "Flashcards for studying Biology 101",
         "creator": "James",
         "cardColor": "#698B22",
         "cards" : [
@@ -24,8 +24,8 @@ const flashCards = [
         ]
     },
     {
-        "setname": "History",
-        "description" : "Da history",
+        "setname": "History 101",
+        "description" : "Flashcards for studying History",
         "creator": "James",
         "cardColor": "#FFAF00",
         "cards" : [
