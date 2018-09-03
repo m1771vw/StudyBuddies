@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { LOGIN_VIEW, SIGNUP_VIEW } from '../constants';
+import { LOGIN_VIEW, SIGNUP_VIEW, HOMEPAGE } from '../constants';
 
 
 class HomePageHeader extends Component {
@@ -13,12 +13,12 @@ class HomePageHeader extends Component {
             <div className='hero-head'>
                 <nav className="navbar is-transparent">
                 <div className="navbar-brand header-button">
-                    <a className="button is-primary">
+                    <button onClick={() => {this.props.changePageName(HOMEPAGE)}} className="button is-primary">
                         <span className="icon">
                             <i class="fas fa-id-card"/>
                         </span>
                         <span>Study Buddies</span>
-                    </a>
+                    </button>
                 </div>
 
                 <div id="navbarExampleTransparentExample" className="navbar-menu">

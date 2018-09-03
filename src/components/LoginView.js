@@ -33,6 +33,8 @@ class LoginView extends Component {
         return (
             <div className="log-in-container">
             <div className="login-field box">
+            <h1 className="sign-title">Log in to Study Buddies
+                </h1>
                 <div className="field">
                     <label className="label is-medium">Email</label>
                     <div className="control has-icons-left has-icons-right">
@@ -53,10 +55,16 @@ class LoginView extends Component {
                             placeholder="Password" />
                     </div>
                 </div>
-
+                <label className="checkbox"> <input type="checkbox"></input> Remember me</label>
+                
+                <div>
                 <button className='button is-primary' onClick={this.onLoginClick}>Login</button>
+                </div>
+                
             </div>
-            </div>
+        </div>
+                
+            
         );
     }
 }

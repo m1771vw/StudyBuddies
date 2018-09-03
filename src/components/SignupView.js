@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {LOGIN_VIEW} from '../constants'
 
 class SignupView extends Component {
     state = {
@@ -56,6 +56,8 @@ class SignupView extends Component {
         return (
             <div className="sign-up-container">
             <div className="signup-field box sign-up-box" >
+            <h1 className="sign-title">Create your account
+                </h1>
                 <div className="field">
                     <label className="label is-medium">Name</label>
                     <div className="control">
@@ -109,7 +111,7 @@ class SignupView extends Component {
 
 
 
-                <button className='button is-primary' onClick={this.addUser}>Sign Up</button>
+                <button className='button is-primary' onClick={this.addUser} onClick={() => { this.props.changePageName(LOGIN_VIEW) }}>Sign Up</button>
     
             </div>
             </div>
