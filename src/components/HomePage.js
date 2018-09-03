@@ -9,13 +9,15 @@ class HomePage extends Component {
             <section className="hero is-large home-page-gradient">
                 <div className="hero-body">
                 <div className="container title-text">
-                    <h1 className="title hero-title">
+                    <h1 className="title hero-title type-writer-font">
                             Study Buddies
                     </h1>
-                    <h2 className="subtitle hero-subtitle">
+                    <h2 className="subtitle hero-subtitle roboto-font">
                             Share and create flashcards! 
                     </h2>
-                    <button onClick={() => {this.props.changePageName(SIGNUP_VIEW)}} className="button is-watermelon">Sign up for free </button>
+                    <div className='home-signup-container'>
+                        <button onClick={() => {this.props.changePageName(SIGNUP_VIEW)}} className="button is-watermelon">Sign up for free </button><span className='home-login-text'>or <a>log in</a></span>
+                    </div>
                 </div>
                 </div>
             </section>
