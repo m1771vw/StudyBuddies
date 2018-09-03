@@ -77,7 +77,7 @@ class EditView extends Component {
                             <button onClick={() => {this.props.selectCardSet(this.props.selectedCardSetIndex)}} className='button is-watermelon'>Return to View</button>
                         </div>
                     <div className="level-item edit-set-name-field">
-                        <input className="input is-primary set-name-field"
+                        <input className="input button-border set-name-field"
                         value={this.state.setname} onChange={this.onChange}
                             type="text" placeholder="Enter set name here..." />
 
@@ -86,7 +86,7 @@ class EditView extends Component {
                 </div>
 
                 <div className="level text-area-level">
-                    <textarea className="is-primary textarea"
+                    <textarea className="button-border textarea"
                         value={this.state.description} onChange={this.onChange2}
                         rows="7"></textarea>
                 </div>

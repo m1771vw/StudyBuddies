@@ -76,7 +76,7 @@ class CreateView extends Component {
             <div id='create-view-form'>
                 <div className="level">
                     <div className="level-item has-text-centered">
-                        <input className="input is-primary set-name-field"
+                        <input className="input button-border set-name-field"
                             value={this.state.setname} onChange={this.onChange}
                             type="text" placeholder="Enter set name here..." />
 
@@ -84,7 +84,7 @@ class CreateView extends Component {
                 </div>
 
                 <div className="level text-area-level">
-                    <textarea className="is-primary textarea"
+                    <textarea className="button-border textarea"
                         value={this.state.description} onChange={this.onChange2} placeholder="Enter description here..."
                         rows="7"></textarea>
                 </div>  

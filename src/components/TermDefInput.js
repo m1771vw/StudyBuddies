@@ -16,11 +16,11 @@ class TermDefInput extends Component {
                 <div className="field level create-card-form">
                 <button onClick={() => {this.props.deleteClicked(this.props.index)}} className='button button-border'>X</button>
                     <div className="level-item">
-                        <input className="input is-primary term-input" type="text" placeholder="Term"
+                        <input className="input button-border term-input" type="text" placeholder="Term"
                             value={this.props.card.term} onChange={this.onChangeOne} />
                     </div>
                     <div className="level-item">
-                        <input className="input is-primary term-input" type="text" placeholder="Definition"
+                        <input className="input button-border term-input" type="text" placeholder="Definition"
                             value={this.props.card.definition} onChange={this.oneChangeTwo} />
                     </div>
                 </div>

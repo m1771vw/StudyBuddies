@@ -78,6 +78,9 @@ h1 {
   width: 200px;
   height: 100px;
 }
+.dashboard-button:hover {
+  opacity: 0.85;
+}
 .dashboard-button-text {
   font-size: 1.5rem;
   font-weight:bold;
@@ -349,4 +352,15 @@ h1 {
 
 .edit-view-form {
   padding-top: 25px;
+}
+
+/* About Us CSS  */
+.about-us-text{
+  opacity: 0.8;
+}
+
+.about-us-photo {
+  width: 100%;
+  height: 25%;
+  object-fit: cover;
 }
