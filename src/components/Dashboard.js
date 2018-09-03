@@ -14,12 +14,13 @@ class Dashboard extends Component {
                 <div className='level'>
                     <div className='flashcard-flex-container'>
                         <div className=''>
-                            <button onClick={() => { this.props.changePageName(CREATE_VIEW) }} className='button is-primary dashboard-button flashcard-box'>Create Set</button>
+                            <button onClick={() => { this.props.changePageName(CREATE_VIEW) }} className='button dashboard-button flashcard-box dashboard-create-flashcard'>+</button>
                         </div>
                         {this.props.flashCardSets.map((cardsets, index) => {
                             return(
                                 <div key={cardsets+index} className=''>
-                                    <button onClick={() => {this.props.selectCardSet(index)}} style={{backgroundColor: RANDOM_COLORS[this.randomNumber()]}} className='button is-success dashboard-button flashcard-box'>{cardsets.setname}</button>
+                                    <button onClick={() => {this.props.selectCardSet(index)}} style={{backgroundColor: cardsets.cardColor}} className='button is-success dashboard-button flashcard-box dashboard-button-text'>{cardsets.setname}</button>
+                                    {/* <button onClick={() => {this.props.selectCardSet(index)}} style={{backgroundColor: RANDOM_COLORS[this.randomNumber()]}} className='button is-success dashboard-button flashcard-box dashboard-button-text'>{cardsets.setname}</button> */}
                                 </div>
                             )
                         })}

@@ -5,15 +5,34 @@ h1 {
 /* HomePage CSS */
 .home-page-gradient {
   /* background-color: red; */
-  background-image: linear-gradient(to bottom left,  
+  background-image: linear-gradient(to bottom left,
+  rgb(185, 230, 240),
+  rgb(124, 222, 240)
+
+  )
+  /* background-image: linear-gradient(to bottom left,  
+  rgb(255, 255, 255),
+  rgb(212, 212, 212)); */
+  /* background-image: linear-gradient(to bottom left,  
   rgb(245, 245, 177),
-  rgb(250, 229, 1));
+  rgb(250, 229, 1)); */
   /* background-image: linear-gradient(to bottom left,
    rgb(246, 252, 124) 1%,
    rgb(89, 233, 249) 75%,
   rgb(1, 122, 250)); */
 }
-
+.home-logo {
+  padding-left: 10px;
+  padding-top: 5px
+}
+.is-watermelon {
+  background-color: #FF3B3F;
+  color: white;
+}
+.hero-title {
+  /* color: rgb(146, 146, 146); */
+  font-size: 3rem;
+}
 .secondGrad{
   background-image: linear-gradient(to top left,  
   rgb(245, 245, 177),
@@ -33,7 +52,9 @@ h1 {
 
 /* Main Page CSS  */
 #body-content {
-  background-color: rgb(255, 255, 255);
+  /* background-color: rgb(255, 255, 255); */
+  background-color: #EFEFEF;
+  /* background-color: #CAEBF2;  */
   width: auto;
   min-height: 100vh;
   padding-bottom: 100px;
@@ -57,21 +78,38 @@ h1 {
   width: 200px;
   height: 100px;
 }
-
-
+.dashboard-button-text {
+  font-size: 1.5rem;
+  font-weight:bold;
+}
+.dashboard-create-flashcard {
+  background-color: white !important;
+  font-size: 3rem;
+}
 /* UserHeader CSS */
 .navbar-container {
   border: 1px solid black;
 }
-
+.button-border {
+  border: 1px solid black;
+}
 .header-flex-content {
   display: flex;
   align-items: center;
   /* justify-content: center; */
-  padding: 10px;
-  padding-bottom: 20px;
+  padding: 5px 10px 10px;
+
   border-bottom: 1px solid rgb(219, 219, 219);
-  background-color: rgb(255, 255, 96);
+  /* background-color: rgb(255, 255, 96); */
+  /* SKY */
+  /* background-color: #CAEBF2;  */
+  /* POWDER */
+  /* background-color: #BFD8D2   */
+  /* CERULEAN */
+  /* background-color: #4484CE  */
+  /* SCREEN */
+  /* background-color: #C5C1C0  */
+
 }
 .level.header-flex-content {
   margin-bottom: 0;
@@ -80,9 +118,15 @@ h1 {
   margin-left: 5px;
   margin-right: 5px;
 }
-.home-logo {
+.user-home-logo {
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto; 
+  /* position: absolute; */
+  justify-content: center;
+  align-items: center;
+  /* padding-left: 10%; */
+  padding-top: 10px;
+  padding-right: 60px;
 }
 /* ViewSet CSS */
 .cardset-info-flex-container {
@@ -99,6 +143,7 @@ h1 {
 .cardset-options-flex-container {
   display: flex;
   flex-direction: row; 
+  justify-content: space-between;
 }
 .flashcard-box{
   width: 275px;
@@ -106,7 +151,7 @@ h1 {
   /* flex: 1; */
   justify-content: space-evenly;
   height: 200px;
-  background-color: rgb(233, 233, 233);
+  /* background-color: rgb(233, 233, 233); */
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 10px;
@@ -114,8 +159,12 @@ h1 {
 }
 
 .setname-box{
-  width: 200px;
-  height: 100px;
+  width: 150px;
+  height: 75px;
+}
+
+.setname-text {
+  font-size: 2.5rem;
 }
 
 .description-box{
@@ -266,8 +315,7 @@ h1 {
 }
 
 
-/* LOG IN VIEW
-*/
+/* LOG IN VIEW */
 .login-field{
   text-align: left;
   width: 400px;
@@ -292,4 +340,10 @@ h1 {
 
 .checkbox{
   padding-bottom: 15px;
+}
+
+/* EDIT CSS */
+.edit-set-name-field {
+  margin-right: 130px;
+
 }

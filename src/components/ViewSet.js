@@ -5,7 +5,7 @@ import { func, object } from 'prop-types';
 
 class Viewset extends Component {
     state = {
-        showTerms: true,
+        // showTerms: true,
         selectedCardSet: this.props.selectedCardSet.cards.map(x => ({ ...x, showTerms: true }))
     }
 
@@ -24,9 +24,9 @@ class Viewset extends Component {
                 <div className="level">
                     <div className="cardset-info-flex-container">
                         <div className='cardset-setname-flex-container'>
-                            <div className="box setname-box">
-                                <h1>SET NAME</h1>
-                                <h2>{this.props.selectedCardSet.setname}</h2>
+                            <div className="setname-box ">
+                                <h1 className="setname-text">{this.props.selectedCardSet.setname}</h1>
+
                             </div>
                             <div className='cardset-options-flex-container'>
                                 <button className="button is-danger" onClick={() => { this.props.changePageName(EDIT) }}>Edit</button>

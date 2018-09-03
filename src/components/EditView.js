@@ -3,11 +3,11 @@ import TermDefInput from './TermDefInput';
 
 
 class EditView extends Component {
-
     state = {
         setname: this.props.selectedCardSet.setname,
         description: this.props.selectedCardSet.description,
         cards: this.props.selectedCardSet.cards,
+        cardColor: this.props.selectedCardSet.cardColor
     }
 
 
@@ -76,12 +76,13 @@ class EditView extends Component {
                     <div className='level-item level-left'>
                             <button onClick={() => {this.props.selectCardSet(this.props.selectedCardSetIndex)}} className='button is-primary'>Return to View</button>
                         </div>
-                    <div className="level-item">
+                    <div className="level-item edit-set-name-field">
                         <input className="input is-primary set-name-field"
                         value={this.state.setname} onChange={this.onChange}
                             type="text" placeholder="Enter set name here..." />
 
                     </div>
+                    <div className="level-item level-right"></div>
                 </div>
 
                 <div className="level text-area-level">

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TermDefInput from './TermDefInput';
-
+import {RANDOM_COLORS} from '../constants';
 class CreateView extends Component {
 
     state = {
@@ -12,6 +12,7 @@ class CreateView extends Component {
             { term: '', definition: '' },
             { term: '', definition: '' }
         ],
+        cardColor: RANDOM_COLORS[Math.floor(Math.random()*RANDOM_COLORS.length)]
     }
 
     change = (property, index, newValue) => {

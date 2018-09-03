@@ -3,6 +3,7 @@ const flashCards = [
         "setname": "Biology",
         "description" : "Da science",
         "creator": "James",
+        "cardColor": "#698B22",
         "cards" : [
             {
                 "term" : "monomer",
@@ -26,6 +27,7 @@ const flashCards = [
         "setname": "History",
         "description" : "Da history",
         "creator": "James",
+        "cardColor": "#FFAF00",
         "cards" : [
             {
                 "term" : "china #2",
