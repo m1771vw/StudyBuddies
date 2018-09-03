@@ -345,5 +345,8 @@ h1 {
 /* EDIT CSS */
 .edit-set-name-field {
   margin-right: 130px;
+}
 
+.edit-view-form {
+  padding-top: 25px;
 }

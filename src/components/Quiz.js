@@ -49,7 +49,7 @@ class Quiz extends Component {
             <div className="level">
                 <div className="quiz-question-flex-container level-item">
                     <div className='level-item level-left return-to-view-button'>
-                            <button onClick={() => {this.props.selectCardSet(this.props.selectedCardSetIndex)}} className='button is-primary'>Return to View</button>
+                            <button onClick={() => {this.props.selectCardSet(this.props.selectedCardSetIndex)}} className='button is-watermelon'>Return to View</button>
                         </div>
                     <div className=" box flashcard-box quiz-term-box has-text-centered">
                         <h1>Term:</h1>

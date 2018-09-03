@@ -71,10 +71,10 @@ class EditView extends Component {
 
     render() {
         return (
-            <div>
+            <div className="edit-view-form">
                 <div className="level">
                     <div className='level-item level-left'>
-                            <button onClick={() => {this.props.selectCardSet(this.props.selectedCardSetIndex)}} className='button is-primary'>Return to View</button>
+                            <button onClick={() => {this.props.selectCardSet(this.props.selectedCardSetIndex)}} className='button is-watermelon'>Return to View</button>
                         </div>
                     <div className="level-item edit-set-name-field">
                         <input className="input is-primary set-name-field"
@@ -86,7 +86,7 @@ class EditView extends Component {
                 </div>
 
                 <div className="level text-area-level">
-                    <textarea className="textarea"
+                    <textarea className="is-primary textarea"
                         value={this.state.description} onChange={this.onChange2}
                         rows="7"></textarea>
                 </div>
@@ -105,10 +105,10 @@ class EditView extends Component {
                 </div>
                 <div className="level" id="create-button-container">
                     <div className='add-button-container'>
-                        <button className="button is-large level-item" onClick={this.addCard}>+</button>
+                        <button className="button button-border is-large level-item" onClick={this.addCard}>+</button>
                     </div>
                     <div className='submit-button-container'>
-                        <button className="button is-large level-item" onClick={() => {
+                        <button className="button button-border is-large level-item" onClick={() => {
                             this.props.updateCardSet(this.state)
                             this.setState({
                                 setname: '',
