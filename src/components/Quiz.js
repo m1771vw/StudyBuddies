@@ -8,12 +8,14 @@ class Quiz extends Component {
         shuffledCardSet: scrambleCards(this.props.selectedCardSet.cards), 
         quizCardSet: (selectQuizCards(this.props.selectedCardSet.cards, 0)),
         cardSetIndex: 0,
-        endOfSetReached: false
+        endOfSetReached: false,
+        selectedCardIndex: -1
     }
     answerClicked = index => {
         console.log("Card: " + index + " has been clicked.")
         this.setState({
-            userHasChosen: true
+            userHasChosen: true,
+            selectedCardIndex: index
         })
     }
     getNewSetOfCards = (cards, cardSetIndex) => {
@@ -33,11 +35,15 @@ class Quiz extends Component {
             this.getNewSetOfCards(this.state.shuffledCardSet, this.state.cardSetIndex+1)
             this.setState({
                 userHasChosen: false,
-                cardSetIndex: this.state.cardSetIndex + 1
+                cardSetIndex: this.state.cardSetIndex + 1,
+                selectedCardIndex: -1
             })
         }
     }
+
     render() {
+        let correctCard = "box flashcard-box has-text-centered is-correct-card";
+        let wrongCard = "box flashcard-box has-text-centered is-wrong-card";
     return (
         <div>
             <div className="level">
@@ -56,17 +62,69 @@ class Quiz extends Component {
             </div>
                 
             <div className='level level-flashcards'>
-                {this.state.userHasChosen? 
-                this.state.quizCardSet.map((card,index) => {
-                    return(
-                        <div key={card.term+index} className='level-item level-right'>
-                        <div onClick={this.showNextQuestion} style={{border: this.state.quizCardSet[index].answer}} className="box flashcard-box has-text-centered">
-                            <h1>Definition: </h1>
-                            <h1>{card.definition}</h1>
+                {   // Check if the user has chosen and if answer is true
+                    this.state.userHasChosen && this.state.quizCardSet[this.state.selectedCardIndex].answer?
+                    this.state.quizCardSet.map((card, index) => {
+                        if(card.answer){
+                            return(
+                                <div key={card.term+index} className='level-item level-right'>
+                            <div onClick={this.showNextQuestion} className={correctCard}>
+                                <h1>Definition: </h1>
+                                <h1>{card.definition}</h1>
+                            </div>
                         </div>
-                    </div> 
-                    )
-                }): this.state.quizCardSet.map((card,index) => {
+                            )
+                        } else {
+                            return(
+                        <div key={card.term+index} className='level-item level-right'>
+                            <div onClick={this.showNextQuestion} className='box flashcard-box has-text-centered'>
+                                <h1>Definition: </h1>
+                                <h1>{card.definition}</h1>
+                            </div>
+                        </div>
+                         )
+                        }
+                       
+                    }) : this.state.userHasChosen && !this.state.quizCardSet[this.state.selectedCardIndex].answer?
+                        this.state.quizCardSet.map((card, index) => {
+                        if(card.answer) {
+                            return(
+                                <div key={card.term+index} className='level-item level-right'>
+                            <div onClick={this.showNextQuestion} className={correctCard}>
+                                <h1>Definition: </h1>
+                                <h1>{card.definition}</h1>
+                            </div>
+                        </div>
+                            )
+                        } else if(this.state.quizCardSet.indexOf(card) == this.state.selectedCardIndex) {
+                            return(
+                                <div key={card.term+index} className='level-item level-right'>
+                            <div onClick={this.showNextQuestion} className={wrongCard}>
+                                <h1>Definition: </h1>
+                                <h1>{card.definition}</h1>
+                            </div>
+                        </div>
+                            )
+                        } else
+                        return(
+                            <div key={card.term+index} className='level-item level-right'>
+                            <div onClick={this.showNextQuestion} className='box flashcard-box has-text-centered'>
+                                <h1>Definition: </h1>
+                                <h1>{card.definition}</h1>
+                            </div>
+                        </div>
+                        )
+                    })
+                    /* this.state.quizCardSet[this.state.selectedCardIndex].answer?
+                    <div key={this.state.quizCardSet[this.state.selectedCardIndex].term} className='level-item level-right'>
+                            <div onClick={this.showNextQuestion} className={correctCard}>
+                                <h1>Definition: </h1>
+                                <h1>{this.state.quizCardSet[this.state.selectedCardIndex].definition}</h1>
+                            </div>
+                        </div>
+                        : this.state.userHasChosen */
+                :  // If user hasn't picked anything yet, render everything
+                this.state.quizCardSet.map((card,index) => {
                     return(
                         <div key={card.term+index} className='level-item level-right'>
                         <div onClick={() => {this.answerClicked(index)}} className="box flashcard-box has-text-centered">
@@ -75,6 +133,32 @@ class Quiz extends Component {
                         </div>
                     </div>
                 )})}
+                {/* this.state.quizCardSet.map((card,index) => {
+                    return( // FIgure it out here
+                        card.answer 
+                        ? <div key={card.term+index} className='level-item level-right'>
+                            <div onClick={this.showNextQuestion} className={correctCard}>
+                                <h1>Definition: </h1>
+                                <h1>{card.definition}</h1>
+                            </div>
+                        </div> 
+                        : <div key={card.term+index} className='level-item level-right'>
+                            <div onClick={this.showNextQuestion} className={wrongCard}>
+                                <h1>Definition: </h1>
+                                <h1>{card.definition}</h1>
+                            </div>
+                        </div> 
+                    ) // Don't worry about down here
+                }) 
+                 : this.state.quizCardSet.map((card,index) => {
+                    return(
+                        <div key={card.term+index} className='level-item level-right'>
+                        <div onClick={() => {this.answerClicked(index)}} className="box flashcard-box has-text-centered">
+                            <h1>Definition: </h1>
+                            <h1>{card.definition}</h1>
+                        </div>
+                    </div>
+                )})} */}
             
             </div>
         </div>

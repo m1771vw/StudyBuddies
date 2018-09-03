@@ -228,6 +228,13 @@ h1 {
   margin-right:auto;
 }
 
+.is-correct-card {
+  background-color: green;
+}
+
+.is-wrong-card {
+  background-color: red;
+}
 /* SIGNUP VIEW
 */
 .signup-field{
