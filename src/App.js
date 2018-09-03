@@ -20,13 +20,13 @@ import { HOMEPAGE, LOGIN_VIEW, SIGNUP_VIEW, PROFILE_VIEW, DASHBOARD, CREATE_VIEW
 
 class App extends Component {
   state = {
-    pageName: HOMEPAGE,
+    pageName: QUIZ,
     userList: Users,
     flashCardSets: FlashCards, // All the Cards
-    selectedCardSet: [], // Selected card set of cards
-    // selectedCardSet: FlashCards[1], // Dummy data to have Quiz as Start Up page
-    userLoggedIn: false,
-    currentUser: "",    
+    // selectedCardSet: [], // Selected card set of cards
+    selectedCardSet: FlashCards[1], // Dummy data to have Quiz as Start Up page
+    userLoggedIn: true,
+    currentUser: [],    
     selectedCardSetIndex: 0
   }
 
@@ -68,7 +68,8 @@ class App extends Component {
   logOut = () => {
     this.setState({
       pageName: HOMEPAGE,
-      userLoggedIn: false
+      userLoggedIn: false,
+      currentUser: []
     })
   }
 
@@ -76,7 +77,7 @@ class App extends Component {
     let newUser = [...this.state.userList, user]
     this.setState({
       userList: newUser,
-    })
+    }, ()=>{this.changePageName(LOGIN_VIEW)})
   }
 
   addToCards = card => {

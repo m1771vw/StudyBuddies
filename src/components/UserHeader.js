@@ -9,7 +9,7 @@ class UserHeader extends Component {
                     <div id="navbarExampleTransparentExample" className="navbar-menu">
                         <div className="navbar-start">
                         <button onClick={() => {this.props.changePageName(DASHBOARD)}} className='button is-rounded is-info header-button'>
-                            <i class="fas fa-home"></i></button>
+                            <i className="fas fa-home"></i></button>
                             <div className="navbar-item has-dropdown is-hoverable">
                             <a className="navbar-link is-rounded is-white header-button">
                                             Card Sets  
@@ -18,7 +18,7 @@ class UserHeader extends Component {
                                 <a onClick={() => {this.props.changePageName(CREATE_VIEW)}} className="navbar-item">
                                             Create New
                                             </a>
-                                <hr class="dropdown-divider"/>
+                                <hr className="dropdown-divider"/>
                                 {this.props.flashCardSets.map((cardsets, index) => {
                                     return (
                                             <a onClick={() => {this.props.selectCardSet(index)}} key={cardsets+index} className="navbar-item">

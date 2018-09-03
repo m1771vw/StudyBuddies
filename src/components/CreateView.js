@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TermDefInput from './TermDefInput';
-import { DASHBOARD, VIEW_SET } from '../constants/';
+
 class CreateView extends Component {
 
     state = {
@@ -99,8 +99,6 @@ class CreateView extends Component {
                             />
                         </div>
                     ))}
-
-
                 </div>
                 <div className="level" id="create-button-container">
                     <div className='add-button-container'>

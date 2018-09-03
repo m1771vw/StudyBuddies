@@ -15,7 +15,7 @@ class HomePageHeader extends Component {
                 <div className="navbar-brand header-button">
                     <button onClick={() => {this.props.changePageName(HOMEPAGE)}} className="button is-primary">
                         <span className="icon">
-                            <i class="fas fa-id-card"/>
+                            <i className="fas fa-id-card"/>
                         </span>
                         <span>Study Buddies</span>
                     </button>

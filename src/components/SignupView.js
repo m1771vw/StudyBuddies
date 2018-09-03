@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {LOGIN_VIEW} from '../constants'
 
 class SignupView extends Component {
     state = {
@@ -107,11 +106,7 @@ class SignupView extends Component {
                             placeholder="Confirm password" />
                     </div>
                 </div>
-
-
-
-
-                <button className='button is-primary' onClick={this.addUser} onClick={() => { this.props.changePageName(LOGIN_VIEW) }}>Sign Up</button>
+                <button className='button is-primary' onClick={this.addUser}>Sign Up</button>
     
             </div>
             </div>

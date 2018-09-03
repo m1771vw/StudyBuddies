@@ -1,14 +1,14 @@
 import { WRONG_ANSWER, CORRECT_ANSWER } from '../constants/'
 
-const generateRandom = (cardSetLength, excludeIndex) => {
+const generateRandomNumberExcluding = (cardSetLength, excludeIndex) => {
   let num = Math.floor(Math.random() * (cardSetLength));
-  return (num === excludeIndex)? generateRandom(cardSetLength, excludeIndex) : num;
+  return (num === excludeIndex)? generateRandomNumberExcluding(cardSetLength, excludeIndex) : num;
 }
 
-const generateArray = (cardSetLength, excludeIndex) => {
+const generateRandomNumberArray = (cardSetLength, excludeIndex) => {
     var arr = []
     while(arr.length < 3){
-      let num = generateRandom(cardSetLength, excludeIndex)
+      let num = generateRandomNumberExcluding(cardSetLength, excludeIndex)
       if(arr.indexOf(num) > -1) continue;
       arr[arr.length] = num;
     }
@@ -16,7 +16,7 @@ const generateArray = (cardSetLength, excludeIndex) => {
 }
 
 export const selectQuizCards = (cardSet, cardSetIndex) => {
-    let randomCardIndex = generateArray(cardSet.length, cardSetIndex)
+    let randomCardIndex = generateRandomNumberArray(cardSet.length, cardSetIndex)
     let quizSet = [];
     quizSet[0] = cardSet[cardSetIndex];
     quizSet[1] = cardSet[randomCardIndex.pop()]
@@ -29,9 +29,9 @@ export const selectQuizCards = (cardSet, cardSetIndex) => {
   export const chooseRightCard = (cardSet, cardSetIndex) => {
   
     for(let i = 0; i < cardSet.length;i++){
-        cardSet[i]['answer'] = WRONG_ANSWER
+        cardSet[i]['answer'] = false
     }
-    cardSet[0]['answer'] = CORRECT_ANSWER
+    cardSet[0]['answer'] = true
     return cardSet
   }
   

@@ -89,42 +89,38 @@ class EditView extends Component {
                         value={this.state.description} onChange={this.onChange2}
                         rows="7"></textarea>
                 </div>
-                {this.state.cards.map((card, index) => (
-                    <div className='create-card-form'>
-                    <button onClick={() => { this.deleteClicked(index) }} className='button'>X</button>
-                        <TermDefInput
-                            key={index}
-                            card={card}
-                            change={this.change}
-                            index={index}
-                            
-                        />
-                        </div>
-                    ))}
-            
-
-                <div className="level" id="createbutton1">
-                    <button className="button is-large level-item" onClick={this.addCard}>+</button>
-                    <button className="button is-large level-item" onClick={() => {
-                         this.props.updateCardSet(this.state)
-                         this.setState({
-                             setname: '',
-                             description: '',
-                             cards: [
-                                { term: '', definition: '' },
-                                { term: '', definition: '' },
-                                { term: '', definition: '' },
-                                { term: '', definition: '' }
-                             ]
-                         }) 
-                        }
-                        
-                        } >
-
-                        Update Set</button>
+                <div className='field input-forms-container'>
+                    {this.state.cards.map((card, index) => (
+                        <div className='control term-def-container'>
+                            <TermDefInput
+                                key={index}
+                                card={card}
+                                change={this.change}
+                                index={index}
+                                deleteClicked={this.deleteClicked}
+                            />
+                            </div>
+                        ))}
                 </div>
-
-
+                <div className="level" id="create-button-container">
+                    <div className='add-button-container'>
+                        <button className="button is-large level-item" onClick={this.addCard}>+</button>
+                    </div>
+                    <div className='submit-button-container'>
+                        <button className="button is-large level-item" onClick={() => {
+                            this.props.updateCardSet(this.state)
+                            this.setState({
+                                setname: '',
+                                description: '',
+                                cards: [
+                                    { term: '', definition: '' },
+                                    { term: '', definition: '' },
+                                    { term: '', definition: '' },
+                                    { term: '', definition: '' }
+                                ]
+                            })}} > Update Set</button>
+                    </div>
+                </div>
             </div>
         );
     }
