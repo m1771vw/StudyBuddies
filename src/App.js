@@ -50,11 +50,9 @@ class App extends Component {
       ...this.state.flashCardSets.slice(this.state.selectedCardSetIndex + 1)
     ];
 
-    //   card, 
-    //   ...this.state.flashCardSets(this.state.selectedCardSetIndex + 1)];
     this.setState({
       flashCardSets: tempSet
-    })
+    }, ()=>{this.selectCardSet(this.state.selectedCardSetIndex)})
   }
 
   authenticateUser = user => {
