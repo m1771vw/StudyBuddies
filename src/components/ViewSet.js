@@ -5,7 +5,6 @@ import { func, object } from 'prop-types';
 
 class Viewset extends Component {
     state = {
-        // showTerms: true,
         selectedCardSet: this.props.selectedCardSet.cards.map(x => ({ ...x, showTerms: true }))
     }
 
@@ -18,6 +17,7 @@ class Viewset extends Component {
             cards: cardSetCopy
         })
     }
+
     render() {
         return (
             <div>

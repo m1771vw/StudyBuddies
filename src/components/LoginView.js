@@ -26,17 +26,14 @@ class LoginView extends Component {
             email: '',
             password: ''
         })
-        // this.props.changePageName(DASHBOARD)
     }
-
 
     render() {
         return (
             <div className="log-in-container">
             <form className="login-form" onSubmit={(event) => {this.onLoginClick(event)}}>
             <div className="login-field box">
-            <h1 className="sign-title type-writer-font">Log in to Study Buddies
-                </h1>
+            <h1 className="sign-title type-writer-font">Log in to Study Buddies </h1>
                 <div className="field">
                     <label className="label is-medium roboto-font">Email</label>
                     <div className="control has-icons-left has-icons-right">
@@ -45,10 +42,8 @@ class LoginView extends Component {
                         <span className="icon is-small is-left">
                             <i className="fas fa-envelope"></i>
                         </span>
-
                     </div>
                 </div>
-
                 <div className="field">
                     <label className="label is-medium roboto-font">Password</label>
                     <div className="control">
@@ -58,16 +53,12 @@ class LoginView extends Component {
                     </div>
                 </div>
                 <label className="checkbox roboto-font"> <input type="checkbox"></input> Remember me</label>
-                
                 <div>
-                <button className='button is-watermelon roboto-font' >Login</button>
+                    <button className='button is-watermelon roboto-font' >Login</button>
                 </div>
-                
             </div>
             </form>
-        </div>
-                
-            
+        </div>  
         );
     }
 }

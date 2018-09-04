@@ -20,7 +20,6 @@ class SignupView extends Component {
         })
     }
 
-
     onChange = event => {
         this.setState({
             email: event.target.value
@@ -56,8 +55,7 @@ class SignupView extends Component {
             <div className="sign-up-container">
                 <form className="Form"  onSubmit={this.addUser}>
                     <div className="signup-field box sign-up-box" >
-                        <h1 className="sign-title type-writer-font">Create your account
-                </h1>
+                        <h1 className="sign-title type-writer-font">Create your account</h1>
                         <div className="field">
                             <label className="label is-medium roboto-font"> Name</label>
                             <div className="control">
@@ -66,7 +64,6 @@ class SignupView extends Component {
                                     placeholder="Name" />
                             </div>
                         </div>
-
                         <div className="field">
                             <label className="label is-medium roboto-font">Username</label>
                             <div className="control has-icons-left has-icons-right">
@@ -77,7 +74,6 @@ class SignupView extends Component {
                                 </span>
                             </div>
                         </div>
-
                         <div className="field">
                             <label className="label is-medium roboto-font">Email</label>
                             <div className="control has-icons-left has-icons-right">
@@ -86,10 +82,8 @@ class SignupView extends Component {
                                 <span className="icon is-small is-left">
                                     <i className="fas fa-envelope"></i>
                                 </span>
-
                             </div>
                         </div>
-
                         <div className="field">
                             <label className="label is-medium roboto-font">Password</label>
                             <div className="control">
@@ -98,7 +92,6 @@ class SignupView extends Component {
                                     placeholder="Password" />
                             </div>
                         </div>
-
                         <div className="field">
                             <label className="label is-medium roboto-font">Confirm password</label>
                             <div className="control">
@@ -108,7 +101,6 @@ class SignupView extends Component {
                             </div>
                         </div>
                         <button className='button is-primary'>Sign Up</button>
-
                     </div>
                 </form>
             </div>

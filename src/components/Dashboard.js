@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { array, func } from 'prop-types';
 import { RANDOM_COLORS, CREATE_VIEW } from '../constants'
 
-
 class Dashboard extends Component {
     randomNumber = () => {
         return Math.floor(Math.random() * RANDOM_COLORS.length)
@@ -13,7 +12,7 @@ class Dashboard extends Component {
                 <div className="type-writer-font" id='dashboard-text'>Welcome To Your Dashboard, {this.props.currentUser.displayName}!</div>
                 <div className='level'>
                     <div className='flashcard-flex-container'>
-                        <div className=''>
+                        <div>
                             <button onClick={() => { this.props.changePageName(CREATE_VIEW) }} className='button dashboard-button flashcard-box dashboard-create-flashcard'>+</button>
                         </div>
                         {this.props.flashCardSets.map((cardsets, index) => {

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import TermDefInput from './TermDefInput';
 import {RANDOM_COLORS} from '../constants';
 class CreateView extends Component {
-
     state = {
         setname: '',
         description: '',
@@ -82,10 +81,8 @@ class CreateView extends Component {
                         <input className="input button-border set-name-field"
                             value={this.state.setname} onChange={this.onChange}
                             type="text" required placeholder="Enter set name here..." />
-
                     </div>
                 </div>
-
                 <div className="level text-area-level">
                     <textarea className="button-border textarea"
                         value={this.state.description} onChange={this.onChange2} placeholder="Enter description here..."

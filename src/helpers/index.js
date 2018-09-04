@@ -27,7 +27,6 @@ export const selectQuizCards = (cardSet, cardSetIndex) => {
   }
   
   export const chooseRightCard = (cardSet, cardSetIndex) => {
-  
     for(let i = 0; i < cardSet.length;i++){
         cardSet[i]['answer'] = false
     }
