@@ -175,6 +175,10 @@ h1 {
   align-items: center;
   text-align: center;
   justify-content: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+
 }
 .flashcard-box{
   width: 275px;
@@ -278,7 +282,7 @@ h1 {
 }
 .flashcard-answer-container {
   width: 90vw;
-    
+
 }
 .flashcard-question{
   width: 400px;
@@ -321,6 +325,9 @@ h1 {
   align-items: center;
   text-align: center;
   justify-content: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .is-correct-card {

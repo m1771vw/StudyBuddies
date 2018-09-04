@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
-import { VIEW_SET } from '../constants'
+import { VIEW_SET, QUIZ } from '../constants'
+const QUIZ_RESULT_ANSWERS = ['Wow, you did great!', "You're almost there, study some more!", "Don't worry, study some more and try again!", "We all have those days, don't let it get you down!"]
 class QuizResults extends Component {
     render() {
+        let percentCorrect = Math.round(this.props.scoreCorrect/this.props.selectedCardSet.cards.length*100);
+        let percentMissed = Math.round(this.props.scoreMissed/this.props.selectedCardSet.cards.length*100)
         return (
             <div>
                 <div className="level profile-level">
                 <div className="box profile-box">
                 <h1>Quiz Results:</h1>
                 <h1>{this.props.selectedCardSet.setname}</h1>
-                <h1 className="green-card">Total Correct: {this.props.scoreCorrect} ({Math.round(this.props.scoreCorrect/this.props.selectedCardSet.cards.length*100)}%)</h1>
-                <h1 className="red-card">Total Missed: {this.props.scoreMissed}  ({Math.round(this.props.scoreMissed/this.props.selectedCardSet.cards.length*100)}%)</h1>
+                <h1 className="green-text">Total Correct: {this.props.scoreCorrect} ({percentCorrect}%)</h1>
+                <h1 className="red-text">Total Missed: {this.props.scoreMissed}  ({percentMissed}%)</h1>
+                <h1>{percentCorrect <= 25 ? QUIZ_RESULT_ANSWERS[3] : percentCorrect <= 50 ? QUIZ_RESULT_ANSWERS[2] : percentCorrect <= 75 ? QUIZ_RESULT_ANSWERS[1] : QUIZ_RESULT_ANSWERS[0]}</h1>
                 </div></div>
                 <div className='level-item'>
 
