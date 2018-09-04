@@ -59,7 +59,8 @@ class EditView extends Component {
         })
     }
 
-    deleteClicked = index => {
+    deleteClicked = (event, index) => {
+        event.preventDefault()
         let newCards = [...this.state.cards.slice(0, index),
         ...this.state.cards.slice(index + 1)]
         this.setState({
@@ -72,7 +73,8 @@ class EditView extends Component {
     render() {
         return (
             <div className="edit-view-form">
-            <form onSubmit={() => {
+            <form onSubmit={(event) => {
+                            event.preventDefault()
                             this.props.updateCardSet(this.state)
                             this.setState({
                                 setname: '',
