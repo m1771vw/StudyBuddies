@@ -27,7 +27,7 @@ class HomePageHeader extends Component {
                         <p className="control">
                             <a onClick={()=>{this.props.changePageName(SIGNUP_VIEW)}} className="button button-border">
                             <span className="icon">
-                            <i className="fas fa-user-plus"/>
+                            <i className="fas fa-user-plus roboto-font"/>
                             </span>
                             <span>
                                 Sign Up
@@ -37,7 +37,7 @@ class HomePageHeader extends Component {
                         <p className="control">
                             <a onClick={()=>{this.props.changePageName(LOGIN_VIEW)}} className="button is-watermelon">
                             <span className="icon">
-                            <i className="fas fa-sign-in-alt"/>
+                            <i className="fas fa-sign-in-alt roboto-font"/>
                             </span>
                             <span>Log In</span>
                             </a>

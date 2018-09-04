@@ -10,7 +10,7 @@ class Dashboard extends Component {
     render() {
         return (
             <div>
-                <div id='dashboard-text'>Welcome To Your Dashboard, {this.props.currentUser.displayName}!</div>
+                <div className="type-writer-font" id='dashboard-text'>Welcome To Your Dashboard, {this.props.currentUser.displayName}!</div>
                 <div className='level'>
                     <div className='flashcard-flex-container'>
                         <div className=''>
@@ -18,7 +18,7 @@ class Dashboard extends Component {
                         </div>
                         {this.props.flashCardSets.map((cardsets, index) => {
                             return(
-                                <div key={cardsets+index} className='viewset-flashcard '>
+                                <div key={cardsets+index} className='viewset-flashcard roboto-font '>
                                     <button onClick={() => {this.props.selectCardSet(index)}} style={{backgroundColor: cardsets.cardColor}} className='button is-success dashboard-button flashcard-box dashboard-button-text viewset-flashcard dashboard-display-flashcard'>{cardsets.setname}</button>
                                     {/* <button onClick={() => {this.props.selectCardSet(index)}} style={{backgroundColor: RANDOM_COLORS[this.randomNumber()]}} className='button is-success dashboard-button flashcard-box dashboard-button-text'>{cardsets.setname}</button> */}
                                 </div>

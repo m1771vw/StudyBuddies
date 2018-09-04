@@ -72,13 +72,25 @@ class EditView extends Component {
     render() {
         return (
             <div className="edit-view-form">
+            <form onSubmit={() => {
+                            this.props.updateCardSet(this.state)
+                            this.setState({
+                                setname: '',
+                                description: '',
+                                cards: [
+                                    { term: '', definition: '' },
+                                    { term: '', definition: '' },
+                                    { term: '', definition: '' },
+                                    { term: '', definition: '' }
+                                ]
+                            })}} >
                 <div className="level">
                     <div className='level-item level-left'>
                             <button onClick={() => {this.props.selectCardSet(this.props.selectedCardSetIndex)}} className='button is-watermelon'>Return to View</button>
                         </div>
                     <div className="level-item edit-set-name-field">
                         <input className="input button-border set-name-field"
-                        value={this.state.setname} onChange={this.onChange}
+                        value={this.state.setname} required onChange={this.onChange}
                             type="text" placeholder="Enter set name here..." />
 
                     </div>
@@ -108,20 +120,10 @@ class EditView extends Component {
                         <button className="button button-border is-large level-item" onClick={this.addCard}>+</button>
                     </div>
                     <div className='submit-button-container'>
-                        <button className="button button-border is-large level-item" onClick={() => {
-                            this.props.updateCardSet(this.state)
-                            this.setState({
-                                setname: '',
-                                description: '',
-                                cards: [
-                                    { term: '', definition: '' },
-                                    { term: '', definition: '' },
-                                    { term: '', definition: '' },
-                                    { term: '', definition: '' }
-                                ]
-                            })}} > Update Set</button>
+                        <button className="button button-border is-large level-item" > Update Set</button>
                     </div>
                 </div>
+                </form>
             </div>
         );
     }
