@@ -25,9 +25,11 @@ class App extends Component {
     flashCardSets: FlashCards, // All the Cards
     // selectedCardSet: [], // Selected card set of cards
     selectedCardSet: FlashCards[1], // Dummy data to have Quiz as Start Up page
-    userLoggedIn: false,
+    userLoggedIn: true,
     currentUser: [],    
-    selectedCardSetIndex: 0
+    selectedCardSetIndex: 0,
+    scoreCorrect: 0,
+    scoreMissed: 0
   }
 
   /**
@@ -48,11 +50,9 @@ class App extends Component {
       ...this.state.flashCardSets.slice(this.state.selectedCardSetIndex + 1)
     ];
 
-    //   card, 
-    //   ...this.state.flashCardSets(this.state.selectedCardSetIndex + 1)];
     this.setState({
       flashCardSets: tempSet
-    })
+    }, ()=>{this.selectCardSet(this.state.selectedCardSetIndex)})
   }
 
   authenticateUser = user => {
@@ -106,6 +106,12 @@ class App extends Component {
       selectedCardSet: cardSet
     })
   }
+  setupQuizResults = (scoreCorrect, scoreMissed) => {
+    this.setState({
+      scoreCorrect: scoreCorrect,
+      scoreMissed: scoreMissed
+    }, () => {this.changePageName(QUIZ_RESULTS )})
+  }
   setPage = pageName => {
     switch (pageName) {
       case HOMEPAGE:
@@ -148,10 +154,14 @@ class App extends Component {
         selectedCardSet={this.state.selectedCardSet} 
         changePageName={this.changePageName}
         selectedCardSetIndex={this.state.selectedCardSetIndex}
+        setupQuizResults={this.setupQuizResults}
         />)  
       case QUIZ_RESULTS:
         return (<QuizResults
           changePageName={this.changePageName}
+          selectedCardSet={this.state.selectedCardSet}
+          scoreCorrect={this.state.scoreCorrect}
+          scoreMissed={this.state.scoreMissed}
         />)
       case EDIT:
             return(<EditView 

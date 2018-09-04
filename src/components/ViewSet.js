@@ -22,20 +22,16 @@ class Viewset extends Component {
         return (
             <div>
                 <div className="level">
-                    <div className="cardset-info-flex-container">
+                    <div className="cardset-info-flex-container level-item level-left">
                         <div className='cardset-setname-flex-container'>
                             <div className="setname-box ">
                                 <h1 className="setname-text">{this.props.selectedCardSet.setname}</h1>
-
+                                <h2>{this.props.selectedCardSet.description}</h2>
                             </div>
                             <div className='cardset-options-flex-container'>
                                 <button className="button is-danger" onClick={() => { this.props.changePageName(EDIT) }}>Edit</button>
                                 <button className="button is-success" onClick={() => { this.props.setupQuiz(QUIZ, this.props.selectedCardSet) }}>Quiz!</button>
                             </div>
-                        </div>
-                        <div className="box description-box">
-                            <h1>Description</h1>
-                            <p>{this.props.selectedCardSet.description}</p>
                         </div>
                     </div>
                 </div>
@@ -44,11 +40,10 @@ class Viewset extends Component {
                         {this.state.selectedCardSet.map((card, index) => {
                             return (
                                 <div onMouseEnter={() => { this.showOtherSide(index) }} onMouseLeave={() => { this.showOtherSide(index) }} key={card + index} className='level-item level-left'>
-                                    <div className="box flashcard-box">
+                                    <div className="box flashcard-box viewset-flashcard">
                                         {
                                             card['showTerms']
-                                                ? (<div className='has-text-centered'>
-                                                    <h1>Term: </h1>
+                                                ? (<div className='has-text-centered term-text'>
                                                     <h1>{card.term}</h1>
                                                     </div>)
                                                 : (<div className='has-text-centered'>
