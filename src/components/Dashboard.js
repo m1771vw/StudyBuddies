@@ -18,8 +18,8 @@ class Dashboard extends Component {
                         </div>
                         {this.props.flashCardSets.map((cardsets, index) => {
                             return(
-                                <div key={cardsets+index} className=''>
-                                    <button onClick={() => {this.props.selectCardSet(index)}} style={{backgroundColor: cardsets.cardColor}} className='button is-success dashboard-button flashcard-box dashboard-button-text'>{cardsets.setname}</button>
+                                <div key={cardsets+index} className='viewset-flashcard '>
+                                    <button onClick={() => {this.props.selectCardSet(index)}} style={{backgroundColor: cardsets.cardColor}} className='button is-success dashboard-button flashcard-box dashboard-button-text viewset-flashcard dashboard-display-flashcard'>{cardsets.setname}</button>
                                     {/* <button onClick={() => {this.props.selectCardSet(index)}} style={{backgroundColor: RANDOM_COLORS[this.randomNumber()]}} className='button is-success dashboard-button flashcard-box dashboard-button-text'>{cardsets.setname}</button> */}
                                 </div>
                             )
