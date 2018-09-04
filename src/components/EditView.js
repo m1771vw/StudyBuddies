@@ -26,6 +26,7 @@ class EditView extends Component {
 
 
     addCard = e => {
+        e.preventDefault()
         let newCards = [...this.state.cards, { term: '', definition: '' }];
         this.setState({ cards: newCards })
     }
@@ -119,7 +120,7 @@ class EditView extends Component {
                 </div>
                 <div className="level" id="create-button-container">
                     <div className='add-button-container'>
-                        <button className="button button-border is-large level-item" onClick={this.addCard}>+</button>
+                        <button className="button button-border is-large level-item" onClick={(e) => {this.addCard(e)}}>+</button>
                     </div>
                     <div className='submit-button-container'>
                         <button className="button button-border is-large level-item" > Update Set</button>

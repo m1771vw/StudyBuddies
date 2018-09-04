@@ -60,8 +60,8 @@ class Quiz extends Component {
     }
 
     render() {
-        let correctCard = "box flashcard-box has-text-centered is-correct-card";
-        let wrongCard = "box flashcard-box has-text-centered is-wrong-card";
+        let correctCard = "box flashcard-box has-text-centered quiz-flashcard-wordwrap is-correct-card";
+        let wrongCard = "box flashcard-box has-text-centered quiz-flashcard-wordwrap is-wrong-card";
     return (
         <div>
             <div className="level">
@@ -95,7 +95,7 @@ class Quiz extends Component {
                         } else {
                             return(
                         <div key={card.term+index} className='level-item level-right'>
-                            <div onClick={ () => {this.showNextQuestion(false)}} className='box flashcard-box has-text-centered'>
+                            <div onClick={ () => {this.showNextQuestion(false)}} className='box flashcard-box has-text-centered quiz-flashcard-wordwrap'>
                                 <h1>Definition: </h1>
                                 <h1>{card.definition}</h1>
                             </div>
@@ -125,7 +125,7 @@ class Quiz extends Component {
                         } else
                         return(
                             <div key={card.term+index} className='level-item level-right'>
-                            <div onClick={ () => {this.showNextQuestion(false)}} className='box flashcard-box has-text-centered'>
+                            <div onClick={ () => {this.showNextQuestion(false)}} className='box flashcard-box has-text-centered quiz-flashcard-wordwrap'>
                                 <h1>Definition: </h1>
                                 <h1>{card.definition}</h1>
                             </div>
@@ -135,7 +135,7 @@ class Quiz extends Component {
                 : this.state.quizCardSet.map((card,index) => {
                     return(
                         <div key={card.term+index} className='level-item level-right'>
-                        <div onClick={() => {this.answerClicked(index)}} className="box flashcard-box has-text-centered">
+                        <div onClick={() => {this.answerClicked(index)}} className="box flashcard-box has-text-centered quiz-flashcard-wordwrap">
                             <h1>Definition: </h1>
                             <h1>{card.definition}</h1>
                         </div>

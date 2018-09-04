@@ -26,6 +26,7 @@ class CreateView extends Component {
     }
 
     addCard = e => {
+        e.preventDefault()
         let newCards = [...this.state.cards, { term: '', definition: '' }];
         this.setState({ cards: newCards })
     }
@@ -105,7 +106,7 @@ class CreateView extends Component {
                 </div>
                 <div className="level" id="create-button-container">
                     <div className='add-button-container'>
-                    <button className="button button-border is-large" onClick={this.addCard}>+</button>
+                    <button className="button button-border is-large" onClick={(e) => {this.addCard(e)}}>+</button>
                     </div>
                     <div className='submit-button-container'>
                     <button className="button button-border is-large" >
