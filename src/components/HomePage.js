@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SIGNUP_VIEW } from '../constants';
+import { SIGNUP_VIEW, LOGIN_VIEW } from '../constants';
 import AboutUs from '../components/AboutUs';
 
 class HomePage extends Component {
@@ -16,7 +16,7 @@ class HomePage extends Component {
                             Share and create flashcards! 
                     </h2>
                     <div className='home-signup-container'>
-                        <button onClick={() => {this.props.changePageName(SIGNUP_VIEW)}} className="button is-watermelon">Sign up for free </button><span className='home-login-text'>or <a>log in</a></span>
+                        <button onClick={() => {this.props.changePageName(SIGNUP_VIEW)}} className="button is-watermelon">Sign up for free </button><span className='home-login-text'>or <a onClick={() => {this.props.changePageName(LOGIN_VIEW)}}>log in</a></span>
                     </div>
                 </div>
                 </div>
@@ -27,7 +27,7 @@ class HomePage extends Component {
             <footer className="hero-foot is-small secondGrad home-page-gradient">
             <div className="hero-body">
             <div className="container title-text2">
-            <h1 className="title">
+            <h1 className="title type-writer-font">
                         Study Buddies </h1>
             <h2>About</h2>
             <p>Creators</p>

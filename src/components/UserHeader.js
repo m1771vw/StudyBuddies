@@ -8,10 +8,10 @@ class UserHeader extends Component {
                 <div className=''>
                     <div id="navbarExampleTransparentExample" className="navbar-menu">
                         <div className="navbar-start">
-                        <button onClick={() => {this.props.changePageName(DASHBOARD)}} className='button is-rounded is-info header-button'>
-                            <i className="fas fa-home"></i></button>
+                        <button onClick={() => {this.props.changePageName(DASHBOARD)}} className='button is-rounded is-black header-button'>
+                            <i className="fas fa-home is"></i></button>
                             <div className="navbar-item has-dropdown is-hoverable">
-                            <a className="navbar-link is-rounded is-white header-button">
+                            <a className="navbar-link is-rounded is-white header-button roboto-font">
                                             Card Sets  
                             </a>
                                 <div className="navbar-dropdown is-boxed">

@@ -11,8 +11,9 @@ class AboutUs extends Component {
             <div className="about-us-container">
             <figure className="image">
                 <img className='about-us-photo' src={AboutUsPhoto} alt="The creators photo"/>
-              <div className="">
-                <div className="top-right creator-font">Meet the creators of Study Buddies</div>
+              <div className>
+                <div className="top-right creator-font type-writer-font">Southern California's Hottest Duo</div>
+                
                </div>
             </figure>
            

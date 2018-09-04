@@ -9,15 +9,15 @@ class QuizResults extends Component {
             <div>
                 <div className="level profile-level">
                 <div className="box profile-box">
-                <h1>Quiz Results:</h1>
+                <h1 className="type-writer-font" id="quiz-results">Quiz Results:</h1>
                 <h1>{this.props.selectedCardSet.setname}</h1>
-                <h1 className="green-text">Total Correct: {this.props.scoreCorrect} ({percentCorrect}%)</h1>
-                <h1 className="red-text">Total Missed: {this.props.scoreMissed}  ({percentMissed}%)</h1>
-                <h1>{percentCorrect <= 25 ? QUIZ_RESULT_ANSWERS[3] : percentCorrect <= 50 ? QUIZ_RESULT_ANSWERS[2] : percentCorrect <= 75 ? QUIZ_RESULT_ANSWERS[1] : QUIZ_RESULT_ANSWERS[0]}</h1>
+                <h1 className="green-text roboto-font">Total Correct: {this.props.scoreCorrect} ({percentCorrect}%)</h1>
+                <h1 className="red-text roboto-font">Total Missed: {this.props.scoreMissed}  ({percentMissed}%)</h1>
+                <h1 className="roboto-font">{percentCorrect <= 25 ? QUIZ_RESULT_ANSWERS[3] : percentCorrect <= 50 ? QUIZ_RESULT_ANSWERS[2] : percentCorrect <= 75 ? QUIZ_RESULT_ANSWERS[1] : QUIZ_RESULT_ANSWERS[0]}</h1>
                 </div></div>
                 <div className='level-item'>
 
-                <button className='button is-watermelon' onClick={() => {this.props.changePageName(VIEW_SET)}}>Return to Card Set</button>
+                <button className='button is-watermelon roboto-font' onClick={() => {this.props.changePageName(VIEW_SET)}}>Return to Card Set</button>
                 </div>
             </div>
         );
