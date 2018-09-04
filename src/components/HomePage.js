@@ -29,11 +29,11 @@ class HomePage extends Component {
             <div className="container title-text2">
             <h1 className="title type-writer-font">
                         Study Buddies </h1>
-            <h2>About</h2>
-            <p>Creators</p>
-            <p>Privacy</p>
-            <p>Jobs</p>
-            <p>Terms</p>
+            <h2 className="robot-font">About</h2>
+            <p className="robot-font">Creators</p>
+            <p className="robot-font">Privacy</p>
+            <p className="robot-font">Jobs</p>
+            <p className="robot-font">Terms</p>
                 
             </div>
             </div>

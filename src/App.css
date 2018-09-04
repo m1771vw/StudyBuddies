@@ -442,11 +442,27 @@ h1 {
   top: 8px;
   right: 16px;
 }
-
+.about-us-font{
+  padding-top: 110px;
+  font-size: 1.5rem;
+  
+  align-items: center;
+  text-align: left;
+  justify-content: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+#aspire{
+  padding-left: 10px;
+}
 .top-right{
   position: absolute;
     top: 8px;
     right: 16px;
+    width: 450px;
+    text-align: left;
+    padding-left: 50px;
 }
 
 .creator-font{
@@ -454,6 +470,8 @@ h1 {
   font-size: 2rem;
   margin-right: 75px; 
   margin-top: 55px;
+  padding-top: 70px; 
+  
 }
 
 
