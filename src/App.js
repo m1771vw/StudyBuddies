@@ -61,7 +61,7 @@ class App extends Component {
       console.log("User logged in!")
       this.setState({ userLoggedIn: true, pageName: DASHBOARD, currentUser: this.state.userList[this.state.userList.findIndex(x => x.email === user.email)]});
     } else {
-      console.log("User trying to log!")
+      alert("Email or Password incorrect! Please try again.")
       this.setState({ userLoggedIn: false });
     }
   }
