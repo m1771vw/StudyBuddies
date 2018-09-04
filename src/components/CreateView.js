@@ -74,11 +74,12 @@ class CreateView extends Component {
     render() {
         return (
             <div id='create-view-form'>
+            <form onSubmit={this.submitSet}>
                 <div className="level">
                     <div className="level-item has-text-centered">
                         <input className="input button-border set-name-field"
                             value={this.state.setname} onChange={this.onChange}
-                            type="text" placeholder="Enter set name here..." />
+                            type="text" required placeholder="Enter set name here..." />
 
                     </div>
                 </div>
@@ -106,10 +107,11 @@ class CreateView extends Component {
                     <button className="button button-border is-large" onClick={this.addCard}>+</button>
                     </div>
                     <div className='submit-button-container'>
-                    <button className="button button-border is-large" onClick={this.submitSet}>
+                    <button className="button button-border is-large" >
                         Submit Set</button>
                     </div>
                 </div>
+                </form>
             </div>
         );
     }

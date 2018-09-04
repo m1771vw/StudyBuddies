@@ -10,10 +10,10 @@ class ProfileView extends Component {
             <div>
                 <div className="level profile-level">
                 <div className="box profile-box">
-                    <div id='dashboard-text'>Welcome To Your Profile {this.props.currentUser.displayName}!</div>
-                    <h1>Email: {this.props.currentUser.email}</h1>
-                    <h1>Name: {this.props.currentUser.fullName}</h1>
-                    <h1>Display Name: {this.props.currentUser.displayName}</h1>
+                    <div className="type-writer-font"id='dashboard-text'>Welcome To Your Profile {this.props.currentUser.displayName}!</div>
+                    <h1 className="roboto-font">Email: {this.props.currentUser.email}</h1>
+                    <h1 className="roboto-font">Name: {this.props.currentUser.fullName}</h1>
+                    <h1 className="roboto-font">Display Name: {this.props.currentUser.displayName}</h1>
                     
                 </div>
                 </div>

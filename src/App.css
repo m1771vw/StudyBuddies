@@ -58,8 +58,8 @@ h1 {
 }
 .secondGrad{
   background-image: linear-gradient(to top left,  
-  rgb(245, 245, 177),
-  rgb(250, 229, 1));
+  rgb(185, 230, 240),
+  rgb(124, 222, 240))
 }
 
 .title-text {
@@ -352,6 +352,10 @@ h1 {
 .green-text {
   color: rgb(0, 180, 0);
 }
+
+#quiz-results{
+  font-size: 2rem;
+}
 /* SIGNUP VIEW
 */
 .signup-field{
@@ -438,16 +442,36 @@ h1 {
   top: 8px;
   right: 16px;
 }
-
+.about-us-font{
+  padding-top: 110px;
+  font-size: 1.5rem;
+  
+  align-items: center;
+  text-align: left;
+  justify-content: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+#aspire{
+  padding-left: 10px;
+}
 .top-right{
   position: absolute;
     top: 8px;
     right: 16px;
+    width: 450px;
+    text-align: left;
+    padding-left: 50px;
 }
 
 .creator-font{
-  color: black;
-  font-size: 36px;
+  color: whitesmoke;
+  font-size: 2rem;
+  margin-right: 75px; 
+  margin-top: 55px;
+  padding-top: 70px; 
+  
 }
 
 
@@ -462,6 +486,7 @@ h1 {
   rgb(185, 230, 240),
   rgb(124, 222, 240)
   )
+}
 /*Profile View */
 .profile-box {
   margin-left: auto;
