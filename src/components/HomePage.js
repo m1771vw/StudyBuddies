@@ -21,7 +21,9 @@ class HomePage extends Component {
                 </div>
                 </div>
             </section>
+            
             <AboutUs />
+           
             <footer className="hero-foot is-small secondGrad home-page-gradient">
             <div className="hero-body">
             <div className="container title-text2">
