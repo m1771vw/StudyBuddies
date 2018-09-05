@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import TermDefInput from './TermDefInput';
 import {RANDOM_COLORS} from '../constants';
+import { func, array } from 'prop-types';
 
 class CreateView extends Component {
     state = {
@@ -24,22 +25,16 @@ class CreateView extends Component {
         cardColor: RANDOM_COLORS[Math.floor(Math.random() * RANDOM_COLORS.length)]
     }
 
-    change = (property, index, newValue) => {
+    changeTermDefInput = (property, index, newValue) => {
         let copy = {
             ...this.state.cards[index]
         };
         copy[property] = newValue;
 
         let newCards = [
-            ...this
-                .state
-                .cards
-                .slice(0, index),
+            ...this.state.cards.slice(0, index),
             copy,
-            ...this
-                .state
-                .cards
-                .slice(index + 1)
+            ...this.state.cards.slice(index + 1)
         ];
 
         this.setState({cards: newCards})
@@ -51,30 +46,15 @@ class CreateView extends Component {
         this.setState({ cards: newCards })
     }
 
-    // onChange = event => {
-    //     this.setState({setname: event.target.value})
-    // }
-
-    // onChange2 = event => {
-    //     this.setState({description: event.target.value})
-    // }
-
     submitSet = () => {
-        this
-            .props
-            .addToCards(this.state);
+        this.props.addToCards(this.state);
     }
 
-    deleteClicked = index => {
+    deleteClicked = (event, index) => {
+        event.preventDefault()
         let newCards = [
-            ...this
-                .state
-                .cards
-                .slice(0, index),
-            ...this
-                .state
-                .cards
-                .slice(index + 1)
+            ...this.state.cards.slice(0, index),
+            ...this.state.cards.slice(index + 1)
         ]
         this.setState({cards: newCards})
     }
@@ -116,12 +96,12 @@ class CreateView extends Component {
                     </div>
                     <div className='field input-forms-container'>
                         {this.state.cards.map((card, index) => (
-                                <div className='control term-def-container'>
+                                <div key={card+index} className='control term-def-container'>
                                     <TermDefInput
                                         key={index}
                                         card={card}
                                         index={index}
-                                        change={this.change}
+                                        changeTermDefInput={this.changeTermDefInput}
                                         deleteClicked={this.deleteClicked}/>
                                 </div>
                             ))}
@@ -141,6 +121,10 @@ class CreateView extends Component {
     }
 }
 
-CreateView.propTypes = {};
+CreateView.propTypes = {
+    addToCards: func,
+    flashCardSets: array,
+    changePageName: func
+};
 
 export default CreateView;

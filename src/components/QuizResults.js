@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { VIEW_SET } from '../constants'
-import { func, number } from 'prop-types';
+import { func, object, number } from 'prop-types';
 import { QUIZ_RESULT_ANSWERS } from '../constants';
 class QuizResults extends Component {
     render() {
@@ -38,7 +38,7 @@ class QuizResults extends Component {
 
 QuizResults.propTypes = {
     changePageName: func,
-    selectedCardSet: func,
+    selectedCardSet: object,
     scoreCorrect: number,
     scoreMissed: number
 };

@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import { array, func } from 'prop-types';
-import { RANDOM_COLORS, CREATE_VIEW } from '../constants'
+import { CREATE_VIEW } from '../constants'
 
 class Dashboard extends Component {
-    randomNumber = () => {
-        return Math.floor(Math.random() * RANDOM_COLORS.length)
-    }
     render() {
         return (
             <div>
@@ -13,13 +10,17 @@ class Dashboard extends Component {
                 <div className='level'>
                     <div className='flashcard-flex-container'>
                         <div>
-                            <button onClick={() => { this.props.changePageName(CREATE_VIEW) }} className='button dashboard-button flashcard-box dashboard-create-flashcard'>+</button>
+                            <button onClick={() => {this.props.changePageName(CREATE_VIEW)}} 
+                            className='button dashboard-button flashcard-box dashboard-create-flashcard'>+</button>
                         </div>
                         {this.props.flashCardSets.map((cardsets, index) => {
                             return(
                                 <div key={cardsets+index} className='viewset-flashcard roboto-font '>
-                                    <button onClick={() => {this.props.selectCardSet(index)}} style={{backgroundColor: cardsets.cardColor}} className='button is-success dashboard-button flashcard-box dashboard-button-text viewset-flashcard dashboard-display-flashcard'>{cardsets.setname}</button>
-                                    {/* <button onClick={() => {this.props.selectCardSet(index)}} style={{backgroundColor: RANDOM_COLORS[this.randomNumber()]}} className='button is-success dashboard-button flashcard-box dashboard-button-text'>{cardsets.setname}</button> */}
+                                    <button onClick={() => {this.props.selectCardSet(index)}} 
+                                    style={{backgroundColor: cardsets.cardColor}} 
+                                    className='button is-success dashboard-button flashcard-box dashboard-button-text viewset-flashcard dashboard-display-flashcard'>
+                                    {cardsets.setname}
+                                    </button>
                                 </div>
                             )
                         })}

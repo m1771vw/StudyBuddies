@@ -37,24 +37,31 @@ class LoginView extends Component {
                 <div className="field">
                     <label className="label is-medium roboto-font">Email</label>
                     <div className="control has-icons-left has-icons-right">
-                        <input className="input" type="email" placeholder="Email input"
-                            value={this.state.email} required onChange={this.onChange} />
+                        <input className="input" 
+                               type="email" 
+                               placeholder="Email input"
+                               value={this.state.email} 
+                               required 
+                               onChange={this.onChange} />
                         <span className="icon is-small is-left">
-                            <i className="fas fa-envelope"></i>
+                            <i className="fas fa-envelope"/>
                         </span>
                     </div>
                 </div>
                 <div className="field">
                     <label className="label is-medium roboto-font">Password</label>
                     <div className="control">
-                        <input className="input" type="password"
-                            value={this.state.password} required onChange={this.onChange2}
-                            placeholder="Password" />
+                        <input className="input" 
+                               type="password"
+                               value={this.state.password} 
+                               required 
+                               onChange={this.onChange2}
+                               placeholder="Password" />
                     </div>
                 </div>
-                <label className="checkbox roboto-font"> <input type="checkbox"></input> Remember me</label>
+                <label className="checkbox roboto-font"> <input type="checkbox"/> Remember me</label>
                 <div>
-                    <button className='button is-watermelon roboto-font' >Login</button>
+                    <button className='button is-watermelon roboto-font'>Login</button>
                 </div>
             </div>
             </form>

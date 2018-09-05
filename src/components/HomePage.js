@@ -20,7 +20,7 @@ class HomePage extends Component {
                                     className="button is-watermelon">Sign up for free
                             </button>
                             <span className='home-login-text'>or 
-                                <a onClick={() => {this.props.changePageName(LOGIN_VIEW)}}>log in</a>
+                                <a onClick={() => {this.props.changePageName(LOGIN_VIEW)}}> log in</a>
                             </span>
                         </div>
                         </div>
