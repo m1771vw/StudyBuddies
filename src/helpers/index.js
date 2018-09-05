@@ -1,8 +1,6 @@
-import { WRONG_ANSWER, CORRECT_ANSWER } from '../constants/'
-
 const generateRandomNumberExcluding = (cardSetLength, excludeIndex) => {
   let num = Math.floor(Math.random() * (cardSetLength));
-  return (num === excludeIndex)? generateRandomNumberExcluding(cardSetLength, excludeIndex) : num;
+  return (num === excludeIndex) ? generateRandomNumberExcluding(cardSetLength, excludeIndex) : num;
 }
 
 const generateRandomNumberArray = (cardSetLength, excludeIndex) => {
@@ -22,11 +20,11 @@ export const selectQuizCards = (cardSet, cardSetIndex) => {
     quizSet[1] = cardSet[randomCardIndex.pop()]
     quizSet[2] = cardSet[randomCardIndex.pop()]
     quizSet[3] = cardSet[randomCardIndex.pop()]
-    quizSet = chooseRightCard(quizSet, cardSetIndex)
+    quizSet = setAnswerPropertyToQuizSet(quizSet)
     return scrambleCards(quizSet)
   }
   
-  export const chooseRightCard = (cardSet, cardSetIndex) => {
+  export const setAnswerPropertyToQuizSet = (cardSet) => {
     for(let i = 0; i < cardSet.length;i++){
         cardSet[i]['answer'] = false
     }

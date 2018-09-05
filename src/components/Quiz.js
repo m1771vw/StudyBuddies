@@ -3,28 +3,31 @@ import { func, array } from 'prop-types';
 import { scrambleCards, selectQuizCards } from '../helpers';
 
 class Quiz extends Component {
-    state={
+    state = {
         userHasChosen: false,
         shuffledCardSet: scrambleCards(this.props.selectedCardSet.cards), 
-        quizCardSet: (selectQuizCards(this.props.selectedCardSet.cards, 0)),
+        quizCardSet: selectQuizCards(this.props.selectedCardSet.cards, 0),
         cardSetIndex: 0,
         endOfSetReached: false,
-        selectedCardIndex: -1,
+        selectedCardIndex: 0,
         scoreCorrect: 0,
         scoreMissed: 0
     }
+
     answerClicked = index => {
         this.setState({
             userHasChosen: true,
             selectedCardIndex: index
         })
     }
+
     getNewSetOfCards = (cards, cardSetIndex) => {
         let newQuizArray = selectQuizCards(cards, cardSetIndex)
         this.setState({
             quizCardSet: newQuizArray
         })
     }
+
     showNextQuestion = correct => {
         if(this.state.cardSetIndex === this.state.shuffledCardSet.length-1){
             if(correct){
@@ -58,7 +61,7 @@ class Quiz extends Component {
             })
         }
     }
-
+    
     render() {
         let correctCard = "box flashcard-box has-text-centered quiz-flashcard-wordwrap is-correct-card";
         let wrongCard = "box flashcard-box has-text-centered quiz-flashcard-wordwrap is-wrong-card";

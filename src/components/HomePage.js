@@ -23,17 +23,18 @@ class HomePage extends Component {
             </section>
             <AboutUs />
             <footer className="hero-foot is-small secondGrad home-page-gradient">
-                <div className="hero-body">
-                     <div className="container title-text2">
-                        <h1 className="title type-writer-font">
-                                    Study Buddies </h1>
-                        <h2 className="robot-font">About</h2>
-                        <p className="robot-font">Creators</p>
-                        <p className="robot-font">Privacy</p>
-                        <p className="robot-font">Jobs</p>
-                        <p className="robot-font">Terms</p> 
-                    </div>
-                </div>
+            <div className="hero-body">
+            <div className="container title-text2">
+            <h1 className="title type-writer-font">
+                        Study Buddies </h1>
+            <h2 className="roboto-font">About</h2>
+            <p className="roboto-font">Creators</p>
+            <p className="roboto-font">Privacy</p>
+            <p className="roboto-font">Jobs</p>
+            <p className="roboto-font">Terms</p>
+                
+            </div>
+            </div>
             </footer>
        
         </div>
