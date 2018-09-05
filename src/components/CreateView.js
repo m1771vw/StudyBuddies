@@ -51,13 +51,13 @@ class CreateView extends Component {
         this.setState({ cards: newCards })
     }
 
-    onChange = event => {
-        this.setState({setname: event.target.value})
-    }
+    // onChange = event => {
+    //     this.setState({setname: event.target.value})
+    // }
 
-    onChange2 = event => {
-        this.setState({description: event.target.value})
-    }
+    // onChange2 = event => {
+    //     this.setState({description: event.target.value})
+    // }
 
     submitSet = () => {
         this
@@ -79,7 +79,7 @@ class CreateView extends Component {
         this.setState({cards: newCards})
     }
 
-    genericChange = e => {
+    onInputChange = e => {
         this.setState({
             [e.target.name]: e.target.value
         })
@@ -94,7 +94,7 @@ class CreateView extends Component {
                             <input
                                 className="input button-border set-name-field"
                                 value={this.state.setname}
-                                onChange={this.genericChange}
+                                onChange={this.onInputChange}
                                 type="text"
                                 required
                                 placeholder="Enter set name here..."
@@ -107,19 +107,15 @@ class CreateView extends Component {
                         <textarea
                             className="button-border textarea"
                             value={this.state.description}
-                            onChange={this.genericChange}
+                            onChange={this.onInputChange}
                             placeholder="Enter description here..."
                             rows="7"
                             name="description"
                             >
-
                             </textarea>
                     </div>
                     <div className='field input-forms-container'>
-                        {this
-                            .state
-                            .cards
-                            .map((card, index) => (
+                        {this.state.cards.map((card, index) => (
                                 <div className='control term-def-container'>
                                     <TermDefInput
                                         key={index}

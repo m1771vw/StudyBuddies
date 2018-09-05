@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { func } from 'prop-types';
 class SignupView extends Component {
     state = {
         email: '',
@@ -109,7 +109,8 @@ class SignupView extends Component {
 }
 
 SignupView.propTypes = {
-
+    changePageName: func,
+    addToUser: func
 };
 
 export default SignupView;

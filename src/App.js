@@ -187,7 +187,7 @@ class App extends Component {
         : <div>
             <HomePageHeader changePageName={this.changePageName}/>
             {this.setPage(this.state.pageName)}
-        </div>
+         </div>
        }
       </div>
     );
