@@ -10,6 +10,7 @@ class TermDefInput extends Component {
         this.props.changeTermDefInput("definition", this.props.index, e.target.value);
     }
 
+
     render() {
         return (
             <div>

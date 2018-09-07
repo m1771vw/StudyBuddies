@@ -29,15 +29,9 @@ class EditView extends Component {
         this.setState({ cards: newCards })
     }
 
-    onChange = event => {
+    inputChange = e => {
         this.setState({
-            setname: event.target.value
-        })
-    }
-
-    onChange2 = event => {
-        this.setState({
-            description: event.target.value
+            [e.target.name]: e.target.value
         })
     }
 
@@ -89,8 +83,9 @@ class EditView extends Component {
                         <input className="input button-border set-name-field"
                                value={this.state.setname} 
                                required 
-                               onChange={this.onChange}
+                               onChange={this.inputChange}
                                type="text" 
+                               name="setname"
                                placeholder="Enter set name here..." />
                     </div>
                     <div className="level-item level-right"></div>
@@ -98,7 +93,8 @@ class EditView extends Component {
                 <div className="level text-area-level">
                     <textarea className="button-border textarea"
                               value={this.state.description} 
-                              onChange={this.onChange2}
+                              name="description"
+                              onChange={this.inputChange}
                               rows="7">          
                     </textarea>
                 </div>
