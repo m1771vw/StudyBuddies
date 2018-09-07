@@ -13,37 +13,24 @@ import SignupView from './components/SignupView';
 import ProfileView from './components/ProfileView';
 import FlashCards from './data/flashcards';
 import Users from './data/users';
-import EditView from './components/EditView';
-
+import EditView from './components/EditView'; 
 import { HOMEPAGE, LOGIN_VIEW, SIGNUP_VIEW, PROFILE_VIEW, DASHBOARD, CREATE_VIEW, VIEW_SET, QUIZ, QUIZ_RESULTS, EDIT } from './constants'
-
 
 class App extends Component {
   state = {
-    pageName: HOMEPAGE,
+    pageName: QUIZ,
     userList: Users,
-    flashCardSets: FlashCards, // All the Cards
-    // selectedCardSet: [], // Selected card set of cards
-    selectedCardSet: FlashCards[1], // Dummy data to have Quiz as Start Up page
-    userLoggedIn: false,
+    flashCardSets: FlashCards, 
+    // selectedCardSet: [], 
+    selectedCardSet: FlashCards[1],
+    userLoggedIn: true,
     currentUser: [],    
     selectedCardSetIndex: 0,
     scoreCorrect: 0,
     scoreMissed: 0
   }
 
-  /**
-   * Edit function that changes 'this.state.flashCardSets' to include the new collection
-   * 
-   * Requires two input: setname, new collection to insert
-   * 
-   * use 'setname' to find index to update
-   * 
-   * Meant for 'EditView.js'
-   */
-
   updateCardSet = cards => {
-
     let tempSet = [
       ...this.state.flashCardSets.slice(0, this.state.selectedCardSetIndex),
       cards,
@@ -54,17 +41,20 @@ class App extends Component {
       flashCardSets: tempSet
     }, ()=>{this.selectCardSet(this.state.selectedCardSetIndex)})
   }
-
+  
   authenticateUser = user => {
     if (this.state.userList.findIndex(x => x.email === user.email) > -1
       && this.state.userList.findIndex(x => x.password === user.password) > -1) {
-      console.log("User logged in!")
-      this.setState({ userLoggedIn: true, pageName: DASHBOARD, currentUser: this.state.userList[this.state.userList.findIndex(x => x.email === user.email)]});
+      this.setState({ 
+        userLoggedIn: true, 
+        pageName: DASHBOARD, 
+        currentUser: this.state.userList[this.state.userList.findIndex(x => x.email === user.email)]});
     } else {
-      console.log("User trying to log!")
+      alert("Email or Password incorrect! Please try again.")
       this.setState({ userLoggedIn: false });
     }
   }
+
   logOut = () => {
     this.setState({
       pageName: HOMEPAGE,
@@ -100,18 +90,21 @@ class App extends Component {
       selectedCardSetIndex: index
     })
   }
+
   setupQuiz = (QUIZ, cardSet) => {
     this.setState({
       pageName: QUIZ,
       selectedCardSet: cardSet
     })
   }
+
   setupQuizResults = (scoreCorrect, scoreMissed) => {
     this.setState({
       scoreCorrect: scoreCorrect,
       scoreMissed: scoreMissed
-    }, () => {this.changePageName(QUIZ_RESULTS )})
+    }, () => {this.changePageName(QUIZ_RESULTS)})
   }
+
   setPage = pageName => {
     switch (pageName) {
       case HOMEPAGE:
@@ -169,37 +162,33 @@ class App extends Component {
             selectedCardSet={this.state.selectedCardSet}
             selectedCardSetIndex={this.state.selectedCardSetIndex}
             updateCardSet={this.updateCardSet}
-            
           />)
       default:
         return <h1>404 Not Found</h1>;
     }
   }
+
   render() {
     return (
       <div>
         {this.state.userLoggedIn
-        ? 
-          <div>
+        ? <div>
             <UserHeader 
-            changePageName={this.changePageName}
-            flashCardSets={this.state.flashCardSets}
-            selectCardSet={this.selectCardSet}
-            /> 
+              changePageName={this.changePageName}
+              flashCardSets={this.state.flashCardSets}
+              selectCardSet={this.selectCardSet}
+              /> 
             <div id='body-content'>
               <div className="container is-fluid main-content"> 
               {this.setPage(this.state.pageName)}
-            </div>
+              </div>
             </div>
          </div> 
         : <div>
-          <HomePageHeader 
-            changePageName={this.changePageName}/>
+            <HomePageHeader changePageName={this.changePageName}/>
             {this.setPage(this.state.pageName)}
-        </div>
+         </div>
        }
-        
-        
       </div>
     );
   }
