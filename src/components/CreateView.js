@@ -41,17 +41,24 @@ class CreateView extends Component {
     }
 
     addCard = e => {
+        if(e.detail=== 0 ) {
+            return;
+        }
         e.preventDefault()
         let newCards = [...this.state.cards, { term: '', definition: '' }];
         this.setState({ cards: newCards })
     }
 
-    submitSet = () => {
+    submitSet = (e) => {
         this.props.addToCards(this.state);
     }
 
     deleteClicked = (event, index) => {
-        event.preventDefault()
+
+        if(event.detail=== 0 ) {
+            return;
+        }
+        event.preventDefault();
         let newCards = [
             ...this.state.cards.slice(0, index),
             ...this.state.cards.slice(index + 1)
@@ -60,6 +67,7 @@ class CreateView extends Component {
     }
 
     onInputChange = e => {
+        e.preventDefault();
         this.setState({
             [e.target.name]: e.target.value
         })
@@ -111,7 +119,7 @@ class CreateView extends Component {
                             <button className="button button-border is-large" onClick={this.addCard}>+</button>
                         </div>
                         <div className='submit-button-container'>
-                            <button className="button button-border is-large">
+                            <button type='submit' className="button button-border is-large">
                                 Submit Set</button>
                         </div>
                     </div>
