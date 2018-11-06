@@ -112,7 +112,7 @@ You can press the **Quiz** button to quiz yourself on your cards.
 
 ## Contributors
 
-You can look here for a list of [contributors](https://github.com/m1771vw/tech-project/graphs/contributors) for the project.
+You can look here for a list of [contributors](https://github.com/m1771vw/StudyBuddies/graphs/contributors) for the project.
 
 ## Similar Projects
 
