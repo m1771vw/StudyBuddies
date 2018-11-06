@@ -1,5 +1,3 @@
-import { WRONG_ANSWER, CORRECT_ANSWER } from '../constants/'
-
 const generateRandomNumberExcluding = (cardSetLength, excludeIndex) => {
   let num = Math.floor(Math.random() * (cardSetLength));
   return (num === excludeIndex)? generateRandomNumberExcluding(cardSetLength, excludeIndex) : num;

@@ -5,12 +5,10 @@ import AboutUsPhoto  from '../img/RUSHHOUR.jpg';
 class AboutUs extends Component {
     render() {
         return (
-
-            
             <section className="hero is-small home-page-gradient2">
             <div className="about-us-container">
             <figure className="image">
-                <img className='about-us-photo' src={AboutUsPhoto} alt="The creators photo"/>
+                <img className='about-us-photo' src={AboutUsPhoto} alt="The creators"/>
               <div className>
                 <div className="top-right creator-font type-writer-font">Brought to you by:
                 <div className="top-right type-writer-font about-us-font" >

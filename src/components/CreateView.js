@@ -47,10 +47,10 @@ class CreateView extends Component {
     }
 
     deleteSet = index => {
-        let newSet = [
-            ...this.state.slice(0, index),
-            ...this.state.slice(index + 1)
-        ];
+        // let newSet = [
+        //     ...this.state.slice(0, index),
+        //     ...this.state.slice(index + 1)
+        // ];
         this.setState({
             setname: '',
             description: '',
