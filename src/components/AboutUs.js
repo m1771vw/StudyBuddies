@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component } from 'react';
 import AboutUsPhoto  from '../img/RUSHHOUR.jpg';
 
 
@@ -23,6 +23,7 @@ class AboutUs extends Component {
             </div>
         </section>
     );
+}
 }
 
 export default AboutUs;

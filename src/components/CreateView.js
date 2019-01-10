@@ -72,14 +72,24 @@ class CreateView extends Component {
             [e.target.name]: e.target.value
         })
     }
-    
+
     deleteSet = index => {
         // let newSet = [
         //     ...this.state.slice(0, index),
         //     ...this.state.slice(index + 1)
         // ];
+        // this.setState({
+        //     [e.target.name]: e.target.value
+        // })
         this.setState({
-            [e.target.name]: e.target.value
+            setname: '',
+            description: '',
+            cards: [
+                { term: '', definition: '' },
+                { term: '', definition: '' },
+                { term: '', definition: '' },
+                { term: '', definition: '' }
+            ]
         })
     }
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {func, object, number } from 'prop-types';
 import { VIEW_SET } from '../constants'
 const QUIZ_RESULT_ANSWERS = ['Wow, you did great!', "You're almost there, study some more!", "Don't worry, study some more and try again!", "We all have those days, don't let it get you down!"]
 
