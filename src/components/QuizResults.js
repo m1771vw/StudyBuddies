@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { VIEW_SET } from '../constants'
-import { func, object, number } from 'prop-types';
-import { QUIZ_RESULT_ANSWERS } from '../constants';
+const QUIZ_RESULT_ANSWERS = ['Wow, you did great!', "You're almost there, study some more!", "Don't worry, study some more and try again!", "We all have those days, don't let it get you down!"]
+
 class QuizResults extends Component {
     render() {
         let percentCorrect = Math.round(this.props.scoreCorrect/this.props.selectedCardSet.cards.length*100);
