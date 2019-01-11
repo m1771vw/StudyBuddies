@@ -1,3 +1,4 @@
+/* Typography */
 @font-face {
   font-family: American Typewriter;
   src: url('./fonts/american_typewriter.woff');
@@ -25,7 +26,28 @@ h1 {
 .roboto-font {
   font-family: Roboto, Arial, Helvetica, sans-serif;;
 }
+
+/* Animations */
+.transition {
+  transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-webkit-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+}
+
 /* HomePage CSS */
+
+.full-height {
+  height: 100vh;
+}
+@media (max-width: 768px) {
+  .title-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
 .home-page-gradient {
   /* background-color: red; */
   background-image: linear-gradient(to bottom left,
@@ -44,34 +66,43 @@ h1 {
    rgb(89, 233, 249) 75%,
   rgb(1, 122, 250)); */
 }
+
 .home-logo {
   padding-left: 10px;
   padding-top: 5px
 }
+
 .is-watermelon {
   background-color: #FF3B3F;
   color: white;
 }
+
 .hero-title {
   /* color: rgb(146, 146, 146); */
   font-size: 3rem;
 }
+
 .secondGrad{
   background-image: linear-gradient(to top left,  
   rgb(185, 230, 240),
   rgb(124, 222, 240))
 }
 
-.title-text {
-  margin-left: 15%;
+@media (min-width: 769px) {
+  .title-text {
+    margin-left: 15%;
+  }
 }
+
 .title-text2 {
   margin-left: 15%
 }
+
 /* HomePageHeader CSS */
 .header-button {
   margin-top:10px;
 }
+
 
 /* Main Page CSS  */
 #body-content {

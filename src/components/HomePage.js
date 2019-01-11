@@ -6,7 +6,7 @@ class HomePage extends Component {
     render() {
         return (
             <div>
-                <section className="hero is-large home-page-gradient">
+                <section className="hero is-large home-page-gradient full-height">
                     <div className="hero-body">
                         <div className="container title-text">
                             <h1 className="title hero-title type-writer-font">
