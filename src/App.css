@@ -88,14 +88,8 @@ h1 {
   rgb(124, 222, 240))
 }
 
-@media (min-width: 769px) {
-  .title-text {
-    margin-left: 15%;
-  }
-}
-
-.title-text2 {
-  margin-left: 15%
+.footer-text {
+  text-align: center;
 }
 
 /* HomePageHeader CSS */
@@ -481,11 +475,7 @@ h1 {
   right: 16px;
 }
 .about-us-font{
-  padding-top: 110px;
   font-size: 1.5rem;
-  
-  align-items: center;
-  text-align: left;
   justify-content: center;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -506,15 +496,10 @@ h1 {
 .creator-font{
   color: whitesmoke;
   font-size: 2rem;
-  margin-right: 75px; 
-  margin-top: 55px;
-  padding-top: 70px; 
-  
 }
 
 
 .about-us-container{
-  padding-top: 40px;
   position: relative;
   text-align: center;
 }
@@ -524,6 +509,41 @@ h1 {
   rgb(185, 230, 240),
   rgb(124, 222, 240)
   )
+}
+
+@media (min-width: 769px) {
+  .mobile-wide-width {
+    min-width: 110%;
+    max-width: 115%;
+  } 
+}
+@media (max-width: 768px) {
+  .mobile-wide-width {
+    width: 200%;
+    transform: translateX(-5%);
+  }
+}
+
+.transparent-background {
+  background-color: rgb(87, 85, 94, 0.7);
+  position: absolute;
+}
+
+@media (min-width: 779px) {
+  .brought-to-you.center-text {
+    position: absolute;
+    top: 50%;
+    right: 25%;
+    transform: translate(25%, -50%);
+  }
+}
+@media (max-width: 778px) {
+  .brought-to-you.center-text {
+    position: absolute;
+    top: 50%;
+    left: calc(150% - 119%);
+    transform: translate(-50%, -50%);
+  }
 }
 /*Profile View */
 .profile-box {
