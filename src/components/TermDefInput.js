@@ -13,13 +13,13 @@ class TermDefInput extends Component {
     render() {
         return (
             <div>
-                <div className="field level create-card-form">
+                <div className="level">
                 <button onClick={(event) => {this.props.deleteClicked(event, this.props.index)}} className='button button-border'>X</button>
-                    <div className="level-item">
+                    <div className="level-item no-margin-bottom">
                         <input className="input button-border term-input" type="text" placeholder="Term"
                             value={this.props.card.term} onChange={this.onTermChange} />
                     </div>
-                    <div className="level-item">
+                    <div className="level-item no-margin-bottom">
                         <input className="input button-border term-input" type="text" placeholder="Definition"
                             value={this.props.card.definition} onChange={this.onDefinitionChange} />
                     </div>

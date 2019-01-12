@@ -6,7 +6,7 @@ import { func, array } from 'prop-types';
 class UserHeader extends Component {
     render() {
         return (
-            <nav className='level header-flex-content'>
+            <nav className='level header-flex-content header-shadow'>
                 <div className=''>
                     <div id="navbarExampleTransparentExample" className="navbar-menu">
                         <div className="navbar-start">

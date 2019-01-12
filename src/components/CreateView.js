@@ -98,7 +98,7 @@ class CreateView extends Component {
             <div id='create-view-form'>
                 <form onSubmit={this.submitSet}>
                     <div className="level">
-                        <div className="level-item has-text-centered">
+                        <div className="level-item has-text-centered text-area-level transition">
                             <input
                                 className="input button-border set-name-field"
                                 value={this.state.setname}
@@ -122,7 +122,7 @@ class CreateView extends Component {
                             >
                             </textarea>
                     </div>
-                    <div className='field input-forms-container'>
+                    <div className='field input-forms-container transition'>
                         {this.state.cards.map((card, index) => (
                                 <div key={card+index} className='control term-def-container'>
                                     <TermDefInput

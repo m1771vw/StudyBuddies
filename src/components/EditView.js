@@ -85,7 +85,7 @@ class EditView extends Component {
                             <button onClick={() => {this.props.selectCardSet(this.props.selectedCardSetIndex)}} 
                                     className='button is-watermelon'>Return to View</button>
                         </div>
-                    <div className="level-item edit-set-name-field">
+                    <div className="level-item has-text-centered text-area-level">
                         <input className="input button-border set-name-field"
                                value={this.state.setname} 
                                required 

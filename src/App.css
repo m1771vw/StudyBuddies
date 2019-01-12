@@ -93,6 +93,11 @@ h1 {
 }
 
 /* HomePageHeader CSS */
+
+.header-shadow {
+  box-shadow: 0 8px 16px rgba(10,10,10,.1);
+}
+
 .header-button {
   margin-top:10px;
 }
@@ -254,38 +259,50 @@ h1 {
   padding-top: 20px;
 }
 .set-name-field{
-  width: 400px;
+
+}
+@media (min-width: 769px) {
+  .text-area-level{
+
+    padding: 0 20% 16px 20%;
+  }
+}
+@media (max-width: 768px) {
+  .text-area-level{
+    padding: 0 20% 8px 20%;
+  }
 }
 
-.text-area-level{
-  width: 400px ;
-  margin: auto;
-}
 .input-forms-container {
-  /* display: flex;
-  flex-wrap: wrap;
-  align-content: space-evenly;
-  align-items: center;
-  justify-content: center; */
-  margin-right: 25px;
 
 }
+
 .add-button-container{
-  /* width: 100px; */
-  margin-left: 48%
+  padding-bottom: 16px;
 }
+
 
 .submit-button-container {
-  padding-right: 10px;
-  margin-right: 3%;
-}
-#create-button-container {
-  padding-top: 20px;
-  flex-direction: row;
 
 }
+
+
+#create-button-container {
+  flex-direction: column;
+}
+
+@media (max-width: 768px){
+  #create-button-container {
+    position:absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+}
 .term-input {
-  width: 90%;
+  /* width: 90%; */
 }
 
 .create-card-form {
@@ -295,8 +312,21 @@ h1 {
   border: 1px solid black;
 }
 
-.term-def-container {
-  padding-right: 10px
+@media (min-width: 769px) {
+  .term-def-container {
+    width: 100%;
+    padding: 0 10% 20px 10%;
+  }
+}
+@media (max-width: 768px) {
+  .term-def-container {
+    width: 100%;
+    padding: 0 10% 16px 10%;
+  }
+}
+
+.level-item.no-margin-bottom {
+  margin-bottom: 0;
 }
 /* Quiz CSS */
 .flashcard-answer{
@@ -459,9 +489,9 @@ h1 {
 }
 
 /* EDIT CSS */
-.edit-set-name-field {
+/* .edit-set-name-field {
   margin-right: 130px;
-}
+} */
 
 .edit-view-form {
   padding-top: 25px;

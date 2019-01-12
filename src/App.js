@@ -18,12 +18,12 @@ import { HOMEPAGE, LOGIN_VIEW, SIGNUP_VIEW, PROFILE_VIEW, DASHBOARD, CREATE_VIEW
 
 class App extends Component {
   state = {
-    pageName: HOMEPAGE,
+    pageName: CREATE_VIEW,
     userList: Users,
     flashCardSets: FlashCards, 
     // selectedCardSet: [], 
     selectedCardSet: FlashCards[1],
-    userLoggedIn: false,
+    userLoggedIn: true,
     currentUser: [],    
     selectedCardSetIndex: 0,
     scoreCorrect: 0,
