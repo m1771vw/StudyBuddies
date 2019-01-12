@@ -66,10 +66,10 @@ class Quiz extends Component {
     quizTopHalf = () => {
         let cardStatus = <h1>{this.state.cardSetIndex + 1} / {this.state.shuffledCardSet.length}</h1>
         return (
-            <div className="level">
+            <div className="flex-column">
                 <div className="quiz-question-flex-container ">
                     <div className="quiz-status">
-                        <div className='level-item return-to-view-button'>
+                        <div className='return-to-view-button'>
                             <button onClick={() => { this.props.selectCardSet(this.props.selectedCardSetIndex) }} className='button is-watermelon'>Return to View</button>
                         </div>
                         <div className=" flashcard-counter">
