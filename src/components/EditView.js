@@ -80,12 +80,12 @@ class EditView extends Component {
                                     { term: '', definition: '' }
                                 ]
                             })}} >
-                <div className="level">
-                    <div className='level-item level-left'>
+                <div className="flex-column">
+                    <div className='return-to-view-button'>
                             <button onClick={() => {this.props.selectCardSet(this.props.selectedCardSetIndex)}} 
                                     className='button is-watermelon'>Return to View</button>
                         </div>
-                    <div className="level-item has-text-centered text-area-level">
+                    <div className="has-text-centered text-area-level">
                         <input className="input button-border set-name-field"
                                value={this.state.setname} 
                                required 
@@ -93,7 +93,6 @@ class EditView extends Component {
                                type="text" 
                                placeholder="Enter set name here..." />
                     </div>
-                    <div className="level-item level-right"></div>
                 </div>
                 <div className="level text-area-level">
                     <textarea className="button-border textarea"

@@ -18,7 +18,7 @@ import { HOMEPAGE, LOGIN_VIEW, SIGNUP_VIEW, PROFILE_VIEW, DASHBOARD, CREATE_VIEW
 
 class App extends Component {
   state = {
-    pageName: QUIZ,
+    pageName: EDIT,
     userList: Users,
     flashCardSets: FlashCards, 
     // selectedCardSet: [], 
