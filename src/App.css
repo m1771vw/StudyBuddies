@@ -40,6 +40,7 @@ h1 {
 .full-height {
   height: 100vh;
 }
+
 @media (max-width: 768px) {
   .title-text {
     position: absolute;
@@ -49,11 +50,9 @@ h1 {
   }
 }
 .home-page-gradient {
-  /* background-color: red; */
   background-image: linear-gradient(to bottom left,
   rgb(185, 230, 240),
   rgb(124, 222, 240)
-
   )
   /* background-image: linear-gradient(to bottom left,  
   rgb(255, 255, 255),
@@ -78,7 +77,6 @@ h1 {
 }
 
 .hero-title {
-  /* color: rgb(146, 146, 146); */
   font-size: 3rem;
 }
 
@@ -93,7 +91,6 @@ h1 {
 }
 
 /* HomePageHeader CSS */
-
 .header-shadow {
   box-shadow: 0 8px 16px rgba(10,10,10,.1);
 }
@@ -105,18 +102,14 @@ h1 {
 
 /* Main Page CSS  */
 #body-content {
-  /* background-color: rgb(255, 255, 255); */
   background-color: #EFEFEF;
-  /* background-color: #CAEBF2;  */
   width: auto;
   min-height: 100vh;
-  padding-bottom: 100px;
-  /* height: 1000px; */
+  padding-bottom: 150px;
 }
 
 
 /* Dashboard CSS */
-
 #dashboard-text {
   font-size: 2em;
   font-weight: bold;
@@ -124,21 +117,26 @@ h1 {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
 .dashboard-button {
   width: 200px;
   height: 100px;
 }
+
 .dashboard-button:hover {
   opacity: 0.85;
 }
+
 .dashboard-button-text {
   font-size: 1.5rem;
   font-weight:bold;
 }
+
 .dashboard-create-flashcard {
   background-color: white !important;
   font-size: 3rem;
 }
+
 .dashboard-display-flashcard {
   justify-content: center;
   word-wrap: break-word;
@@ -146,19 +144,20 @@ h1 {
   word-break: break-word;
   white-space: normal;
 }
+
 /* UserHeader CSS */
 .navbar-container {
   border: 1px solid black;
 }
+
 .button-border {
   border: 1px solid black;
 }
+
 .header-flex-content {
   display: flex;
   align-items: center;
-  /* justify-content: center; */
   padding: 5px 10px 10px;
-
   border-bottom: 1px solid rgb(219, 219, 219);
   /* background-color: rgb(255, 255, 96); */
   /* SKY */
@@ -169,8 +168,8 @@ h1 {
   /* background-color: #4484CE  */
   /* SCREEN */
   /* background-color: #C5C1C0  */
-
 }
+
 .level.header-flex-content {
   margin-bottom: 0;
 }
@@ -181,10 +180,8 @@ h1 {
 .user-home-logo {
   margin-left: auto;
   margin-right: auto; 
-  /* position: absolute; */
   justify-content: center;
   align-items: center;
-  /* padding-left: 10%; */
   padding-top: 10px;
   padding-right: 60px;
 }
@@ -217,22 +214,16 @@ h1 {
 }
 .flashcard-box{
   width: 275px;
-  /* display: flex; */
-  /* flex: 1; */
-  /* justify-content: space-evenly; */
   height: 200px;
-  /* background-color: rgb(233, 233, 233); */
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 10px;
   border: 1px black solid;
-  
 }
 
 @media (max-width: 1307px) {
   .quiz-flex {
     flex: 0 50%;
-
   }
 }
 
@@ -265,12 +256,9 @@ h1 {
 #create-view-form {
   padding-top: 20px;
 }
-.set-name-field{
 
-}
 @media (min-width: 769px) {
   .text-area-level{
-
     padding: 0 20% 16px 20%;
   }
 }
@@ -280,19 +268,9 @@ h1 {
   }
 }
 
-.input-forms-container {
-
-}
-
 .add-button-container{
   padding-bottom: 16px;
 }
-
-
-.submit-button-container {
-
-}
-
 
 #create-button-container {
   flex-direction: column;
@@ -307,9 +285,6 @@ h1 {
     display: flex;
     flex-direction: column;
   }
-}
-.term-input {
-  /* width: 90%; */
 }
 
 .create-card-form {
@@ -335,11 +310,10 @@ h1 {
 .level-item.no-margin-bottom {
   margin-bottom: 0;
 }
+
 /* Quiz CSS */
 .flashcard-answer{
   width: 275px;
-  /* display: flex; */
-  /* flex: 1; */
   flex-wrap: wrap;
   justify-content: space-evenly;
   height: 200px;
@@ -363,20 +337,13 @@ h1 {
 }
 .flashcard-question{
   width: 400px;
-  /* display: flex; */
-  /* flex: 1; */
-  /* justify-content: space-evenly; */
   height: 300px;
   background-color: rgb(233, 233, 233);
-  /* margin-left: auto;
-  margin-right: auto; */
   border: 1px black solid;
 }
 
 .flashcard-counter {
   width: 100px;
-  /* margin-left:auto;
-  margin-right: auto; */
 }
 .term-text {
   font-size: 2.0em;
@@ -388,12 +355,6 @@ h1 {
 
 }
 
-/* @media (max-width: 768px) {
-  .quiz-question-flex-container{
-    flex-direction: column;
-
-  }
-} */
 .return-to-view-button {
   margin-left: 5%;
 }
@@ -513,22 +474,10 @@ h1 {
   margin-left: auto;
   margin-right: auto;
   max-width: 500px;
-  /* height: 450px; */
-  
 }
 .profile-level{
   padding-top: 50px;
   justify-content: center;
-  /* width: 90%; */
-}
-
-/* EDIT CSS */
-/* .edit-set-name-field {
-  margin-right: 130px;
-} */
-
-.edit-view-form {
-  padding-top: 25px;
 }
 
 /* About Us CSS  */
