@@ -107,7 +107,7 @@ class Quiz extends Component {
             this.state.quizCardSet.map((card, index) => {
                 if (card.answer) {
                     return (
-                        <div key={card.term + index} className='level-item'>
+                        <div key={card.term + index} className='level-item quiz-flex'>
                             <div onClick={() => { this.showNextQuestion(false) }} className={correctCard}>
                                 <h1>Definition: </h1>
                                 <h1>{card.definition}</h1>
@@ -116,7 +116,7 @@ class Quiz extends Component {
                     )
                 } else if (this.state.quizCardSet.indexOf(card) === this.state.selectedCardIndex) {
                     return (
-                        <div key={card.term + index} className='level-item'>
+                        <div key={card.term + index} className='level-item quiz-flex'>
                             <div onClick={() => { this.showNextQuestion(false) }} className={wrongCard}>
                                 <h1>Definition: </h1>
                                 <h1>{card.definition}</h1>
@@ -125,7 +125,7 @@ class Quiz extends Component {
                     )
                 } else
                     return (
-                        <div key={card.term + index} className='level-item '>
+                        <div key={card.term + index} className='level-item quiz-flex '>
                             <div onClick={() => { this.showNextQuestion(false) }} className='box flashcard-box has-text-centered quiz-flashcard-wordwrap'>
                                 <h1>Definition: </h1>
                                 <h1>{card.definition}</h1>
@@ -142,7 +142,7 @@ class Quiz extends Component {
             this.state.quizCardSet.map((card, index) => {
                 if (card.answer) {
                     return (
-                        <div key={card.term + index} className='level-item'>
+                        <div key={card.term + index} className='level-item quiz-flex'>
                             <div onClick={() => { this.showNextQuestion(true) }} className={correctCard}>
                                 <h1>Definition: </h1>
                                 <h1>{card.definition}</h1>
@@ -151,7 +151,7 @@ class Quiz extends Component {
                     )
                 } else {
                     return (
-                        <div key={card.term + index} className='level-item'>
+                        <div key={card.term + index} className='level-item quiz-flex'>
                             <div onClick={() => { this.showNextQuestion(false) }} className='box flashcard-box has-text-centered quiz-flashcard-wordwrap'>
                                 <h1>Definition: </h1>
                                 <h1>{card.definition}</h1>
@@ -167,7 +167,7 @@ class Quiz extends Component {
         return (
             this.state.quizCardSet.map((card, index) => {
                 return (
-                    <div key={card.term + index} className='level-item'>
+                    <div key={card.term + index} className='level-item quiz-flex'>
                         <div onClick={() => { this.answerClicked(index) }} className="box flashcard-box has-text-centered quiz-flashcard-wordwrap">
                             <h1>Definition: </h1>
                             <h1>{card.definition}</h1>

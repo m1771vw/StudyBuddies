@@ -219,7 +219,7 @@ h1 {
   width: 275px;
   /* display: flex; */
   /* flex: 1; */
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   height: 200px;
   /* background-color: rgb(233, 233, 233); */
   margin-left: 10px;
@@ -227,6 +227,13 @@ h1 {
   margin-bottom: 10px;
   border: 1px black solid;
   
+}
+
+@media (max-width: 1307px) {
+  .quiz-flex {
+    flex: 0 50%;
+
+  }
 }
 
 .setname-box{
@@ -351,7 +358,7 @@ h1 {
   word-break: break-word;
 }
 .flashcard-answer-container {
-
+  flex-wrap: wrap;
 
 }
 .flashcard-question{
@@ -505,12 +512,14 @@ h1 {
 .profile-box {
   margin-left: auto;
   margin-right: auto;
-  width: 500px;
+  max-width: 500px;
   /* height: 450px; */
   
 }
 .profile-level{
   padding-top: 50px;
+  justify-content: center;
+  /* width: 90%; */
 }
 
 /* EDIT CSS */
@@ -599,17 +608,6 @@ h1 {
     left: calc(150% - 119%);
     transform: translate(-50%, -50%);
   }
-}
-/*Profile View */
-.profile-box {
-  margin-left: auto;
-  margin-right: auto;
-  width: 500px;
-  /* height: 450px; */
-  
-}
-.profile-level{
-  padding-top: 50px;
 }
 
 .home-signup-container {
