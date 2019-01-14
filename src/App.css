@@ -184,6 +184,12 @@ h1 {
   align-items: center;
   padding-right: 60px;
 }
+
+@media (max-width: 768px){ 
+  .user-home-logo {
+    margin-top: 16px;
+  }
+}
 /* ViewSet CSS */
 .cardset-info-flex-container {
   margin-left: 7.5%;
